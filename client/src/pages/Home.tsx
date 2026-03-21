@@ -53,10 +53,10 @@ export default function Home() {
               className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Bespaar{" "}
-              <span className="gradient-text">uren per week</span>
+              Automatiseer uw{" "}
+              <span className="gradient-text">technische processen</span>
               <br />
-              met slimme automatisering
+              met slimme integraties
             </motion.h1>
 
             {/* Subtext - Benefit Driven */}
@@ -66,7 +66,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-white/60 leading-relaxed mb-8 max-w-xl"
             >
-              Monteurs, administratie, rapportage — wij automatiseren wat u nu nog handmatig doet. Resultaat: meer winst, minder stress.
+              Voor engineering, manufacturing, IT en technische diensten. Wij integreren uw systemen, automatiseren workflows en implementeren AI-oplossingen die direct impact hebben op productiviteit en kwaliteit.
             </motion.p>
 
             {/* Social Proof USPs */}
@@ -77,9 +77,9 @@ export default function Home() {
               className="flex flex-wrap gap-4 mb-10"
             >
               {[
+                { icon: "✓", text: "Integratie met uw bestaande systemen" },
                 { icon: "✓", text: "Resultaat in 2-12 weken" },
-                { icon: "✓", text: "Geen lange contracten" },
-                { icon: "✓", text: "Gratis eerste advies" },
+                { icon: "✓", text: "Gratis technische intake" },
               ].map((usp) => (
                 <div key={usp.text} className="flex items-center gap-2 text-sm text-white/70">
                   <span className="text-[oklch(0.65_0.22_25)] font-bold">{usp.icon}</span>
@@ -224,13 +224,13 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>
-                    Automatiseringen & Software
+                    Integraties & Automatisering
                   </h3>
                   <p className="text-white/50 text-sm leading-relaxed mb-4">
-                    Stroomlijn uw processen met slimme automatiseringen en maatwerk web applicaties die tijd en kosten besparen.
+                    Integreer uw ERP, CAD, IoT en andere systemen. Automatiseer data flows, workflows en technische processen.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["Rapportage automatisering", "Web applicaties", "Procesoptimalisatie"].map((tag) => (
+                    {["API integraties", "Workflow automatisering", "Data synchronisatie"].map((tag) => (
                       <span key={tag} className="px-2.5 py-1 rounded-md bg-white/5 text-white/40 text-xs border border-white/5">
                         {tag}
                       </span>
@@ -261,13 +261,13 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>
-                    AI Implementatie
+                    AI & Machine Learning
                   </h3>
                   <p className="text-white/50 text-sm leading-relaxed mb-4">
-                    Slimme AI-toepassingen die direct resultaat opleveren. Van virtuele assistenten tot data-analyse.
+                    Implementeer AI voor predictive maintenance, quality control, data analysis en intelligente automatisering.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["Chatbots", "Virtuele assistenten", "Data-analyse"].map((tag) => (
+                    {["Predictive analytics", "Computer vision", "Process optimization"].map((tag) => (
                       <span key={tag} className="px-2.5 py-1 rounded-md bg-white/5 text-white/40 text-xs border border-white/5">
                         {tag}
                       </span>

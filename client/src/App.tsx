@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import Diensten from "./pages/Diensten";
 import OverOns from "./pages/OverOns";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
 
 function Router() {
   return (
@@ -16,6 +18,8 @@ function Router() {
       <Route path="/diensten" component={Diensten} />
       <Route path="/over-ons" component={OverOns} />
       <Route path="/contact" component={Contact} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:id" component={BlogArticle} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
