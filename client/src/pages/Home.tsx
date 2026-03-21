@@ -24,7 +24,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-hero-bg-no3eVhmwB6AWV5oFN2jduY.webp)`,
+            backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-hero-engineering-AFi4EVQVcoyF9oVcr7Ni6E.webp)`,
           }}
         />
         {/* Dark overlay */}
@@ -240,7 +240,7 @@ export default function Home() {
               </div>
               <div className="mt-6 overflow-hidden rounded-xl border border-white/5">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-visual-5PKDExTwL5b3mWTke4noEe.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp"
                   alt="Automatisering visualisatie"
                   className="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-[1.02]"
                 />
@@ -277,7 +277,7 @@ export default function Home() {
               </div>
               <div className="mt-6 overflow-hidden rounded-xl border border-white/5">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-visual-R77pzhAFECUcxHV25eoBK6.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp"
                   alt="AI visualisatie"
                   className="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-[1.02]"
                 />
@@ -306,7 +306,7 @@ export default function Home() {
       <section
         className="relative py-24 overflow-hidden"
         style={{
-          backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-bg-8BwWJB46vQ5JRSkwm96vzw.webp)`,
+          backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

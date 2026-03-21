@@ -30,7 +30,7 @@ const articleContent: Record<
     category: "Technisch",
     date: "21 maart 2026",
     readTime: 8,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-visual-5PKDExTwL5b3mWTke4noEe.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
     author: "Juko Team",
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
@@ -97,7 +97,7 @@ const articleContent: Record<
     category: "AI",
     date: "18 maart 2026",
     readTime: 6,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-visual-R77pzhAFECUcxHV25eoBK6.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
     author: "Juko Team",
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">

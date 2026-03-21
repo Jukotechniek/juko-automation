@@ -20,7 +20,7 @@ const articles = [
     category: "Technisch",
     date: "21 maart 2026",
     readTime: 8,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-visual-5PKDExTwL5b3mWTke4noEe.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
     featured: true,
   },
   {
@@ -30,7 +30,7 @@ const articles = [
     category: "AI",
     date: "18 maart 2026",
     readTime: 6,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-visual-R77pzhAFECUcxHV25eoBK6.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
     featured: false,
   },
   {
@@ -40,7 +40,7 @@ const articles = [
     category: "Implementatie",
     date: "15 maart 2026",
     readTime: 10,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-bg-8BwWJB46vQ5JRSkwm96vzw.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp",
     featured: false,
   },
   {
@@ -50,7 +50,7 @@ const articles = [
     category: "IoT",
     date: "12 maart 2026",
     readTime: 7,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-hero-bg-no3eVhmwB6AWV5oFN2jduY.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp",
     featured: false,
   },
   {
@@ -60,7 +60,7 @@ const articles = [
     category: "Automatisering",
     date: "9 maart 2026",
     readTime: 9,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-visual-5PKDExTwL5b3mWTke4noEe.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
     featured: false,
   },
   {
@@ -70,7 +70,7 @@ const articles = [
     category: "Beveiliging",
     date: "6 maart 2026",
     readTime: 8,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-visual-R77pzhAFECUcxHV25eoBK6.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
     featured: false,
   },
 ];
