@@ -34,29 +34,16 @@ export default function Home() {
 
         <div className="container relative z-10 pt-24 pb-16">
           <div className="max-w-3xl">
-            {/* Urgency Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.65_0.22_25/0.3)] bg-[oklch(0.65_0.22_25/0.08)] mb-6"
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.22_25)] animate-pulse" />
-              <span className="text-xs font-medium text-[oklch(0.65_0.22_25)]">⏱️ Intake duurt ±2 minuten</span>
-            </motion.div>
-
             {/* Headline - Conversion Focused */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] tracking-tight mb-8 overflow-visible after:content-[''] after:block after:h-[0.2em]"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Automatiseer uw{" "}
-              <span className="gradient-text">technische processen</span>
-              <br />
-              met slimme integraties
+              <span className="block">Automatiseer uw</span>
+              <span className="block gradient-text">technische processen</span>
             </motion.h1>
 
             {/* Subtext - Benefit Driven */}
@@ -66,7 +53,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-white/60 leading-relaxed mb-8 max-w-xl"
             >
-              Voor engineering, manufacturing, IT en technische diensten. Wij integreren uw systemen, automatiseren workflows en implementeren AI-oplossingen die direct impact hebben op productiviteit en kwaliteit.
+              Voor engineering, manufacturing en technische diensten. We koppelen systemen, automatiseren workflows en zetten AI praktisch in voor meer productiviteit en kwaliteit.
             </motion.p>
 
             {/* Social Proof USPs */}
@@ -78,8 +65,7 @@ export default function Home() {
             >
               {[
                 { icon: "✓", text: "Integratie met uw bestaande systemen" },
-                { icon: "✓", text: "Resultaat in 2-12 weken" },
-                { icon: "✓", text: "Gratis technische intake" },
+                { icon: "✓", text: "Gratis kennismaking" },
               ].map((usp) => (
                 <div key={usp.text} className="flex items-center gap-2 text-sm text-white/70">
                   <span className="text-[oklch(0.65_0.22_25)] font-bold">{usp.icon}</span>
@@ -97,7 +83,7 @@ export default function Home() {
             >
               <Link href="/contact">
                 <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
-                  Start gratis intake
+                  Plan gratis kennismaking
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
@@ -150,8 +136,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { value: "±2 min", label: "Intake duurt" },
-              { value: "2–12 wk", label: "Projectduur" },
+              { value: "±2 min", label: "Snel gestart" },
               { value: "24 uur", label: "Reactietijd" },
               { value: "100%", label: "Maatwerk" },
             ].map((stat, i) => (
@@ -205,7 +190,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-white/50 text-lg max-w-2xl"
             >
-              Wij helpen uw bedrijf groeien met de juiste technologische oplossingen — praktisch, bewezen en op maat gemaakt.
+              Wij helpen uw bedrijf groeien met de juiste technologische oplossingen, praktisch, bewezen en op maat gemaakt.
             </motion.p>
           </div>
 
@@ -227,7 +212,7 @@ export default function Home() {
                     Integraties & Automatisering
                   </h3>
                   <p className="text-white/50 text-sm leading-relaxed mb-4">
-                    Integreer uw ERP, CAD, IoT en andere systemen. Automatiseer data flows, workflows en technische processen.
+                    Integreer uw ERP, CAD, Power BI en andere systemen. Automatiseer data flows, workflows en technische processen.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {["API integraties", "Workflow automatisering", "Data synchronisatie"].map((tag) => (
@@ -264,10 +249,10 @@ export default function Home() {
                     AI & Machine Learning
                   </h3>
                   <p className="text-white/50 text-sm leading-relaxed mb-4">
-                    Implementeer AI voor predictive maintenance, quality control, data analysis en intelligente automatisering.
+                    Implementeer AI voor voorspellen van onderhoud, kwaliteitscontrole, data analyse en intelligente automatisering.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["Predictive analytics", "Computer vision", "Process optimization"].map((tag) => (
+                    {["Voorspellend onderhoud", "Computer vision", "Process optimalisatie"].map((tag) => (
                       <span key={tag} className="px-2.5 py-1 rounded-md bg-white/5 text-white/40 text-xs border border-white/5">
                         {tag}
                       </span>
@@ -284,6 +269,33 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-8"
+          >
+            <p className="text-sm text-white/45 mb-4">Specialisaties waarmee wij uw bedrijf kunnen helpen:</p>
+            <div className="flex flex-wrap gap-2.5">
+              {[
+                "Web applicaties & Maatwerk software",
+                "AI Chatbots & Virtuele assistenten",
+                "Rapportage automatisering",
+                "Procesoptimalisatie",
+                "Systeemintegratie",
+                "Data-analyse",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="px-3 py-1.5 rounded-lg bg-white/5 text-white/55 text-xs sm:text-sm border border-white/10 hover:border-[oklch(0.65_0.22_25/0.35)] hover:text-white/80 transition-all duration-300"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -407,7 +419,7 @@ export default function Home() {
           >
             <Link href="/contact">
               <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
-                Start gratis intake (±2 min)
+                Plan kennismaking (±2 min)
                 <ArrowRight className="w-4 h-4" />
               </button>
             </Link>
@@ -446,22 +458,22 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
-                icon: "⚡",
+                icon: <Zap className="w-5 h-5" />,
                 title: "Snelle Implementatie",
                 desc: "Van idee naar werkende oplossing in weken, niet maanden.",
               },
               {
-                icon: "🤝",
+                icon: <Users className="w-5 h-5" />,
                 title: "Denken Met U Mee",
                 desc: "Niet alleen uitvoeren, maar ook adviseren en optimaliseren.",
               },
               {
-                icon: "🎯",
+                icon: <Brain className="w-5 h-5" />,
                 title: "Praktische Oplossingen",
                 desc: "De juiste balans tussen slimme techniek en eenvoud.",
               },
               {
-                icon: "📈",
+                icon: <TrendingUp className="w-5 h-5" />,
                 title: "Echte Resultaten",
                 desc: "Tevreden klanten die tijd en geld besparen door onze oplossingen.",
               },
@@ -474,7 +486,9 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="glass-card-hover p-6"
               >
-                <div className="text-3xl mb-4">{item.icon}</div>
+                <div className="w-11 h-11 rounded-lg mb-4 flex items-center justify-center bg-[oklch(0.65_0.22_25/0.12)] border border-[oklch(0.65_0.22_25/0.25)] text-[oklch(0.72_0.2_35)]">
+                  {item.icon}
+                </div>
                 <h3 className="text-base font-bold text-white mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>
                   {item.title}
                 </h3>
@@ -508,7 +522,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
-                  Start gratis intake
+                  Plan kennismaking
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </Link>

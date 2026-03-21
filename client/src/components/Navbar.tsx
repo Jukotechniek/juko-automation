@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-2.5 group">
-              <img src="/juko-logo.svg" alt="Juko Automation" className="h-8 w-auto" />
+              <img src="/juko-logo.png" alt="Juko Automation" className="h-10 lg:h-12 w-auto" />
             </div>
           </Link>
 

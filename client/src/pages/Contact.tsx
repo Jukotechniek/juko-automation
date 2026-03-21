@@ -119,7 +119,7 @@ export default function Contact() {
               <span className="gradient-text">kennismaking</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-white/50 text-lg leading-relaxed">
-              Beantwoord een paar vragen (±2 min). Dan kunnen we u direct gericht helpen. Reactie binnen 24 uur op werkdagen.
+              Vul het formulier in (±2 min). Dan kunnen we u direct gericht helpen. Reactie binnen 24 uur op werkdagen.
             </motion.p>
           </motion.div>
         </div>

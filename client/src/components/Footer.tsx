@@ -6,7 +6,7 @@
 */
 
 import { Link } from "wouter";
-import { Zap, Mail, Phone, ArrowUpRight } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -17,12 +17,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/">
               <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[oklch(0.65_0.22_25)] to-[oklch(0.65_0.18_240)] flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
-                </div>
-                <span className="font-bold text-lg text-white" style={{ fontFamily: "'Syne', sans-serif" }}>
-                  Juko <span className="text-[oklch(0.65_0.22_25)]">Automation</span>
-                </span>
+                <img src="/juko-logo.png" alt="Juko Automation" className="h-8 w-auto" />
               </div>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
