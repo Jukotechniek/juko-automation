@@ -335,19 +335,19 @@ export default function Home() {
                 num: "01",
                 title: "Kennismaking",
                 desc: "We komen bij u op locatie of plannen een videocall om uw bedrijf en uitdagingen te leren kennen.",
-                accentColor: "#00B4D8",
+                accentColor: "#E63946",
               },
               {
                 num: "02",
                 title: "Proces Analyse",
                 desc: "Samen nemen we de relevante processen van uw bedrijf door en identificeren we kansen voor automatisering.",
-                accentColor: "#00B4D8",
+                accentColor: "#E63946",
               },
               {
                 num: "03",
                 title: "Voorstel op Maat",
                 desc: "We presenteren u een concreet automatiseringsvoorstel met heldere voordelen en implementatiestappen.",
-                accentColor: "#00E5A0",
+                accentColor: "#F77F00",
               },
             ].map((step, i) => (
               <motion.div

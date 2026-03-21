@@ -4,10 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 /* 
-  DESIGN PHILOSOPHY: Dark Precision Tech
+  DESIGN PHILOSOPHY: Dark Precision Tech with Red Brand Accent
   - Deep navy/near-black background for premium tech feel
-  - Cyan-blue (#00B4D8) primary accent for innovation
-  - Emerald green (#00E5A0) secondary accent for results/growth
+  - Red (#E63946) primary accent matching Juko logo for brand consistency
+  - Orange-red (#F77F00) secondary accent for energy and growth
   - Syne display font + DM Sans body font
   - Glassmorphism cards with subtle glow borders
   - Framer Motion animations for fluid interactions
@@ -63,15 +63,15 @@
   --popover: oklch(0.13 0.018 240);
   --popover-foreground: oklch(0.95 0.005 220);
   
-  /* Cyan-blue primary */
-  --primary: oklch(0.72 0.15 220);
-  --primary-foreground: oklch(0.09 0.015 240);
+  /* Red primary - matching Juko logo */
+  --primary: oklch(0.65 0.22 25);
+  --primary-foreground: oklch(0.95 0.005 220);
   
-  --secondary: oklch(0.17 0.018 240);
-  --secondary-foreground: oklch(0.85 0.01 220);
+  --secondary: oklch(0.70 0.20 35);
+  --secondary-foreground: oklch(0.95 0.005 220);
   --muted: oklch(0.16 0.015 240);
   --muted-foreground: oklch(0.60 0.02 220);
-  --accent: oklch(0.17 0.018 240);
+  --accent: oklch(0.70 0.20 35);
   --accent-foreground: oklch(0.95 0.005 220);
   --destructive: oklch(0.65 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
@@ -79,26 +79,26 @@
   --input: oklch(1 0 0 / 10%);
   --ring: oklch(0.72 0.15 220);
   
-  --chart-1: oklch(0.72 0.15 220);
-  --chart-2: oklch(0.75 0.18 165);
-  --chart-3: oklch(0.65 0.20 280);
-  --chart-4: oklch(0.80 0.12 200);
-  --chart-5: oklch(0.70 0.16 250);
+  --chart-1: oklch(0.65 0.22 25);
+  --chart-2: oklch(0.70 0.20 35);
+  --chart-3: oklch(0.60 0.18 20);
+  --chart-4: oklch(0.68 0.21 30);
+  --chart-5: oklch(0.63 0.20 28);
   
   --sidebar: oklch(0.11 0.016 240);
   --sidebar-foreground: oklch(0.90 0.005 220);
-  --sidebar-primary: oklch(0.72 0.15 220);
-  --sidebar-primary-foreground: oklch(0.09 0.015 240);
-  --sidebar-accent: oklch(0.16 0.015 240);
-  --sidebar-accent-foreground: oklch(0.90 0.005 220);
+  --sidebar-primary: oklch(0.65 0.22 25);
+  --sidebar-primary-foreground: oklch(0.95 0.005 220);
+  --sidebar-accent: oklch(0.70 0.20 35);
+  --sidebar-accent-foreground: oklch(0.95 0.005 220);
   --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: oklch(0.72 0.15 220);
+  --sidebar-ring: oklch(0.65 0.22 25);
   
-  /* Custom brand colors */
-  --cyan: oklch(0.72 0.15 220);
-  --green-accent: oklch(0.82 0.18 165);
-  --glow-cyan: oklch(0.72 0.15 220 / 20%);
-  --glow-green: oklch(0.82 0.18 165 / 20%);
+  /* Custom brand colors - Red theme */
+  --red-primary: oklch(0.65 0.22 25);
+  --red-secondary: oklch(0.70 0.20 35);
+  --glow-red: oklch(0.65 0.22 25 / 20%);
+  --glow-red-secondary: oklch(0.70 0.20 35 / 20%);
 }
 
 @layer base {
@@ -172,19 +172,19 @@
 
   .glass-card-hover:hover {
     background: oklch(1 0 0 / 7%);
-    border-color: oklch(0.72 0.15 220 / 30%);
-    box-shadow: 0 0 30px oklch(0.72 0.15 220 / 10%);
+    border-color: oklch(0.65 0.22 25 / 30%);
+    box-shadow: 0 0 30px oklch(0.65 0.22 25 / 10%);
     transform: translateY(-2px);
   }
 
   /* Glow text */
-  .text-glow-cyan {
-    text-shadow: 0 0 40px oklch(0.72 0.15 220 / 50%);
+  .text-glow-red {
+    text-shadow: 0 0 40px oklch(0.65 0.22 25 / 50%);
   }
 
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, oklch(0.72 0.15 220), oklch(0.82 0.18 165));
+    background: linear-gradient(135deg, oklch(0.65 0.22 25), oklch(0.70 0.20 35));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -194,14 +194,14 @@
   .btn-primary-glow {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, oklch(0.72 0.15 220), oklch(0.65 0.18 240));
+    background: linear-gradient(135deg, oklch(0.65 0.22 25), oklch(0.70 0.20 35));
     color: white;
     border: none;
     transition: all 0.3s ease;
   }
 
   .btn-primary-glow:hover {
-    box-shadow: 0 0 30px oklch(0.72 0.15 220 / 40%);
+    box-shadow: 0 0 30px oklch(0.65 0.22 25 / 40%);
     transform: translateY(-1px);
   }
 
@@ -229,8 +229,8 @@
   }
 
   /* Radial glow */
-  .radial-glow-cyan {
-    background: radial-gradient(ellipse at center, oklch(0.72 0.15 220 / 15%) 0%, transparent 70%);
+  .radial-glow-red {
+    background: radial-gradient(ellipse at center, oklch(0.65 0.22 25 / 15%) 0%, transparent 70%);
   }
 
   /* Animated border gradient */
@@ -243,7 +243,7 @@
     position: absolute;
     inset: -1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, oklch(0.72 0.15 220 / 50%), oklch(0.82 0.18 165 / 50%));
+    background: linear-gradient(135deg, oklch(0.65 0.22 25 / 50%), oklch(0.70 0.20 35 / 50%));
     z-index: -1;
   }
 
@@ -272,8 +272,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px oklch(0.72 0.15 220 / 20%); }
-  50% { box-shadow: 0 0 40px oklch(0.72 0.15 220 / 40%); }
+  0%, 100% { box-shadow: 0 0 20px oklch(0.65 0.22 25 / 20%); }
+  50% { box-shadow: 0 0 40px oklch(0.65 0.22 25 / 40%); }
 }
 
 /* Smooth scrolling */
@@ -296,5 +296,5 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.72 0.15 220 / 50%);
+  background: oklch(0.65 0.22 25 / 50%);
 }
