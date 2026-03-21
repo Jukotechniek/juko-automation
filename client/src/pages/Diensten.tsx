@@ -32,7 +32,7 @@ export default function Diensten() {
       {/* Page Header */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[oklch(0.72_0.15_220/0.06)] blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[oklch(0.65_0.22_25/0.06)] blur-3xl" />
         <div className="container relative z-10">
           <motion.div
             initial="hidden"
@@ -66,9 +66,9 @@ export default function Diensten() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut" as const }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.72_0.15_220/0.3)] bg-[oklch(0.72_0.15_220/0.08)] mb-5">
-                <Zap className="w-3.5 h-3.5 text-[oklch(0.72_0.15_220)]" />
-                <span className="text-xs font-medium text-[oklch(0.72_0.15_220)]">Dienst 01</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.65_0.22_25/0.3)] bg-[oklch(0.65_0.22_25/0.08)] mb-5">
+                <Zap className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" />
+                <span className="text-xs font-medium text-[oklch(0.65_0.22_25)]">Dienst 01</span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "'Syne', sans-serif" }}>
                 Automatiseringen & Software
@@ -89,7 +89,7 @@ export default function Diensten() {
                   "Dashboard & monitoring",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 text-sm text-white/60">
-                    <CheckCircle2 className="w-4 h-4 text-[oklch(0.72_0.15_220)] flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[oklch(0.65_0.22_25)] flex-shrink-0" />
                     {item}
                   </div>
                 ))}
@@ -110,7 +110,7 @@ export default function Diensten() {
               transition={{ duration: 0.7, ease: "easeOut" as const, delay: 0.1 }}
               className="relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.72_0.15_220/0.15)] to-transparent rounded-2xl blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.65_0.22_25/0.15)] to-transparent rounded-2xl blur-xl" />
               <div className="relative glass-card overflow-hidden">
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-visual-5PKDExTwL5b3mWTke4noEe.webp"
@@ -118,7 +118,7 @@ export default function Diensten() {
                   className="w-full h-72 object-cover"
                 />
                 <div className="p-6">
-                  <div className="flex items-center gap-3 p-3 rounded-lg bg-[oklch(0.72_0.15_220/0.1)] border border-[oklch(0.72_0.15_220/0.2)]">
+                  <div className="flex items-center gap-3 p-3 rounded-lg bg-[oklch(0.65_0.22_25/0.1)] border border-[oklch(0.65_0.22_25/0.2)]">
                     <div className="w-2 h-2 rounded-full bg-[oklch(0.82_0.18_165)] animate-pulse" />
                     <span className="text-sm text-white/70">Projecten & uren beheer voor monteurs — live voorbeeld</span>
                   </div>
@@ -208,7 +208,7 @@ export default function Diensten() {
       {/* CTA */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.12_0.025_230)] to-[oklch(0.09_0.015_240)]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-[oklch(0.72_0.15_220/0.08)] blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-[oklch(0.65_0.22_25/0.08)] blur-3xl" />
         <div className="container relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

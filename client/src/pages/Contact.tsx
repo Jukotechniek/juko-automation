@@ -50,7 +50,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
     <div
-      className={`glass-card border transition-all duration-300 ${open ? "border-[oklch(0.72_0.15_220/0.25)]" : "border-white/5"}`}
+      className={`glass-card border transition-all duration-300 ${open ? "border-[oklch(0.65_0.22_25/0.25)]" : "border-white/5"}`}
     >
       <button
         className="w-full flex items-center justify-between gap-4 p-5 text-left"
@@ -103,7 +103,7 @@ export default function Contact() {
       {/* Header */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[oklch(0.72_0.15_220/0.06)] blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[oklch(0.65_0.22_25/0.06)] blur-3xl" />
         <div className="container relative z-10">
           <motion.div
             initial="hidden"
@@ -141,8 +141,8 @@ export default function Contact() {
             >
               {submitted ? (
                 <div className="glass-card p-10 text-center">
-                  <div className="w-16 h-16 rounded-full bg-[oklch(0.82_0.18_165/0.15)] border border-[oklch(0.82_0.18_165/0.3)] flex items-center justify-center mx-auto mb-5">
-                    <CheckCircle2 className="w-8 h-8 text-[oklch(0.82_0.18_165)]" />
+                  <div className="w-16 h-16 rounded-full bg-[oklch(0.70_0.20_35/0.15)] border border-[oklch(0.70_0.20_35/0.3)] flex items-center justify-center mx-auto mb-5">
+                    <CheckCircle2 className="w-8 h-8 text-[oklch(0.70_0.20_35)]" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Syne', sans-serif" }}>
                     Bedankt voor uw bericht!
@@ -162,7 +162,7 @@ export default function Contact() {
                         value={formData.naam}
                         onChange={(e) => setFormData({ ...formData, naam: e.target.value })}
                         placeholder="Jan de Vries"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.72_0.15_220/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
                       />
                     </div>
                     <div>
@@ -172,7 +172,7 @@ export default function Contact() {
                         value={formData.bedrijf}
                         onChange={(e) => setFormData({ ...formData, bedrijf: e.target.value })}
                         placeholder="Uw bedrijfsnaam"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.72_0.15_220/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
                       />
                     </div>
                   </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="jan@bedrijf.nl"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.72_0.15_220/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
                       />
                     </div>
                     <div>
@@ -196,7 +196,7 @@ export default function Contact() {
                         value={formData.telefoon}
                         onChange={(e) => setFormData({ ...formData, telefoon: e.target.value })}
                         placeholder="+31 6 12345678"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.72_0.15_220/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
                       />
                     </div>
                   </div>
@@ -206,7 +206,7 @@ export default function Contact() {
                     <select
                       value={formData.dienst}
                       onChange={(e) => setFormData({ ...formData, dienst: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[oklch(0.72_0.15_220/0.5)] transition-all duration-200 text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] transition-all duration-200 text-sm"
                     >
                       <option value="geen" className="bg-[oklch(0.13_0.018_240)]">Selecteer een dienst</option>
                       <option value="automatisering" className="bg-[oklch(0.13_0.018_240)]">Automatiseringen & Software</option>
@@ -224,7 +224,7 @@ export default function Contact() {
                       value={formData.bericht}
                       onChange={(e) => setFormData({ ...formData, bericht: e.target.value })}
                       placeholder="Beschrijf kort welk proces u wilt automatiseren of welke uitdaging u heeft..."
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.72_0.15_220/0.5)] focus:bg-white/8 transition-all duration-200 text-sm resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm resize-none"
                     />
                   </div>
 
@@ -258,10 +258,10 @@ export default function Contact() {
                 <div className="flex flex-col gap-3">
                   <a
                     href="mailto:info@jukoautomation.nl"
-                    className="flex items-center gap-3 text-sm text-white/50 hover:text-[oklch(0.72_0.15_220)] transition-colors"
+                    className="flex items-center gap-3 text-sm text-white/50 hover:text-[oklch(0.65_0.22_25)] transition-colors"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[oklch(0.72_0.15_220/0.1)] flex items-center justify-center">
-                      <Mail className="w-4 h-4 text-[oklch(0.72_0.15_220)]" />
+                    <div className="w-8 h-8 rounded-lg bg-[oklch(0.65_0.22_25/0.1)] flex items-center justify-center">
+                      <Mail className="w-4 h-4 text-[oklch(0.65_0.22_25)]" />
                     </div>
                     info@jukoautomation.nl
                   </a>
@@ -280,7 +280,7 @@ export default function Contact() {
                     { icon: <CheckCircle2 className="w-4 h-4" />, text: "Concrete eerste inschatting na intake" },
                   ].map((item) => (
                     <div key={item.text} className="flex items-start gap-3 text-sm text-white/50">
-                      <div className="text-[oklch(0.72_0.15_220)] mt-0.5 flex-shrink-0">{item.icon}</div>
+                      <div className="text-[oklch(0.65_0.22_25)] mt-0.5 flex-shrink-0">{item.icon}</div>
                       {item.text}
                     </div>
                   ))}

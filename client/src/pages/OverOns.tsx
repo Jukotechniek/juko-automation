@@ -31,7 +31,7 @@ export default function OverOns() {
       {/* Header */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[oklch(0.72_0.15_220/0.06)] blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[oklch(0.65_0.22_25/0.06)] blur-3xl" />
         <div className="container relative z-10">
           <motion.div
             initial="hidden"
@@ -66,8 +66,8 @@ export default function OverOns() {
               transition={{ duration: 0.6, ease: "easeOut" as const }}
               className="glass-card p-8"
             >
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.72_0.15_220/0.15)] border border-[oklch(0.72_0.15_220/0.2)] flex items-center justify-center mb-6">
-                <Target className="w-6 h-6 text-[oklch(0.72_0.15_220)]" />
+              <div className="w-12 h-12 rounded-xl bg-[oklch(0.65_0.22_25/0.15)] border border-[oklch(0.65_0.22_25/0.2)] flex items-center justify-center mb-6">
+                <Target className="w-6 h-6 text-[oklch(0.65_0.22_25)]" />
               </div>
               <h2 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
                 Onze Missie
@@ -134,13 +134,13 @@ export default function OverOns() {
                 icon: <Gauge className="w-5 h-5" />,
                 title: "Snelle Implementatie",
                 desc: "Van idee naar werkende oplossing in weken, niet maanden.",
-                color: "oklch(0.72_0.15_220)",
+                color: "oklch(0.65_0.22_25)",
               },
               {
                 icon: <Users className="w-5 h-5" />,
                 title: "Denken Met U Mee",
                 desc: "Niet alleen uitvoeren, maar ook adviseren en optimaliseren.",
-                color: "oklch(0.72_0.15_220)",
+                color: "oklch(0.65_0.22_25)",
               },
               {
                 icon: <Lightbulb className="w-5 h-5" />,
@@ -217,7 +217,7 @@ export default function OverOns() {
                 key={item}
                 variants={fadeUp}
                 custom={i}
-                className="px-4 py-2.5 rounded-xl glass-card border border-white/8 text-sm text-white/60 hover:text-white hover:border-[oklch(0.72_0.15_220/0.3)] transition-all duration-300"
+                className="px-4 py-2.5 rounded-xl glass-card border border-white/8 text-sm text-white/60 hover:text-white hover:border-[oklch(0.65_0.22_25/0.3)] transition-all duration-300"
               >
                 {item}
               </motion.div>
@@ -280,7 +280,7 @@ export default function OverOns() {
       {/* CTA */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.12_0.025_230)] to-[oklch(0.09_0.015_240)]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-[oklch(0.72_0.15_220/0.08)] blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-[oklch(0.65_0.22_25/0.08)] blur-3xl" />
         <div className="container relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

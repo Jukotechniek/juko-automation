@@ -17,11 +17,11 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/">
               <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[oklch(0.72_0.15_220)] to-[oklch(0.65_0.18_240)] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[oklch(0.65_0.22_25)] to-[oklch(0.65_0.18_240)] flex items-center justify-center">
                   <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
                 </div>
                 <span className="font-bold text-lg text-white" style={{ fontFamily: "'Syne', sans-serif" }}>
-                  Juko <span className="text-[oklch(0.72_0.15_220)]">Automation</span>
+                  Juko <span className="text-[oklch(0.65_0.22_25)]">Automation</span>
                 </span>
               </div>
             </Link>
@@ -29,7 +29,7 @@ export default function Footer() {
               Wij maken uw werk makkelijker door slimme automatiseringen en praktische software. Meer tijd voor wat echt belangrijk is.
             </p>
             <div className="flex flex-col gap-2 mt-6">
-              <a href="mailto:info@jukoautomation.nl" className="flex items-center gap-2 text-white/50 hover:text-[oklch(0.72_0.15_220)] transition-colors text-sm">
+              <a href="mailto:info@jukoautomation.nl" className="flex items-center gap-2 text-white/50 hover:text-[oklch(0.65_0.22_25)] transition-colors text-sm">
                 <Mail className="w-4 h-4" />
                 info@jukoautomation.nl
               </a>

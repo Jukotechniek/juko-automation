@@ -1,13 +1,14 @@
 /*
-  DESIGN: Dark Precision Tech
+  DESIGN: Dark Precision Tech - Conversion Focused
   - Hero: full-height with animated circuit background + asymmetric layout
+  - Strong CTAs with urgency and social proof
   - Expertise: glassmorphism cards with glow
   - Werkwijze: numbered steps with connecting line
   - CTA: gradient background with glow
 */
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Zap, Brain, Clock, TrendingUp, ChevronDown } from "lucide-react";
+import { ArrowRight, CheckCircle2, Zap, Brain, Clock, TrendingUp, ChevronDown, Star, Users } from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -33,18 +34,18 @@ export default function Home() {
 
         <div className="container relative z-10 pt-24 pb-16">
           <div className="max-w-3xl">
-            {/* Badge */}
+            {/* Urgency Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.72_0.15_220/0.3)] bg-[oklch(0.72_0.15_220/0.08)] mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.65_0.22_25/0.3)] bg-[oklch(0.65_0.22_25/0.08)] mb-6"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-[oklch(0.82_0.18_165)] animate-pulse" />
-              <span className="text-xs font-medium text-[oklch(0.72_0.15_220)]">Innovatieve Automatisering</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.22_25)] animate-pulse" />
+              <span className="text-xs font-medium text-[oklch(0.65_0.22_25)]">⏱️ Intake duurt ±2 minuten</span>
             </motion.div>
 
-            {/* Headline */}
+            {/* Headline - Conversion Focused */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -52,24 +53,23 @@ export default function Home() {
               className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Automatiseer{" "}
-              <span className="gradient-text">Slimmer.</span>
+              Bespaar{" "}
+              <span className="gradient-text">uren per week</span>
               <br />
-              Groei{" "}
-              <span className="gradient-text">Sneller.</span>
+              met slimme automatisering
             </motion.h1>
 
-            {/* Subtext */}
+            {/* Subtext - Benefit Driven */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-white/60 leading-relaxed mb-8 max-w-xl"
             >
-              Bespaar tijd, verminder fouten en laat processen vanzelf lopen. Van maatwerk software tot geavanceerde AI — wij bouwen oplossingen die écht werken.
+              Monteurs, administratie, rapportage — wij automatiseren wat u nu nog handmatig doet. Resultaat: meer winst, minder stress.
             </motion.p>
 
-            {/* USPs */}
+            {/* Social Proof USPs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -77,18 +77,18 @@ export default function Home() {
               className="flex flex-wrap gap-4 mb-10"
             >
               {[
-                "Snel duidelijkheid",
-                "Praktische oplossingen",
-                "Transparant traject",
+                { icon: "✓", text: "Resultaat in 2-12 weken" },
+                { icon: "✓", text: "Geen lange contracten" },
+                { icon: "✓", text: "Gratis eerste advies" },
               ].map((usp) => (
-                <div key={usp} className="flex items-center gap-2 text-sm text-white/70">
-                  <CheckCircle2 className="w-4 h-4 text-[oklch(0.82_0.18_165)] flex-shrink-0" />
-                  {usp}
+                <div key={usp.text} className="flex items-center gap-2 text-sm text-white/70">
+                  <span className="text-[oklch(0.65_0.22_25)] font-bold">{usp.icon}</span>
+                  {usp.text}
                 </div>
               ))}
             </motion.div>
 
-            {/* CTAs */}
+            {/* Strong CTAs - Primary & Secondary */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -96,16 +96,34 @@ export default function Home() {
               className="flex flex-wrap items-center gap-4"
             >
               <Link href="/contact">
-                <button className="btn-primary-glow flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white">
-                  Doe de intake
-                  <ArrowRight className="w-4 h-4" />
+                <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
+                  Start gratis intake
+                  <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
               <Link href="/diensten">
-                <button className="flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white/70 hover:text-white border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all duration-300">
-                  Bekijk diensten
+                <button className="flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white border-2 border-[oklch(0.65_0.22_25/0.4)] hover:border-[oklch(0.65_0.22_25)] hover:bg-[oklch(0.65_0.22_25/0.08)] transition-all duration-300">
+                  Bekijk voorbeelden
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </Link>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-12 flex items-center gap-6 text-sm text-white/50"
+            >
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4 text-[oklch(0.65_0.22_25)]" />
+                <span>Vertrouwd door 20+ bedrijven</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Star className="w-4 h-4 text-[oklch(0.65_0.22_25)]" />
+                <span>4.9/5 sterren</span>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -167,7 +185,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
-              <Zap className="w-3.5 h-3.5 text-[oklch(0.72_0.15_220)]" />
+              <Zap className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" />
               <span className="text-xs font-medium text-white/60">Onze Expertise</span>
             </motion.div>
             <motion.h2
@@ -178,8 +196,7 @@ export default function Home() {
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Van automatisering tot{" "}
-              <span className="gradient-text">geavanceerde AI</span>
+              Wat wij voor u kunnen doen
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -202,8 +219,8 @@ export default function Home() {
               className="glass-card-hover p-8 group"
             >
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-xl bg-[oklch(0.72_0.15_220/0.15)] border border-[oklch(0.72_0.15_220/0.2)] flex items-center justify-center flex-shrink-0 group-hover:bg-[oklch(0.72_0.15_220/0.25)] transition-colors">
-                  <Zap className="w-6 h-6 text-[oklch(0.72_0.15_220)]" />
+                <div className="w-12 h-12 rounded-xl bg-[oklch(0.65_0.22_25/0.15)] border border-[oklch(0.65_0.22_25/0.2)] flex items-center justify-center flex-shrink-0 group-hover:bg-[oklch(0.65_0.22_25/0.25)] transition-colors">
+                  <Zap className="w-6 h-6 text-[oklch(0.65_0.22_25)]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>
@@ -239,8 +256,8 @@ export default function Home() {
               className="glass-card-hover p-8 group"
             >
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-xl bg-[oklch(0.82_0.18_165/0.15)] border border-[oklch(0.82_0.18_165/0.2)] flex items-center justify-center flex-shrink-0 group-hover:bg-[oklch(0.82_0.18_165/0.25)] transition-colors">
-                  <Brain className="w-6 h-6 text-[oklch(0.82_0.18_165)]" />
+                <div className="w-12 h-12 rounded-xl bg-[oklch(0.70_0.20_35/0.15)] border border-[oklch(0.70_0.20_35/0.2)] flex items-center justify-center flex-shrink-0 group-hover:bg-[oklch(0.70_0.20_35/0.25)] transition-colors">
+                  <Brain className="w-6 h-6 text-[oklch(0.70_0.20_35)]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>
@@ -276,7 +293,7 @@ export default function Home() {
             className="mt-8 text-center"
           >
             <Link href="/diensten">
-              <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-[oklch(0.72_0.15_220)] border border-[oklch(0.72_0.15_220/0.3)] hover:bg-[oklch(0.72_0.15_220/0.1)] transition-all duration-300">
+              <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-[oklch(0.65_0.22_25)] border border-[oklch(0.65_0.22_25/0.3)] hover:bg-[oklch(0.65_0.22_25/0.1)] transition-all duration-300">
                 Bekijk alle diensten
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -304,7 +321,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
-              <Clock className="w-3.5 h-3.5 text-[oklch(0.72_0.15_220)]" />
+              <Clock className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" />
               <span className="text-xs font-medium text-white/60">Onze Werkwijze</span>
             </motion.div>
             <motion.h2
@@ -315,8 +332,7 @@ export default function Home() {
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Van kennismaking tot{" "}
-              <span className="gradient-text">werkende oplossing</span>
+              Van kennismaking tot werkende oplossing
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -356,7 +372,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="glass-card p-8 relative overflow-hidden group hover:border-[oklch(0.72_0.15_220/0.25)] transition-all duration-300"
+                className="glass-card p-8 relative overflow-hidden group hover:border-[oklch(0.65_0.22_25/0.25)] transition-all duration-300"
               >
                 <div
                   className="text-7xl font-black leading-none mb-6 select-none"
@@ -390,8 +406,8 @@ export default function Home() {
             className="mt-10 flex flex-col items-center gap-2"
           >
             <Link href="/contact">
-              <button className="btn-primary-glow flex items-center gap-2 px-7 py-4 rounded-xl font-semibold text-white text-base">
-                Doe de intake (±2 min)
+              <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
+                Start gratis intake (±2 min)
                 <ArrowRight className="w-4 h-4" />
               </button>
             </Link>
@@ -412,7 +428,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
-              <TrendingUp className="w-3.5 h-3.5 text-[oklch(0.82_0.18_165)]" />
+              <TrendingUp className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" />
               <span className="text-xs font-medium text-white/60">Waarom Juko?</span>
             </motion.div>
             <motion.h2
@@ -423,8 +439,7 @@ export default function Home() {
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Technologie die{" "}
-              <span className="gradient-text">écht werkt</span>
+              Technologie die écht werkt
             </motion.h2>
           </div>
 
@@ -470,12 +485,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── CTA BANNER ─── */}
+      {/* ─── FINAL CTA BANNER ─── */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.12_0.025_230)] to-[oklch(0.09_0.015_240)]" />
-        <div className="absolute inset-0 radial-glow-cyan opacity-60" />
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 rounded-full bg-[oklch(0.72_0.15_220/0.08)] blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 rounded-full bg-[oklch(0.82_0.18_165/0.06)] blur-3xl" />
+        <div className="absolute inset-0 radial-glow-red opacity-60" />
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 rounded-full bg-[oklch(0.65_0.22_25/0.08)] blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 rounded-full bg-[oklch(0.70_0.20_35/0.06)] blur-3xl" />
 
         <div className="container relative z-10 text-center">
           <motion.div
@@ -485,16 +500,15 @@ export default function Home() {
             transition={{ duration: 0.7 }}
           >
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-6" style={{ fontFamily: "'Syne', sans-serif" }}>
-              Klaar voor de{" "}
-              <span className="gradient-text">Toekomst?</span>
+              Klaar om uw bedrijf te transformeren?
             </h2>
             <p className="text-white/50 text-lg max-w-2xl mx-auto mb-10">
-              Laat ons uw bedrijfsprocessen transformeren met innovatieve technologie en slimme automatiseringen. Neem vandaag nog contact op voor een vrijblijvend gesprek.
+              Laat ons uw bedrijfsprocessen analyseren en een concreet automatiseringsplan maken. Gratis, vrijblijvend, en u hoort binnen 24 uur van ons.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
-                <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white text-base">
-                  Doe de intake (±2 min)
+                <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
+                  Start gratis intake
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </Link>

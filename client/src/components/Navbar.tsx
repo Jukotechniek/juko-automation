@@ -7,7 +7,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -41,12 +41,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-2.5 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[oklch(0.72_0.15_220)] to-[oklch(0.65_0.18_240)] flex items-center justify-center shadow-lg shadow-[oklch(0.72_0.15_220/0.3)] group-hover:shadow-[oklch(0.72_0.15_220/0.5)] transition-all duration-300">
-                <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
-              </div>
-              <span className="font-bold text-lg tracking-tight text-white" style={{ fontFamily: "'Syne', sans-serif" }}>
-                Juko <span className="text-[oklch(0.72_0.15_220)]">Automation</span>
-              </span>
+              <img src="/juko-logo.svg" alt="Juko Automation" className="h-8 w-auto" />
             </div>
           </Link>
 
@@ -57,7 +52,7 @@ export default function Navbar() {
                 <span
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     location === link.href
-                      ? "text-[oklch(0.72_0.15_220)] bg-[oklch(0.72_0.15_220/0.1)]"
+                      ? "text-[oklch(0.65_0.22_25)] bg-[oklch(0.65_0.22_25/0.1)]"
                       : "text-white/70 hover:text-white hover:bg-white/5"
                   }`}
                 >
@@ -103,7 +98,7 @@ export default function Navbar() {
                   <span
                     className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                       location === link.href
-                        ? "text-[oklch(0.72_0.15_220)] bg-[oklch(0.72_0.15_220/0.1)]"
+                        ? "text-[oklch(0.65_0.22_25)] bg-[oklch(0.65_0.22_25/0.1)]"
                         : "text-white/70 hover:text-white hover:bg-white/5"
                     }`}
                     onClick={() => setMobileOpen(false)}
