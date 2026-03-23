@@ -1,39 +1,179 @@
 /*
-  DESIGN: Dark Precision Tech - Conversion Focused
-  - Hero: full-height with animated circuit background + asymmetric layout
-  - Strong CTAs with urgency and social proof
-  - Expertise: glassmorphism cards with glow
-  - Werkwijze: numbered steps with connecting line
-  - CTA: gradient background with glow
+  DESIGN: Dark Precision Tech - Conversion & SEO Focused
+  - Hero: AI & Automatisering for growing businesses
+  - 3 Core Services: AI Implementaties, Webapps & Portalen, Automatiseringen
+  - Social proof, process, FAQ with schema markup
+  - SEO: proper h1/h2/h3 hierarchy, structured data, internal links
 */
 
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Zap, Brain, Clock, TrendingUp, ChevronDown, Star, Users, Rocket, Handshake, Target, BarChart3, Monitor, Lock } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ArrowRight, CheckCircle2, Zap, Brain, Clock, TrendingUp, ChevronDown, Star,
+  Users, Rocket, Handshake, Target, BarChart3, Monitor, Lock, Bot, FileText,
+  Workflow, Globe, Database, BarChart, MessageSquare, Cpu, Layers, Code2, ShieldCheck
+} from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const faqs = [
+  {
+    q: "Wat kost een AI implementatie?",
+    a: "De kosten hangen af van de complexiteit. Een AI chatbot begint vanaf €2.500, terwijl complexe predictive analytics projecten meer investering vragen. Na de gratis intake ontvangt u een heldere offerte met exacte kosten.",
+  },
+  {
+    q: "Hoe lang duurt het bouwen van een webapp of klantenportaal?",
+    a: "Een eenvoudig klantenportaal is binnen 4-6 weken live. Complexere webapplicaties met meerdere integraties duren 8-12 weken. Na de intake geven we u een concrete tijdsinschatting.",
+  },
+  {
+    q: "Kunnen jullie bestaande systemen integreren met nieuwe software?",
+    a: "Ja, systeemintegratie is een van onze specialisaties. We koppelen uw ERP, CRM, boekhoudsoftware en andere tools naadloos aan nieuwe oplossingen via API-integraties.",
+  },
+  {
+    q: "Werken jullie ook voor kleine en middelgrote bedrijven?",
+    a: "Absoluut. Onze visie is juist dat ook MKB-bedrijven toegang moeten hebben tot AI en automatisering. We passen onze aanpak aan op uw schaal en budget.",
+  },
+  {
+    q: "Bieden jullie ondersteuning na oplevering?",
+    a: "Ja, bij elk project bieden we een support-periode van minimaal 30 dagen. Daarna kunt u kiezen voor doorlopende ondersteuning en optimalisatie tegen een vast maandtarief.",
+  },
+  {
+    q: "Wat is het verschil tussen automatisering en AI?",
+    a: "Automatisering voert vaste, regelgebaseerde taken uit (bijv. data overzetten, e-mails versturen). AI gaat verder en kan leren, voorspellen en beslissingen nemen op basis van data — zoals een chatbot die vragen begrijpt of een systeem dat storingen voorspelt.",
+  },
+];
+
+function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className={`glass-card border transition-all duration-300 ${open ? "border-[oklch(0.65_0.22_25/0.25)]" : "border-white/5"}`}
+      itemScope
+      itemProp="mainEntity"
+      itemType="https://schema.org/Question"
+    >
+      <button
+        className="w-full flex items-center justify-between gap-4 p-5 text-left"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={`faq-answer-${index}`}
+      >
+        <span className="font-medium text-white/80 text-sm" itemProp="name">{q}</span>
+        <motion.div animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
+          <ChevronDown className="w-4 h-4 text-white/40 flex-shrink-0" />
+        </motion.div>
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id={`faq-answer-${index}`}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="overflow-hidden"
+            itemScope
+            itemProp="acceptedAnswer"
+            itemType="https://schema.org/Answer"
+          >
+            <div className="px-5 pb-5 text-sm text-white/50 leading-relaxed border-t border-white/5 pt-4" itemProp="text">
+              {a}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[oklch(0.09_0.015_240)] text-white">
       <Navbar />
 
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Juko Automation",
+            description: "AI implementaties, webapps, klantenportalen en automatiseringen voor groeiende bedrijven in Nederland.",
+            url: "https://www.jukoautomation.nl",
+            email: "info@jukoautomation.nl",
+            areaServed: "Nederland",
+            priceRange: "€€",
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Diensten",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "AI Implementatie",
+                    description: "AI chatbots, predictive analytics, documentverwerking en AI-gestuurde automatisering voor bedrijven.",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Webapps & Klantenportalen",
+                    description: "Maatwerk webapplicaties, klantenportalen, interne dashboards en workflow applicaties.",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Automatiseringen",
+                    description: "Procesautomatisering, API-integraties, workflow optimalisatie en data synchronisatie.",
+                  },
+                },
+              ],
+            },
+          }),
+        }}
+      />
+
+      {/* FAQ Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
+
       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-hero-engineering-AFi4EVQVcoyF9oVcr7Ni6E.webp)`,
-          }}
-        />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.09_0.015_240/0.95)] via-[oklch(0.09_0.015_240/0.80)] to-[oklch(0.09_0.015_240/0.50)]" />
+      <section className="relative min-h-screen flex items-center overflow-hidden" aria-label="Hero sectie">
+        {/* Animated gradient mesh background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[oklch(0.09_0.015_240)]" />
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full bg-[oklch(0.65_0.22_25/0.06)] blur-[120px] animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[oklch(0.70_0.20_35/0.04)] blur-[100px]" />
+          <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full bg-[oklch(0.50_0.15_280/0.03)] blur-[80px]" />
+        </div>
+        {/* Grid overlay */}
+        <div className="absolute inset-0 grid-bg opacity-15" />
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[oklch(0.09_0.015_240)] to-transparent" />
 
         <div className="container relative z-10 pt-24 pb-16">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             {/* Urgency Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -42,54 +182,58 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.65_0.22_25/0.3)] bg-[oklch(0.65_0.22_25/0.08)] mb-6"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.22_25)] animate-pulse" />
-              <span className="text-xs font-medium text-[oklch(0.65_0.22_25)] flex items-center gap-1"><Clock className="w-3.5 h-3.5" />Intake duurt ±2 minuten</span>
+              <span className="text-xs font-medium text-[oklch(0.65_0.22_25)] flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5" aria-hidden="true" />Gratis intake in ±2 minuten
+              </span>
             </motion.div>
 
-            {/* Headline - Conversion Focused */}
+            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] tracking-tight mb-8 overflow-visible after:content-[''] after:block after:h-[0.2em]"
-              style={{ fontFamily: "'Syne', sans-serif" }}
+              className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-8"
             >
-              <span className="block">Automatiseer uw</span>
-              <span className="block gradient-text">technische processen</span>
+              <span className="block">AI, Webapps &</span>
+              <span className="block gradient-text">Automatisering</span>
+              <span className="block text-3xl sm:text-4xl lg:text-5xl text-white/70 mt-2 font-semibold">voor groeiende bedrijven</span>
             </motion.h1>
 
-            {/* Subtext - Benefit Driven */}
+            {/* Subtext */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-white/70 mb-8 max-w-2xl leading-relaxed"
+              className="text-lg text-white/60 mb-8 max-w-2xl leading-relaxed"
             >
-              Voor engineering, manufacturing, IT en technische diensten. Wij integreren uw systemen, automatiseren workflows en implementeren AI-oplossingen die direct impact hebben op productiviteit en kwaliteit.
+              Van AI chatbots en klantenportalen tot volledig geautomatiseerde workflows.
+              Wij bouwen de software die uw bedrijf sneller, slimmer en schaalbaarder maakt.
             </motion.p>
 
-            {/* USPs - Benefit Driven */}
+            {/* USPs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4 mb-10"
+              className="flex flex-wrap gap-x-6 gap-y-3 mb-10"
             >
               {[
-                { icon: CheckCircle2, text: "Integratie met uw bestaande systemen" },
-                { icon: Rocket, text: "Resultaat in 2-12 weken" },
-                { icon: Star, text: "Gratis technische intake" },
+                { icon: Bot, text: "AI-oplossingen op maat" },
+                { icon: Globe, text: "Webapps & klantenportalen" },
+                { icon: Zap, text: "Proces automatisering" },
+                { icon: Rocket, text: "Live in 2-12 weken" },
               ].map((usp) => {
                 const IconComponent = usp.icon;
                 return (
-                  <div key={usp.text} className="flex items-center gap-2 text-sm text-white/70">
-                    <IconComponent className="w-4 h-4 text-[oklch(0.65_0.22_25)]" />
+                  <div key={usp.text} className="flex items-center gap-2 text-sm text-white/60">
+                    <IconComponent className="w-4 h-4 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
                     {usp.text}
                   </div>
                 );
               })}
             </motion.div>
 
-            {/* Strong CTAs - Primary & Secondary */}
+            {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,13 +243,13 @@ export default function Home() {
               <Link href="/contact">
                 <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
                   Start gratis intake
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </button>
               </Link>
               <Link href="/diensten">
                 <button className="flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white border-2 border-[oklch(0.65_0.22_25/0.4)] hover:border-[oklch(0.65_0.22_25)] hover:bg-[oklch(0.65_0.22_25/0.08)] transition-all duration-300">
-                  Bekijk voorbeelden
-                  <ArrowRight className="w-4 h-4" />
+                  Bekijk onze diensten
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </button>
               </Link>
             </motion.div>
@@ -115,15 +259,19 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-12 flex items-center gap-6 text-sm text-white/50"
+              className="mt-12 flex flex-wrap items-center gap-6 text-sm text-white/40"
             >
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-[oklch(0.65_0.22_25)]" />
+                <Users className="w-4 h-4 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
                 <span>Vertrouwd door 20+ bedrijven</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-[oklch(0.65_0.22_25)]" />
-                <span>4.9/5 sterren</span>
+                <Star className="w-4 h-4 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
+                <span>4.9/5 beoordeling</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
+                <span>GDPR-compliant</span>
               </div>
             </motion.div>
           </div>
@@ -135,56 +283,45 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/30"
+          aria-hidden="true"
         >
           <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          >
+          <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
             <ChevronDown className="w-4 h-4" />
           </motion.div>
         </motion.div>
       </section>
 
       {/* ─── STATS BAND ─── */}
-      <section className="relative py-12 border-y border-white/5 bg-[oklch(0.11_0.016_240)]">
+      <section className="relative py-12 border-y border-white/5 bg-[oklch(0.11_0.016_240)]" aria-label="Statistieken">
         <div className="container">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="text-3xl font-bold text-[oklch(0.65_0.22_25)] mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>20+</div>
-              <p className="text-sm text-white/50">Bedrijven vertrouwen ons</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className="text-3xl font-bold text-[oklch(0.65_0.22_25)] mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>2-12</div>
-              <p className="text-sm text-white/50">Weken tot implementatie</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="text-3xl font-bold text-[oklch(0.65_0.22_25)] mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>4.9/5</div>
-              <p className="text-sm text-white/50">Gemiddelde beoordeling</p>
-            </motion.div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "20+", label: "Tevreden klanten" },
+              { value: "50+", label: "Projecten opgeleverd" },
+              { value: "2-12", label: "Weken tot live" },
+              { value: "4.9/5", label: "Gemiddelde beoordeling" },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="text-3xl font-bold text-[oklch(0.65_0.22_25)] mb-2">{stat.value}</div>
+                <p className="text-sm text-white/50">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ─── EXPERTISE ─── */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="container">
-          <div className="mb-14">
+      {/* ─── 3 CORE SERVICES ─── */}
+      <section className="relative py-24 overflow-hidden" aria-label="Onze diensten">
+        <div className="absolute inset-0 grid-bg opacity-10" />
+        <div className="container relative z-10">
+          <div className="mb-16 max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -192,8 +329,8 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
-              <Brain className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" />
-              <span className="text-xs font-medium text-white/60">Expertise</span>
+              <Layers className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
+              <span className="text-xs font-medium text-white/60">Onze Diensten</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -201,96 +338,117 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
-              style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Wat wij voor u kunnen doen
+              Drie pijlers voor{" "}
+              <span className="gradient-text">digitale groei</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg text-white/60 max-w-2xl"
+              className="text-lg text-white/60"
             >
-              Wij helpen uw bedrijf groeien met de juiste technologische oplossingen — praktisch, bewezen en op maat gemaakt.
+              Van intelligente AI-toepassingen tot op maat gemaakte webapplicaties en slimme automatiseringen — wij helpen uw bedrijf de volgende stap te zetten.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Integraties & Automatisering",
-                desc: "Integreer uw ERP, CAD, IoT en andere systemen. Automatiseer data flows, workflows en technische processen.",
-                features: ["API integraties", "Workflow automatisering", "Data synchronisatie"],
-                image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
+                icon: Brain,
+                badge: "Meest gevraagd",
+                title: "AI Implementaties",
+                desc: "Zet AI in om slimmer te werken. Van chatbots die klanten helpen tot systemen die data analyseren en voorspellingen doen.",
+                features: [
+                  "AI chatbots & virtuele assistenten",
+                  "Predictive analytics & forecasting",
+                  "Documentverwerking met AI",
+                  "Kennisbank & FAQ automatisering",
+                  "AI-gestuurde data-analyse",
+                ],
+                link: "/diensten#ai-implementaties",
+                highlight: true,
               },
               {
-                title: "AI & Machine Learning",
-                desc: "Implementeer AI voor predictive maintenance, quality control, data analysis en intelligente automatisering.",
-                features: ["Predictive analytics", "Computer vision", "Process optimization"],
-                image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
+                icon: Monitor,
+                badge: null,
+                title: "Webapps & Portalen",
+                desc: "Op maat gebouwde webapplicaties en klantenportalen die uw bedrijfsprocessen stroomlijnen en klanten zelfbediening bieden.",
+                features: [
+                  "Klantenportalen op maat",
+                  "Interne dashboards & tools",
+                  "Workflow applicaties",
+                  "Realtime data visualisatie",
+                  "Mobile-responsive design",
+                ],
+                link: "/diensten#webapps-portalen",
+                highlight: false,
               },
-            ].map((service, i) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="glass-card-hover p-8 group"
-              >
-                <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Syne', sans-serif" }}>
-                  {service.title}
-                </h3>
-                <p className="text-white/50 text-sm leading-relaxed mb-6">{service.desc}</p>
-                <ul className="space-y-2 mb-8">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-white/40">
-                      <CheckCircle2 className="w-4 h-4 text-[oklch(0.65_0.22_25)]" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6 overflow-hidden rounded-xl border border-white/5">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-[1.02]"
-                  />
-                </div>
-              </motion.div>
-            ))}
+              {
+                icon: Zap,
+                badge: null,
+                title: "Automatiseringen",
+                desc: "Automatiseer repetitieve taken en verbind uw systemen. Bespaar uren per week en elimineer handmatige fouten.",
+                features: [
+                  "API-integraties & koppelingen",
+                  "Workflow automatisering (n8n/Make)",
+                  "Data synchronisatie",
+                  "Rapportage automatisering",
+                  "E-mail & notificatie flows",
+                ],
+                link: "/diensten#automatiseringen",
+                highlight: false,
+              },
+            ].map((service, i) => {
+              const IconComponent = service.icon;
+              return (
+                <motion.article
+                  key={service.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className={`glass-card-hover p-8 flex flex-col relative ${
+                    service.highlight ? "border-[oklch(0.65_0.22_25/0.3)] ring-1 ring-[oklch(0.65_0.22_25/0.15)]" : ""
+                  }`}
+                >
+                  {service.badge && (
+                    <div className="absolute -top-3 left-6 px-3 py-1 rounded-full bg-[oklch(0.65_0.22_25)] text-white text-xs font-bold">
+                      {service.badge}
+                    </div>
+                  )}
+                  <div className="w-14 h-14 rounded-2xl bg-[oklch(0.65_0.22_25/0.12)] border border-[oklch(0.65_0.22_25/0.2)] flex items-center justify-center mb-6">
+                    <IconComponent className="w-7 h-7 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed mb-6">{service.desc}</p>
+                  <ul className="space-y-2.5 mb-8 flex-1">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2 text-sm text-white/50">
+                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.65_0.22_25)] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={service.link}>
+                    <button className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border border-[oklch(0.65_0.22_25/0.3)] text-[oklch(0.65_0.22_25)] hover:bg-[oklch(0.65_0.22_25/0.1)] transition-all duration-300">
+                      Meer over {service.title.toLowerCase()}
+                      <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                  </Link>
+                </motion.article>
+              );
+            })}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center"
-          >
-            <Link href="/diensten">
-              <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105 mx-auto">
-                Bekijk alle diensten
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </Link>
-          </motion.div>
         </div>
       </section>
 
       {/* ─── WERKWIJZE ─── */}
-      <section
-        className="relative py-24 overflow-hidden"
-        style={{
-          backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-[oklch(0.09_0.015_240/0.92)]" />
+      <section className="relative py-24 overflow-hidden bg-[oklch(0.07_0.012_240)]" aria-label="Onze werkwijze">
+        <div className="absolute inset-0 grid-bg opacity-10" />
         <div className="container relative z-10">
-          <div className="mb-14">
+          <div className="mb-16 max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -298,7 +456,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
-              <TrendingUp className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" />
+              <TrendingUp className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
               <span className="text-xs font-medium text-white/60">Werkwijze</span>
             </motion.div>
             <motion.h2
@@ -307,79 +465,74 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
-              style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Van kennismaking tot werkende oplossing
+              Van intake tot{" "}
+              <span className="gradient-text">werkende oplossing</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg text-white/60 max-w-2xl"
+              className="text-lg text-white/60"
             >
-              Een persoonlijke aanpak waarbij we samen uw processen doorlopen en op maat gemaakte automatiseringsvoorstellen ontwikkelen.
+              Een transparant proces waarin u altijd weet waar u aan toe bent. Geen verrassingen, wel concrete resultaten.
             </motion.p>
           </div>
 
-          <div className="space-y-6 mb-12 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 num: "01",
+                icon: MessageSquare,
                 title: "Gratis Intake",
-                desc: "U vertelt over uw bedrijf, processen en doelen. Wij luisteren en analyseren.",
-                accentColor: "oklch(0.65_0.22_25)",
+                desc: "U vertelt over uw bedrijf en uitdagingen. Wij luisteren en stellen de juiste vragen. Duurt slechts 15-30 minuten.",
               },
               {
                 num: "02",
+                icon: Target,
                 title: "Analyse & Voorstel",
-                desc: "We maken een concreet plan met geschatte kosten, timeline en verwachte resultaten.",
-                accentColor: "oklch(0.70_0.20_35)",
+                desc: "We maken een concreet plan met geschatte kosten, timeline en verwachte resultaten. Helder en zonder jargon.",
               },
               {
                 num: "03",
-                title: "Implementatie",
-                desc: "Wij bouwen en integreren de oplossing. U krijgt regelmatig updates.",
-                accentColor: "oklch(0.65_0.22_25)",
+                icon: Code2,
+                title: "Bouw & Integratie",
+                desc: "Wij bouwen uw oplossing en integreren met bestaande systemen. U krijgt wekelijks een update met demo.",
               },
               {
                 num: "04",
+                icon: Rocket,
                 title: "Launch & Support",
-                desc: "Go-live met training en support. Daarna blijven we beschikbaar voor optimalisaties.",
-                accentColor: "oklch(0.70_0.20_35)",
+                desc: "Go-live met training voor uw team. Daarna blijven we beschikbaar voor optimalisaties en support.",
               },
-            ].map((step, i) => (
-              <motion.div
-                key={step.num}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative glass-card-hover p-8 border-l-4"
-                style={{ borderColor: step.accentColor }}
-              >
-                <div
-                  className="absolute -left-12 top-8 w-8 h-8 rounded-full border-4 border-[oklch(0.09_0.015_240)] flex items-center justify-center text-xs font-bold"
-                  style={{ backgroundColor: step.accentColor, color: "oklch(0.09_0.015_240)" }}
+            ].map((step, i) => {
+              const IconComponent = step.icon;
+              return (
+                <motion.div
+                  key={step.num}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="glass-card-hover p-6 relative group"
                 >
-                  {step.num}
-                </div>
-                <div
-                  className="absolute top-6 right-6 text-sm font-bold"
-                  style={{ fontFamily: "'Syne', sans-serif", color: step.accentColor }}
-                >
-                  {step.num}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Syne', sans-serif" }}>
-                  {step.title}
-                </h3>
-                <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: `linear-gradient(90deg, transparent, ${step.accentColor}, transparent)` }}
-                />
-              </motion.div>
-            ))}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-[oklch(0.65_0.22_25/0.12)] border border-[oklch(0.65_0.22_25/0.2)] flex items-center justify-center">
+                      <IconComponent className="w-6 h-6 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
+                    </div>
+                    <span className="text-4xl font-black text-white/5 select-none">{step.num}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                  <p className="text-white/45 text-sm leading-relaxed">{step.desc}</p>
+                  {i < 3 && (
+                    <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+                      <ArrowRight className="w-5 h-5 text-[oklch(0.65_0.22_25/0.3)]" aria-hidden="true" />
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
 
           <motion.div
@@ -387,24 +540,23 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-10 flex flex-col items-center gap-2"
+            className="mt-12 flex flex-col items-center gap-2"
           >
             <Link href="/contact">
               <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
                 Start gratis intake (±2 min)
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </button>
             </Link>
-            <p className="text-white/30 text-sm">Geen verplichtingen. Wel een scherpe eerste inschatting.</p>
+            <p className="text-white/30 text-sm">Geen verplichtingen. Reactie binnen 24 uur.</p>
           </motion.div>
         </div>
       </section>
 
       {/* ─── WAAROM JUKO ─── */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-20" />
+      <section className="relative py-24 overflow-hidden" aria-label="Waarom Juko Automation">
         <div className="container relative z-10">
-          <div className="mb-14">
+          <div className="mb-16 max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -412,7 +564,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
-              <TrendingUp className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" />
+              <Star className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
               <span className="text-xs font-medium text-white/60">Waarom Juko?</span>
             </motion.div>
             <motion.h2
@@ -421,9 +573,9 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
-              style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Technologie die écht werkt
+              Software die{" "}
+              <span className="gradient-text">echt werkt</span>
             </motion.h2>
           </div>
 
@@ -431,23 +583,23 @@ export default function Home() {
             {[
               {
                 icon: Rocket,
-                title: "Snelle Implementatie",
-                desc: "Van idee naar werkende oplossing in weken, niet maanden.",
+                title: "Snelle Oplevering",
+                desc: "Van idee naar werkende software in 2-12 weken. Geen eindeloze trajecten.",
               },
               {
                 icon: Handshake,
-                title: "Denken Met U Mee",
-                desc: "Niet alleen uitvoeren, maar ook adviseren en optimaliseren.",
+                title: "Persoonlijke Aanpak",
+                desc: "Directe communicatie, geen tussenlagen. Wij denken mee met uw business.",
               },
               {
                 icon: Target,
-                title: "Praktische Oplossingen",
-                desc: "De juiste balans tussen slimme techniek en eenvoud.",
+                title: "Op Maat Gemaakt",
+                desc: "Geen standaard templates. Elke oplossing is gebouwd voor uw specifieke situatie.",
               },
               {
                 icon: BarChart3,
-                title: "Echte Resultaten",
-                desc: "Tevreden klanten die tijd en geld besparen door onze oplossingen.",
+                title: "Meetbare Resultaten",
+                desc: "Concrete KPI's en ROI. U ziet direct wat het oplevert aan tijd en geld.",
               },
             ].map((item, i) => {
               const IconComponent = item.icon;
@@ -460,10 +612,8 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="glass-card-hover p-6"
                 >
-                  <IconComponent className="w-8 h-8 mb-4 text-[oklch(0.65_0.22_25)]" />
-                  <h3 className="text-base font-bold text-white mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>
-                    {item.title}
-                  </h3>
+                  <IconComponent className="w-8 h-8 mb-4 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
+                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
                   <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               );
@@ -472,8 +622,120 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── SOCIAL PROOF / REVIEWS ─── */}
+      <section className="relative py-24 overflow-hidden bg-[oklch(0.07_0.012_240)]" aria-label="Klantbeoordelingen">
+        <div className="container relative z-10">
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
+            >
+              Wat klanten{" "}
+              <span className="gradient-text">over ons zeggen</span>
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                quote: "Juko heeft ons klantenportaal gebouwd waardoor klanten zelf orders kunnen volgen. De klanttevredenheid is enorm gestegen en we besparen 15 uur per week aan telefonische updates.",
+                name: "Mark V.",
+                role: "Operations Manager",
+                company: "Technisch Installatiebedrijf",
+              },
+              {
+                quote: "De AI chatbot die Juko heeft geImplementeerd beantwoordt 80% van onze klantvragen automatisch. Ons support team kan zich nu focussen op complexe cases.",
+                name: "Sandra K.",
+                role: "Customer Service Lead",
+                company: "E-commerce Bedrijf",
+              },
+              {
+                quote: "Door de workflow automatisering van Juko hebben we ons facturatieproces van 3 dagen teruggebracht naar 2 uur. Een ongelofelijke tijdsbesparing.",
+                name: "Peter J.",
+                role: "Directeur",
+                company: "Dienstverlener MKB",
+              },
+            ].map((review, i) => (
+              <motion.blockquote
+                key={review.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="glass-card p-8 flex flex-col"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Star key={s} className="w-4 h-4 fill-[oklch(0.65_0.22_25)] text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
+                  ))}
+                </div>
+                <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1 italic">
+                  "{review.quote}"
+                </p>
+                <div>
+                  <p className="text-white font-semibold text-sm">{review.name}</p>
+                  <p className="text-white/40 text-xs">{review.role} — {review.company}</p>
+                </div>
+              </motion.blockquote>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FAQ SECTION ─── */}
+      <section className="relative py-24 overflow-hidden" aria-label="Veelgestelde vragen" itemScope itemType="https://schema.org/FAQPage">
+        <div className="container relative z-10">
+          <div className="mb-16 max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
+            >
+              <MessageSquare className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
+              <span className="text-xs font-medium text-white/60">FAQ</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
+            >
+              Veelgestelde{" "}
+              <span className="gradient-text">vragen</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg text-white/60"
+            >
+              Antwoorden op de meest gestelde vragen over onze AI implementaties, webapps en automatiseringen.
+            </motion.p>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl flex flex-col gap-3"
+          >
+            {faqs.map((faq, index) => (
+              <FaqItem key={faq.q} q={faq.q} a={faq.a} index={index} />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* ─── FINAL CTA BANNER ─── */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-24 overflow-hidden" aria-label="Contact opnemen">
         <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.12_0.025_230)] to-[oklch(0.09_0.015_240)]" />
         <div className="absolute inset-0 radial-glow-red opacity-60" />
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 rounded-full bg-[oklch(0.65_0.22_25/0.08)] blur-3xl" />
@@ -487,128 +749,26 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: "'Syne', sans-serif" }}>
-              Klaar om uw bedrijf te transformeren?
+            <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+              Klaar om uw bedrijf{" "}
+              <span className="gradient-text">slimmer te laten werken?</span>
             </h2>
             <p className="text-lg text-white/60 mb-10">
-              Laat ons uw bedrijfsprocessen analyseren en een concreet automatiseringsplan maken. Gratis, vrijblijvend, en u hoort binnen 24 uur van ons.
+              Plan een gratis intake en ontdek wat AI, webapps en automatisering voor uw bedrijf kunnen betekenen. Geen verplichtingen — wel een concreet advies binnen 24 uur.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
                 <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
                   Start gratis intake
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </button>
               </Link>
-              <Link href="/over-ons">
+              <Link href="/diensten">
                 <button className="flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white/70 hover:text-white border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all duration-300 text-base">
-                  Meer over ons
+                  Bekijk onze diensten
                 </button>
               </Link>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─── WEBAPPS & KLANTENPORTALEN ─── */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.12_0.025_230)] to-[oklch(0.09_0.015_240)]" />
-        <div className="container relative z-10">
-          <div className="mb-14">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
-            >
-              <Monitor className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" />
-              <span className="text-xs font-medium text-white/60">Custom Software</span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
-              style={{ fontFamily: "'Syne', sans-serif" }}
-            >
-              Webapps & Klantenportalen op Maat
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg text-white/60 max-w-2xl"
-            >
-              Van interne dashboards tot klant-facing portalen — wij bouwen software die uw bedrijfsprocessen stroomlijnt en uw klanten beter bedient.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Monitor,
-                title: "Interne Dashboards",
-                desc: "Real-time monitoring van productie, orders en KPI's. Geoptimaliseerd voor uw specifieke workflows.",
-                features: ["Live data visualisatie", "Custom metrics", "Integratie met ERP"]
-              },
-              {
-                icon: Lock,
-                title: "Klantenportalen",
-                desc: "Geef uw klanten zelf toegang tot orders, facturen, tracking en documentatie. Verhoog tevredenheid.",
-                features: ["Veilige authenticatie", "Klant-specifieke views", "Automatische updates"]
-              },
-              {
-                icon: Zap,
-                title: "Workflow Automatisering",
-                desc: "Automatiseer repetitieve taken, approvals en notificaties. Bespaar uren per week.",
-                features: ["Trigger-based actions", "Email/SMS alerts", "API integraties"]
-              },
-            ].map((item, i) => {
-              const IconComponent = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="glass-card-hover p-8 group"
-                >
-                  <IconComponent className="w-10 h-10 mb-4 text-[oklch(0.65_0.22_25)] group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Syne', sans-serif" }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-5">{item.desc}</p>
-                  <ul className="space-y-2">
-                    {item.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-xs text-white/40">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-12 text-center"
-          >
-            <p className="text-white/50 mb-6">Wilt u weten wat wij voor uw bedrijf kunnen bouwen?</p>
-            <Link href="/contact">
-              <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105 mx-auto">
-                Plan een demo
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </Link>
           </motion.div>
         </div>
       </section>

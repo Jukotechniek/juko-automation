@@ -1,8 +1,7 @@
 /*
   DESIGN: Dark Precision Tech - Blog Article
-  - Full article view with metadata
-  - Related articles
-  - CTA at bottom
+  - Full article view with new AI/webapp/automation articles
+  - SEO optimized with article schema
 */
 
 import { motion } from "framer-motion";
@@ -24,126 +23,150 @@ const articleContent: Record<
     content: React.ReactNode;
   }
 > = {
-  "api-integratie-guide": {
-    title: "Complete Guide: API Integratie voor Technische Bedrijven",
-    excerpt: "Leer hoe u uw systemen naadloos kunt integreren met REST APIs, webhooks en real-time data synchronisatie.",
-    category: "Technisch",
+  "ai-chatbot-klantenservice": {
+    title: "AI Chatbot voor Klantenservice: Zo Bespaart U 80% Support Tijd",
+    excerpt: "Ontdek hoe een AI chatbot uw klantenservice transformeert.",
+    category: "AI",
     date: "21 maart 2026",
+    readTime: 8,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
+    author: "Juko Team",
+    content: (
+      <div className="prose prose-invert max-w-none space-y-6 text-white/70">
+        <p>
+          Een AI chatbot is voor veel bedrijven de snelste manier om klantenservice te verbeteren en tegelijk kosten te verlagen. In dit artikel leggen we uit hoe het werkt, wat het kost en welke resultaten u kunt verwachten.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat is een AI Chatbot?</h2>
+        <p>
+          Een AI chatbot is een virtuele assistent die klantvragen begrijpt en beantwoordt zonder menselijke tussenkomst. Moderne chatbots gebruiken large language models (LLM's) die natuurlijke taal begrijpen en relevante antwoorden genereren op basis van uw bedrijfsdocumentatie.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Hoe werkt het in de praktijk?</h2>
+        <p>
+          De chatbot wordt getraind op uw kennisbank, productcatalogus, handleidingen en FAQ. Wanneer een klant een vraag stelt, zoekt de AI het juiste antwoord op en formuleert een helder, persoonlijk antwoord.
+        </p>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>Beantwoordt 70-90% van veelgestelde vragen automatisch</li>
+          <li>Draagt complexe vragen naadloos over aan een medewerker</li>
+          <li>Beschikbaar 24/7, ook buiten kantooruren</li>
+          <li>Leert continu bij door nieuwe vragen en feedback</li>
+        </ul>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Resultaten uit de Praktijk</h2>
+        <p>
+          Bedrijven die een AI chatbot implementeren zien gemiddeld een reductie van 60-80% in support tickets en een klanttevredenheid die stijgt door snellere antwoorden.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat kost een AI Chatbot?</h2>
+        <p>
+          Een AI chatbot implementatie begint vanaf €2.500 en kan oplopen afhankelijk van complexiteit, integraties en het aantal talen. Na de intake ontvangt u een specifieke offerte.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
+        <p>
+          Wilt u ontdekken wat een AI chatbot voor uw bedrijf kan betekenen? Neem contact op voor een gratis intake. We analyseren uw huidige klantenservice en maken een concreet voorstel.
+        </p>
+      </div>
+    ),
+  },
+  "klantenportaal-bouwen": {
+    title: "Klantenportaal op Maat: Waarom Elk Groeiend Bedrijf Er Een Nodig Heeft",
+    excerpt: "Een klantenportaal verhoogt klanttevredenheid en bespaart uw team uren per week.",
+    category: "Webapps",
+    date: "18 maart 2026",
+    readTime: 7,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
+    author: "Juko Team",
+    content: (
+      <div className="prose prose-invert max-w-none space-y-6 text-white/70">
+        <p>
+          Een klantenportaal is een beveiligde webapplicatie waar uw klanten zelf toegang hebben tot hun gegevens, orders, facturen en documenten. Het bespaart uw team uren aan telefonische en e-mail support.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Waarom een Klantenportaal?</h2>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>Klanten helpen zichzelf, 24/7</li>
+          <li>Minder telefonische vragen over orderstatus, facturen en documenten</li>
+          <li>Professionele uitstraling en hogere klanttevredenheid</li>
+          <li>Centrale plek voor alle klantcommunicatie</li>
+        </ul>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat kan er in een Klantenportaal?</h2>
+        <p>Typische functionaliteiten die wij bouwen zijn:</p>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>Order tracking en statusupdates</li>
+          <li>Facturenoverzicht en betalingsstatus</li>
+          <li>Document management (offertes, contracten, rapporten)</li>
+          <li>Ticketsysteem voor support aanvragen</li>
+          <li>Persoonlijke dashboards met KPI's</li>
+        </ul>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Investering en Timeline</h2>
+        <p>
+          Een klantenportaal op maat start vanaf €3.500. De gemiddelde bouwtijd is 4-8 weken afhankelijk van functionaliteiten en integraties met uw bestaande systemen.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
+        <p>
+          Benieuwd naar een klantenportaal voor uw bedrijf? Plan een gratis intake en we bespreken de mogelijkheden.
+        </p>
+      </div>
+    ),
+  },
+  "api-integratie-guide": {
+    title: "Complete Guide: API Integratie voor Uw Bedrijfssystemen",
+    excerpt: "Leer hoe u uw ERP, CRM en andere systemen naadloos verbindt.",
+    category: "Automatisering",
+    date: "12 maart 2026",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
     author: "Juko Team",
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
-          API-integratie is de ruggengraat van moderne automatisering. In deze gids leren we hoe u uw ERP, CAD-systemen en IoT-apparaten naadloos met elkaar kunt verbinden.
+          API-integratie is de ruggengraat van moderne automatisering. In deze gids leren we hoe u uw ERP, CRM en andere bedrijfssystemen naadloos met elkaar kunt verbinden.
         </p>
-
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-          Wat is een API?
-        </h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat is een API?</h2>
         <p>
-          Een API (Application Programming Interface) is een set regels die twee softwaresystemen toestaan met elkaar te communiceren. Voor technische bedrijven betekent dit dat u gegevens kunt uitwisselen tussen uw ERP-systeem, productieapparatuur en rapportagetools zonder handmatige invoer.
+          Een API (Application Programming Interface) is een set regels die twee softwaresystemen toestaan met elkaar te communiceren. Voor bedrijven betekent dit dat u gegevens automatisch kunt uitwisselen tussen uw systemen.
         </p>
-
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-          REST API's: De Standaard
-        </h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">REST APIs: De Standaard</h2>
         <p>
-          REST (Representational State Transfer) is de meest gebruikte API-architectuur. Het werkt via HTTP-verzoeken (GET, POST, PUT, DELETE) en is ideaal voor:
+          REST is de meest gebruikte API-architectuur en werkt via HTTP-verzoeken. Ideaal voor data synchronisatie, automatische rapportages en externe tool-integraties.
         </p>
-        <ul className="list-disc list-inside space-y-2 ml-4">
-          <li>Real-time data synchronisatie tussen systemen</li>
-          <li>Automatische rapportage generatie</li>
-          <li>IoT-sensorgegevens naar uw centrale database sturen</li>
-          <li>Externe tools integreren (cloud services, analytics platforms)</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-          Praktische Use Case: Manufacturing
-        </h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Webhooks: Event-Driven Automatisering</h2>
         <p>
-          Stel, u heeft een productielijn met IoT-sensoren die temperatuur, druk en snelheid meten. Via een REST API kunnen deze gegevens automatisch naar uw ERP-systeem worden gestuurd, waar ze:
+          Webhooks sturen automatisch een bericht wanneer iets gebeurt — perfect voor notificaties, workflow triggers en real-time updates.
         </p>
-        <ul className="list-disc list-inside space-y-2 ml-4">
-          <li>Real-time kwaliteitscontrole triggeren</li>
-          <li>Automatisch onderhoud inplannen als parameters afwijken</li>
-          <li>Productierapporten genereren zonder handmatige invoer</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-          Webhooks: Event-Driven Automatisering
-        </h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
         <p>
-          Webhooks zijn als "reverse APIs" — in plaats van dat u een systeem vraagt om gegevens, stuurt het systeem u automatisch een bericht wanneer iets gebeurt. Dit is perfect voor:
-        </p>
-        <ul className="list-disc list-inside space-y-2 ml-4">
-          <li>Automatische notificaties wanneer een order klaar is</li>
-          <li>Triggers voor volgende stappen in workflows</li>
-          <li>Alerts bij kritieke fouten of afwijkingen</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-          Volgende Stappen
-        </h2>
-        <p>
-          Wilt u uw systemen integreren? Neem contact met ons op voor een gratis technische intake. We analyseren uw huidige setup en stellen een concreet integratieplan op.
+          Wilt u uw systemen integreren? Neem contact met ons op voor een gratis technische intake.
         </p>
       </div>
     ),
   },
   "predictive-maintenance-ai": {
-    title: "Predictive Maintenance met AI: Downtime Voorkomen",
-    excerpt: "Ontdek hoe machine learning u kan helpen onderhoud in te plannen voordat apparatuur faalt.",
+    title: "Predictive Maintenance met AI: Voorkom Downtime en Bespaar Kosten",
+    excerpt: "Hoe machine learning u helpt onderhoud in te plannen voordat apparatuur faalt.",
     category: "AI",
-    date: "18 maart 2026",
+    date: "9 maart 2026",
     readTime: 6,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
     author: "Juko Team",
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
-          Predictive maintenance is een van de meest impactvolle toepassingen van AI in technische bedrijven. In plaats van apparatuur te onderhouden op vaste schema's, voorspelt AI wanneer onderhoud nodig is — wat downtime en kosten drastisch reduceert.
+          Predictive maintenance is een van de meest impactvolle toepassingen van AI. In plaats van apparatuur op vaste schema's te onderhouden, voorspelt AI wanneer onderhoud nodig is.
         </p>
-
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-          Hoe Werkt Predictive Maintenance?
-        </h2>
-        <p>
-          AI-modellen analyseren historische sensorgegevens van uw apparatuur om patronen te herkennen die wijzen op toekomstige fouten. Dit gebeurt in drie stappen:
-        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Hoe Werkt Predictive Maintenance?</h2>
+        <p>AI-modellen analyseren sensorgegevens om patronen te herkennen die wijzen op toekomstige fouten:</p>
         <ol className="list-decimal list-inside space-y-2 ml-4">
           <li>Sensorgegevens verzamelen (temperatuur, trillingen, stroomverbruik)</li>
           <li>Machine learning modellen trainen op historische data</li>
           <li>Real-time voorspellingen doen en alerts genereren</li>
         </ol>
-
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-          Praktische Voordelen
-        </h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Praktische Voordelen</h2>
         <ul className="list-disc list-inside space-y-2 ml-4">
-          <li><strong>50-70% minder downtime:</strong> Onderhoud voorkomen in plaats van herstellen</li>
-          <li><strong>Kostenbesparing:</strong> Geen noodinterventies meer nodig</li>
-          <li><strong>Betere planning:</strong> Onderhoud inplannen op momenten die u uitkomen</li>
-          <li><strong>Langere levensduur:</strong> Apparatuur werkt onder optimale omstandigheden</li>
+          <li><strong>50-70% minder downtime</strong></li>
+          <li><strong>Kostenbesparing:</strong> Geen noodinterventies meer</li>
+          <li><strong>Betere planning:</strong> Onderhoud op uw momenten</li>
+          <li><strong>Langere levensduur</strong> van apparatuur</li>
         </ul>
-
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-          Case Study: Productielijn
-        </h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
         <p>
-          Een van onze klanten had onverwachte uitval van productieapparatuur, wat maandelijks €15.000 kostte. Na implementatie van predictive maintenance:
-        </p>
-        <ul className="list-disc list-inside space-y-2 ml-4">
-          <li>Downtime daalde van 8% naar 1%</li>
-          <li>Onderhoudskosten daalden met 35%</li>
-          <li>Productiviteit steeg met 12%</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-          Volgende Stappen
-        </h2>
-        <p>
-          Heeft u interesse in predictive maintenance? Neem contact op voor een gratis analyse van uw huidige apparatuur en downtime-patronen.
+          Heeft u interesse in predictive maintenance? Neem contact op voor een gratis analyse.
         </p>
       </div>
     ),
@@ -161,9 +184,10 @@ export default function BlogArticle() {
         <Navbar />
         <div className="container py-32 text-center">
           <h1 className="text-4xl font-bold mb-4">Artikel niet gevonden</h1>
+          <p className="text-white/50 mb-8">Dit artikel bestaat niet of is verplaatst.</p>
           <Link href="/blog">
             <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[oklch(0.65_0.22_25)] text-white font-semibold hover:bg-[oklch(0.70_0.20_35)] transition-colors">
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
               Terug naar blog
             </button>
           </Link>
@@ -177,12 +201,29 @@ export default function BlogArticle() {
     <div className="min-h-screen bg-[oklch(0.09_0.015_240)] text-white">
       <Navbar />
 
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: article.title,
+            description: article.excerpt,
+            author: { "@type": "Organization", name: "Juko Automation" },
+            publisher: { "@type": "Organization", name: "Juko Automation" },
+            datePublished: article.date,
+            image: article.image,
+          }),
+        }}
+      />
+
       {/* Header */}
       <section className="relative pt-20 pb-12 overflow-hidden">
         <div className="container relative z-10">
           <Link href="/blog">
             <button className="flex items-center gap-2 text-[oklch(0.65_0.22_25)] hover:text-white transition-colors mb-8 font-semibold">
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
               Terug naar blog
             </button>
           </Link>
@@ -198,22 +239,18 @@ export default function BlogArticle() {
                 {article.category}
               </span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6" style={{ fontFamily: "'Syne', sans-serif" }}>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
               {article.title}
             </h1>
             <div className="flex flex-wrap items-center gap-6 text-white/50">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                {article.date}
+                <Calendar className="w-4 h-4" aria-hidden="true" />
+                <time>{article.date}</time>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
+                <Clock className="w-4 h-4" aria-hidden="true" />
                 {article.readTime} min leestijd
               </div>
-              <button className="flex items-center gap-2 hover:text-white transition-colors">
-                <Share2 className="w-4 h-4" />
-                Delen
-              </button>
             </div>
           </motion.div>
         </div>
@@ -229,13 +266,13 @@ export default function BlogArticle() {
             transition={{ duration: 0.6 }}
             className="overflow-hidden rounded-2xl border border-white/10"
           >
-            <img src={article.image} alt={article.title} className="w-full h-96 object-cover" />
+            <img src={article.image} alt={`Afbeelding bij artikel: ${article.title}`} className="w-full h-96 object-cover" />
           </motion.div>
         </div>
       </section>
 
       {/* Article Content */}
-      <section className="py-16">
+      <article className="py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -248,10 +285,10 @@ export default function BlogArticle() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </article>
 
       {/* CTA */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-24 overflow-hidden" aria-label="Contact opnemen">
         <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.12_0.025_230)] to-[oklch(0.09_0.015_240)]" />
         <div className="absolute inset-0 radial-glow-red opacity-60" />
         <div className="container relative z-10 text-center">
@@ -261,16 +298,16 @@ export default function BlogArticle() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: "'Syne', sans-serif" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
               Klaar om dit in praktijk te brengen?
             </h2>
             <p className="text-white/50 text-lg max-w-2xl mx-auto mb-10">
-              Laat ons uw technische processen analyseren en een concreet plan maken.
+              Plan een gratis intake en ontdek hoe we dit voor uw bedrijf kunnen implementeren.
             </p>
             <Link href="/contact">
               <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105 mx-auto">
                 Start gratis intake
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </button>
             </Link>
           </motion.div>

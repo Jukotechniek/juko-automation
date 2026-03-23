@@ -7,8 +7,13 @@
 
 import { Link } from "wouter";
 import { Mail, ArrowUpRight } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
+import { branding } from "@/config/branding";
 
 export default function Footer() {
+  const { resolvedTheme } = useTheme();
+  const logoSrc = resolvedTheme === "dark" ? branding.logoDark : branding.logoLight;
+
   return (
     <footer className="relative border-t border-white/5 bg-[oklch(0.07_0.012_240)]">
       <div className="container py-16">
@@ -17,7 +22,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/">
               <div className="flex items-center gap-2.5 mb-4">
-                <img src="/juko-logo.png" alt="Juko Automation" className="h-8 w-auto" />
+                <img src={logoSrc} alt="Juko Automation" className="h-8 w-auto" />
               </div>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">

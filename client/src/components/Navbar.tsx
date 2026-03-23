@@ -9,6 +9,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/contexts/ThemeContext";
+import { branding } from "@/config/branding";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -22,6 +24,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
+  const { resolvedTheme } = useTheme();
+
+  const logoSrc = resolvedTheme === "dark" ? branding.logoDark : branding.logoLight;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -29,12 +34,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[oklch(0.09_0.015_240/0.95)] backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20"
-          : "bg-transparent"
+          ? "bg-background/88 backdrop-blur-xl border-b border-border/60 shadow-[0_10px_40px_-24px_oklch(0_0_0/0.35)]"
+          : "bg-background/55 backdrop-blur-md border-b border-transparent"
       }`}
     >
       <div className="container">
@@ -42,7 +51,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-2.5 group">
-              <img src="/juko-logo.png" alt="Juko Automation" className="h-10 lg:h-12 w-auto" />
+              <img src={logoSrc} alt="Juko Automation" className="h-10 lg:h-12 w-auto" />
             </div>
           </Link>
 
@@ -54,7 +63,7 @@ export default function Navbar() {
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     location === link.href
                       ? "text-[oklch(0.65_0.22_25)] bg-[oklch(0.65_0.22_25/0.1)]"
-                      : "text-white/70 hover:text-white hover:bg-white/5"
+                      : "text-foreground/70 hover:text-foreground hover:bg-white/5 dark:hover:bg-white/5"
                   }`}
                 >
                   {link.label}
@@ -74,7 +83,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+            className="md:hidden p-2 rounded-lg text-foreground/70 hover:text-foreground hover:bg-white/5 dark:hover:bg-white/5 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
           >
@@ -91,7 +100,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-[oklch(0.09_0.015_240/0.98)] backdrop-blur-xl border-b border-white/5"
+            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/60"
           >
             <div className="container py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -100,9 +109,8 @@ export default function Navbar() {
                     className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                       location === link.href
                         ? "text-[oklch(0.65_0.22_25)] bg-[oklch(0.65_0.22_25/0.1)]"
-                        : "text-white/70 hover:text-white hover:bg-white/5"
+                        : "text-foreground/70 hover:text-foreground hover:bg-white/5 dark:hover:bg-white/5"
                     }`}
-                    onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
                   </span>
