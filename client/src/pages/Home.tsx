@@ -20,7 +20,7 @@ import Footer from "@/components/Footer";
 const faqs = [
   {
     q: "Wat kost een AI implementatie?",
-    a: "De kosten hangen af van de complexiteit. Een AI chatbot begint vanaf €2.500, terwijl complexe predictive analytics projecten meer investering vragen. Na de gratis intake ontvangt u een heldere offerte met exacte kosten.",
+    a: "De kosten hangen af van de complexiteit. Een AI chatbot begint vanaf €2.500, terwijl complexe projecten voor voorspellende analyses meer investering vragen. Na de gratis intake ontvangt u een heldere offerte met exacte kosten.",
   },
   {
     q: "Hoe lang duurt het bouwen van een webapp of klantenportaal?",
@@ -173,7 +173,8 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[oklch(0.09_0.015_240)] to-transparent" />
 
         <div className="container relative z-10 pt-24 pb-16">
-          <div className="max-w-4xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="lg:col-span-7">
             {/* Urgency Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -240,14 +241,14 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap items-center gap-4"
             >
-              <Link href="/contact">
+              <Link href="/contact#contact-form">
                 <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
                   Start gratis intake
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </button>
               </Link>
               <Link href="/diensten">
-                <button className="flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white border-2 border-[oklch(0.65_0.22_25/0.4)] hover:border-[oklch(0.65_0.22_25)] hover:bg-[oklch(0.65_0.22_25/0.08)] transition-all duration-300">
+                <button className="btn-outline-theme flex items-center gap-2 px-8 py-4 rounded-xl font-semibold">
                   Bekijk onze diensten
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </button>
@@ -269,9 +270,25 @@ export default function Home() {
                 <Star className="w-4 h-4 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
                 <span>4.9/5 beoordeling</span>
               </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
-                <span>GDPR-compliant</span>
+            </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 28 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.35 }}
+              className="hidden lg:block lg:col-span-5"
+            >
+              <div className="hero-visual-shell p-4 lg:p-5">
+                <div className="relative rounded-2xl overflow-hidden border border-white/10">
+                  <img
+                    src="/hero-automation-visual.svg"
+                    alt="Visual van automatiseringsdashboard"
+                    className="w-full h-auto object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.09_0.015_240/0.55)] via-transparent to-transparent dark:from-[oklch(0.12_0.018_240/0.45)]" />
+                </div>
               </div>
             </motion.div>
           </div>
@@ -362,7 +379,7 @@ export default function Home() {
                 desc: "Zet AI in om slimmer te werken. Van chatbots die klanten helpen tot systemen die data analyseren en voorspellingen doen.",
                 features: [
                   "AI chatbots & virtuele assistenten",
-                  "Predictive analytics & forecasting",
+                  "Voorspellende analyses & forecasting",
                   "Documentverwerking met AI",
                   "Kennisbank & FAQ automatisering",
                   "AI-gestuurde data-analyse",
@@ -432,8 +449,10 @@ export default function Home() {
                     ))}
                   </ul>
                   <Link href={service.link}>
-                    <button className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border border-[oklch(0.65_0.22_25/0.3)] text-[oklch(0.65_0.22_25)] hover:bg-[oklch(0.65_0.22_25/0.1)] transition-all duration-300">
-                      Meer over {service.title.toLowerCase()}
+                    <button className="btn-service-cta w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm">
+                      {service.title === "AI Implementaties"
+                        ? "Meer over AI implementaties"
+                        : `Meer over ${service.title.toLowerCase()}`}
                       <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </button>
                   </Link>
@@ -542,7 +561,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-12 flex flex-col items-center gap-2"
           >
-            <Link href="/contact">
+            <Link href="/contact#contact-form">
               <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
                 Start gratis intake (±2 min)
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -757,14 +776,14 @@ export default function Home() {
               Plan een gratis intake en ontdek wat AI, webapps en automatisering voor uw bedrijf kunnen betekenen. Geen verplichtingen — wel een concreet advies binnen 24 uur.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/contact#contact-form">
                 <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105">
                   Start gratis intake
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </button>
               </Link>
               <Link href="/diensten">
-                <button className="flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white/70 hover:text-white border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all duration-300 text-base">
+                <button className="btn-outline-theme flex items-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-300 text-base">
                   Bekijk onze diensten
                 </button>
               </Link>

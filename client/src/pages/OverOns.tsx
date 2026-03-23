@@ -298,7 +298,7 @@ export default function OverOns() {
               Laten we kennismaken en ontdekken hoe AI, webapps en automatisering uw bedrijf kunnen helpen.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/contact#contact-form">
                 <button className="btn-primary-glow inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg">
                   Start gratis intake
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />

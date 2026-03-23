@@ -102,38 +102,38 @@
 }
 
 .dark {
-  /* Slightly lighter dark mode for better readability */
-  --background: oklch(0.15 0.016 240);
+  /* Richer, less heavy dark mode */
+  --background: oklch(0.22 0.02 240);
   --foreground: oklch(0.95 0.005 220);
-  --card: oklch(0.19 0.018 240);
+  --card: oklch(0.27 0.022 240);
   --card-foreground: oklch(0.95 0.005 220);
-  --popover: oklch(0.19 0.018 240);
+  --popover: oklch(0.27 0.022 240);
   --popover-foreground: oklch(0.95 0.005 220);
   --primary: oklch(0.65 0.22 25);
   --primary-foreground: oklch(0.95 0.005 220);
   --secondary: oklch(0.70 0.20 35);
   --secondary-foreground: oklch(0.95 0.005 220);
-  --muted: oklch(0.23 0.015 240);
-  --muted-foreground: oklch(0.72 0.015 220);
+  --muted: oklch(0.31 0.018 240);
+  --muted-foreground: oklch(0.79 0.013 220);
   --accent: oklch(0.70 0.20 35);
   --accent-foreground: oklch(0.95 0.005 220);
   --destructive: oklch(0.65 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 14%);
+  --border: oklch(1 0 0 / 18%);
+  --input: oklch(1 0 0 / 20%);
   --ring: oklch(0.72 0.15 220);
   --chart-1: oklch(0.65 0.22 25);
   --chart-2: oklch(0.70 0.20 35);
   --chart-3: oklch(0.60 0.18 20);
   --chart-4: oklch(0.68 0.21 30);
   --chart-5: oklch(0.63 0.20 28);
-  --sidebar: oklch(0.17 0.016 240);
+  --sidebar: oklch(0.25 0.02 240);
   --sidebar-foreground: oklch(0.90 0.005 220);
   --sidebar-primary: oklch(0.65 0.22 25);
   --sidebar-primary-foreground: oklch(0.95 0.005 220);
   --sidebar-accent: oklch(0.70 0.20 35);
   --sidebar-accent-foreground: oklch(0.95 0.005 220);
-  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-border: oklch(1 0 0 / 16%);
   --sidebar-ring: oklch(0.65 0.22 25);
   --red-primary: oklch(0.65 0.22 25);
   --red-secondary: oklch(0.70 0.20 35);
@@ -242,12 +242,17 @@
     overflow: hidden;
     background: linear-gradient(135deg, oklch(0.65 0.22 25), oklch(0.70 0.20 35));
     color: white;
-    border: none;
+    border: 1px solid color-mix(in oklch, var(--red-primary) 52%, transparent);
+    box-shadow:
+      0 12px 30px -20px oklch(0.65 0.22 25 / 42%),
+      inset 0 1px 0 oklch(1 0 0 / 20%);
     transition: all 0.3s ease;
   }
 
   .btn-primary-glow:hover {
-    box-shadow: 0 0 30px oklch(0.65 0.22 25 / 40%);
+    box-shadow:
+      0 18px 34px -18px oklch(0.65 0.22 25 / 50%),
+      0 0 28px oklch(0.65 0.22 25 / 22%);
     transform: translateY(-1px);
   }
 
@@ -264,6 +269,57 @@
 
   .btn-primary-glow:hover::before {
     left: 100%;
+  }
+
+  .btn-primary-glow:active {
+    transform: translateY(0);
+    filter: saturate(1.06);
+  }
+
+  /* Theme-aware secondary/outline button */
+  .btn-outline-theme {
+    position: relative;
+    border-radius: 0.75rem;
+    border: 1px solid color-mix(in oklch, var(--red-primary) 42%, transparent);
+    color: color-mix(in oklch, var(--red-primary) 88%, var(--foreground) 12%);
+    background: color-mix(in oklch, var(--red-primary) 6%, transparent);
+    transition: all 0.28s ease;
+  }
+
+  .btn-outline-theme:hover {
+    border-color: color-mix(in oklch, var(--red-primary) 72%, transparent);
+    background: color-mix(in oklch, var(--red-primary) 13%, transparent);
+    transform: translateY(-1px);
+  }
+
+  /* High-contrast CTA for service cards */
+  .btn-service-cta {
+    border-radius: 0.75rem;
+    border: 1px solid color-mix(in oklch, var(--red-primary) 58%, transparent);
+    background:
+      linear-gradient(
+        135deg,
+        oklch(0.65 0.22 25 / 16%),
+        oklch(0.70 0.20 35 / 14%)
+      );
+    color: oklch(0.50 0.16 24);
+    box-shadow: 0 8px 20px -16px oklch(0.65 0.22 25 / 44%);
+    transition: all 0.25s ease;
+  }
+
+  .btn-service-cta:hover {
+    border-color: oklch(0.65 0.22 25 / 72%);
+    background:
+      linear-gradient(
+        135deg,
+        oklch(0.65 0.22 25 / 82%),
+        oklch(0.70 0.20 35 / 80%)
+      );
+    color: oklch(0.99 0.003 250);
+    box-shadow:
+      0 14px 30px -16px oklch(0.65 0.22 25 / 48%),
+      0 0 24px oklch(0.65 0.22 25 / 18%);
+    transform: translateY(-1px);
   }
 
   /* Subtle grid background */
@@ -329,9 +385,10 @@ html {
 
 html.dark body {
   background-image:
-    radial-gradient(circle at 10% -10%, oklch(0.65 0.22 25 / 9%), transparent 34%),
-    radial-gradient(circle at 95% 8%, oklch(0.70 0.20 35 / 8%), transparent 30%),
-    linear-gradient(180deg, color-mix(in oklch, var(--background) 94%, black 6%), var(--background) 45%);
+    radial-gradient(circle at 6% -8%, oklch(0.65 0.22 25 / 16%), transparent 36%),
+    radial-gradient(circle at 102% 10%, oklch(0.70 0.20 35 / 13%), transparent 34%),
+    radial-gradient(circle at 50% 120%, oklch(0.30 0.03 250 / 24%), transparent 46%),
+    linear-gradient(180deg, color-mix(in oklch, var(--background) 86%, black 14%), var(--background) 52%);
 }
 
 /* Custom scrollbar */
@@ -389,12 +446,32 @@ html:not(.dark) .text-white {
   color: var(--foreground);
 }
 
+html:not(.dark) .btn-primary-glow,
+html:not(.dark) .btn-primary-glow * {
+  color: oklch(0.99 0.003 250);
+}
+
+html:not(.dark) .btn-primary-glow {
+  text-shadow: 0 1px 0 oklch(0 0 0 / 22%);
+}
+
+html:not(.dark) button.text-white:not(.btn-primary-glow),
+html:not(.dark) button.text-white:not(.btn-primary-glow) * {
+  color: var(--foreground);
+}
+
 html:not(.dark) [class*="bg-white/"] {
   background-color: color-mix(in oklch, var(--foreground) 6%, var(--background) 94%);
 }
 
 html:not(.dark) [class*="border-white/"] {
   border-color: color-mix(in oklch, var(--foreground) 12%, var(--background) 88%);
+}
+
+html:not(.dark) input[class*="placeholder-white/"]::placeholder,
+html:not(.dark) textarea[class*="placeholder-white/"]::placeholder {
+  color: color-mix(in oklch, var(--foreground) 44%, var(--background) 56%);
+  opacity: 1;
 }
 
 html:not(.dark) .grid-bg {
@@ -414,4 +491,175 @@ html:not(.dark) .section-divider {
 
 html:not(.dark) .radial-glow-red {
   background: radial-gradient(ellipse at center, oklch(0.65 0.22 25 / 10%) 0%, transparent 70%);
+}
+
+/* Theme-aware native select dropdown colors */
+.contact-service-select {
+  color-scheme: light dark;
+}
+
+.contact-service-select option {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+}
+
+html:not(.dark) .contact-service-select option {
+  background-color: oklch(0.995 0.002 250);
+  color: oklch(0.24 0.015 245);
+}
+
+html.dark .contact-service-select option {
+  background-color: oklch(0.24 0.02 240);
+  color: oklch(0.95 0.005 220);
+}
+
+/* Dark-mode richness and readability improvements */
+html.dark .glass-card,
+html.dark .glass-card-hover {
+  background:
+    linear-gradient(165deg, oklch(0.28 0.02 240 / 70%), oklch(0.22 0.02 240 / 76%));
+  border-color: oklch(1 0 0 / 18%);
+  box-shadow:
+    0 16px 42px -30px oklch(0 0 0 / 56%),
+    inset 0 1px 0 oklch(1 0 0 / 8%);
+}
+
+html.dark .glass-card-hover:hover {
+  background:
+    linear-gradient(165deg, oklch(0.31 0.022 240 / 76%), oklch(0.24 0.02 240 / 82%));
+  border-color: oklch(0.65 0.22 25 / 38%);
+  box-shadow:
+    0 18px 44px -28px oklch(0 0 0 / 60%),
+    0 0 34px oklch(0.65 0.22 25 / 16%);
+}
+
+html.dark .grid-bg {
+  background-image:
+    linear-gradient(oklch(1 0 0 / 7%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 7%) 1px, transparent 1px);
+}
+
+html.dark .section-divider {
+  background: linear-gradient(90deg, transparent, oklch(1 0 0 / 22%), transparent);
+}
+
+/* Lift hardcoded dark utility backgrounds so sections feel less flat */
+html.dark .bg-\[oklch\(0\.09_0\.015_240\)\] {
+  background-color: oklch(0.22 0.02 240);
+}
+
+html.dark .bg-\[oklch\(0\.07_0\.012_240\)\] {
+  background-color: oklch(0.20 0.018 240);
+}
+
+html.dark .bg-\[oklch\(0\.11_0\.016_240\)\] {
+  background-color: oklch(0.25 0.02 240);
+}
+
+html.dark .from-\[oklch\(0\.12_0\.025_230\)\] {
+  --tw-gradient-from: oklch(0.26 0.03 235) var(--tw-gradient-from-position);
+  --tw-gradient-to: oklch(0.26 0.03 235 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+html.dark .to-\[oklch\(0\.09_0\.015_240\)\] {
+  --tw-gradient-to: oklch(0.22 0.02 240) var(--tw-gradient-to-position);
+}
+
+html.dark .from-\[oklch\(0\.09_0\.015_240\)\] {
+  --tw-gradient-from: oklch(0.22 0.02 240) var(--tw-gradient-from-position);
+  --tw-gradient-to: oklch(0.22 0.02 240 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+html.dark .btn-primary-glow {
+  box-shadow: 0 0 0 1px oklch(1 0 0 / 12%), 0 14px 34px -22px oklch(0.65 0.22 25 / 45%);
+}
+
+html.dark .btn-outline-theme {
+  border-color: oklch(0.65 0.22 25 / 34%);
+  color: oklch(0.72 0.20 32);
+  background: oklch(0.65 0.22 25 / 7%);
+}
+
+html.dark .btn-outline-theme:hover {
+  border-color: oklch(0.65 0.22 25 / 56%);
+  color: oklch(0.78 0.20 32);
+  background: oklch(0.65 0.22 25 / 14%);
+  box-shadow: 0 8px 26px -18px oklch(0.65 0.22 25 / 36%);
+}
+
+html:not(.dark) .btn-outline-theme {
+  border-color: oklch(0.65 0.22 25 / 42%);
+  color: oklch(0.50 0.15 24);
+  background: oklch(0.65 0.22 25 / 5%);
+}
+
+html:not(.dark) .btn-outline-theme:hover {
+  border-color: oklch(0.65 0.22 25 / 60%);
+  color: oklch(0.45 0.13 24);
+  background: oklch(0.65 0.22 25 / 11%);
+}
+
+html.dark .btn-service-cta {
+  border-color: oklch(0.70 0.20 35 / 52%);
+  background:
+    linear-gradient(
+      135deg,
+      oklch(0.65 0.22 25 / 30%),
+      oklch(0.70 0.20 35 / 24%)
+    );
+  color: oklch(0.96 0.01 35);
+  box-shadow:
+    0 12px 26px -18px oklch(0.65 0.22 25 / 50%),
+    inset 0 1px 0 oklch(1 0 0 / 16%);
+}
+
+html.dark .btn-service-cta:hover {
+  border-color: oklch(0.70 0.20 35 / 72%);
+  background:
+    linear-gradient(
+      135deg,
+      oklch(0.65 0.22 25 / 56%),
+      oklch(0.70 0.20 35 / 48%)
+    );
+  color: oklch(0.99 0.003 250);
+  box-shadow:
+    0 18px 34px -18px oklch(0.65 0.22 25 / 56%),
+    0 0 28px oklch(0.65 0.22 25 / 24%);
+}
+
+/* Hero visual for desktop */
+.hero-visual-shell {
+  position: relative;
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in oklch, var(--border) 82%, transparent);
+  background:
+    linear-gradient(160deg, color-mix(in oklch, var(--card) 88%, transparent), color-mix(in oklch, var(--card) 72%, transparent));
+  box-shadow:
+    0 30px 56px -34px oklch(0 0 0 / 46%),
+    inset 0 1px 0 oklch(1 0 0 / 12%);
+  overflow: hidden;
+}
+
+.hero-visual-chip {
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklch, var(--red-primary) 34%, transparent);
+  background: color-mix(in oklch, var(--red-primary) 8%, var(--card) 92%);
+  color: color-mix(in oklch, var(--red-primary) 82%, var(--foreground) 18%);
+}
+
+.hero-visual-chip-idle {
+  opacity: 0.82;
+}
+
+.hero-visual-chip-idle:hover {
+  opacity: 1;
+  border-color: color-mix(in oklch, var(--red-primary) 50%, transparent);
+}
+
+.hero-visual-chip-active {
+  border-color: color-mix(in oklch, var(--red-primary) 72%, transparent);
+  background: color-mix(in oklch, var(--red-primary) 16%, var(--card) 84%);
+  box-shadow: 0 8px 18px -14px oklch(0.65 0.22 25 / 45%);
 }

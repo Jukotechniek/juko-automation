@@ -74,7 +74,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/contact">
+            <Link href="/contact#contact-form">
               <button className="btn-primary-glow px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-all duration-300">
                 Doe de intake
               </button>
@@ -91,6 +91,11 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+      <div
+        className={`pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-[oklch(0.65_0.22_25/0.65)] to-transparent transition-opacity duration-300 ${
+          scrolled ? "opacity-85" : "opacity-55"
+        }`}
+      />
 
       {/* Mobile menu */}
       <AnimatePresence>
@@ -117,7 +122,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="pt-2 pb-1">
-                <Link href="/contact">
+                <Link href="/contact#contact-form">
                   <button
                     className="btn-primary-glow w-full px-5 py-3 rounded-lg text-sm font-semibold text-white"
                     onClick={() => setMobileOpen(false)}

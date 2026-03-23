@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Juko Automation - Innovatieve Automatisering voor Uw Bedrijf</title>
     <meta name="description" content="Juko Automation helpt uw bedrijf groeien met slimme automatiseringen, maatwerk software en AI-implementaties. Bespaar tijd, verminder fouten en laat processen vanzelf lopen." />
+    <link id="theme-favicon" rel="icon" type="image/x-icon" href="/favicon_zwart.ico?v=2" />
+    <script>
+      (() => {
+        const darkFavicon = "/favicon_wit.ico?v=2";
+        const lightFavicon = "/favicon_zwart.ico?v=2";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const applyFavicon = () => {
+          const link = document.getElementById("theme-favicon");
+          if (link) {
+            link.setAttribute("href", media.matches ? darkFavicon : lightFavicon);
+          }
+        };
+
+        applyFavicon();
+        if (typeof media.addEventListener === "function") {
+          media.addEventListener("change", applyFavicon);
+        } else if (typeof media.addListener === "function") {
+          media.addListener(applyFavicon);
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />

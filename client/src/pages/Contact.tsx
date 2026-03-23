@@ -133,7 +133,7 @@ export default function Contact() {
       <div className="section-divider" />
 
       {/* Main content */}
-      <section className="py-16" id="contact-form" aria-label="Intake formulier">
+      <section className="py-16 scroll-mt-28" id="contact-form" aria-label="Intake formulier">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
@@ -198,10 +198,11 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="telefoon" className="block text-sm font-medium text-white/60 mb-2">Telefoon</label>
+                      <label htmlFor="telefoon" className="block text-sm font-medium text-white/60 mb-2">Telefoon *</label>
                       <input
                         id="telefoon"
                         type="tel"
+                        required
                         value={formData.telefoon}
                         onChange={(e) => setFormData({ ...formData, telefoon: e.target.value })}
                         placeholder="+31 6 12345678"
@@ -216,14 +217,14 @@ export default function Contact() {
                       id="dienst"
                       value={formData.dienst}
                       onChange={(e) => setFormData({ ...formData, dienst: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] transition-all duration-200 text-sm"
+                      className="contact-service-select w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] transition-all duration-200 text-sm"
                     >
-                      <option value="" className="bg-[oklch(0.13_0.018_240)]">Selecteer een dienst</option>
-                      <option value="ai-implementatie" className="bg-[oklch(0.13_0.018_240)]">AI Implementatie (chatbot, analytics, document AI)</option>
-                      <option value="webapp-portaal" className="bg-[oklch(0.13_0.018_240)]">Webapp of Klantenportaal op maat</option>
-                      <option value="automatisering" className="bg-[oklch(0.13_0.018_240)]">Automatisering (API-integraties, workflows)</option>
-                      <option value="meerdere" className="bg-[oklch(0.13_0.018_240)]">Combinatie van diensten</option>
-                      <option value="anders" className="bg-[oklch(0.13_0.018_240)]">Anders / Weet ik nog niet</option>
+                      <option value="">Selecteer een dienst</option>
+                      <option value="ai-implementatie">AI Implementatie (chatbot, analytics, document AI)</option>
+                      <option value="webapp-portaal">Webapp of Klantenportaal op maat</option>
+                      <option value="automatisering">Automatisering (API-integraties, workflows)</option>
+                      <option value="meerdere">Combinatie van diensten</option>
+                      <option value="anders">Anders / Weet ik nog niet</option>
                     </select>
                   </div>
 

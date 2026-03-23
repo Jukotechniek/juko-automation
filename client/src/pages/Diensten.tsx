@@ -112,24 +112,23 @@ export default function Diensten() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.65_0.22_25/0.3)] bg-[oklch(0.65_0.22_25/0.08)] mb-5">
-                <Brain className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
-                <span className="text-xs font-medium text-[oklch(0.65_0.22_25)]">Dienst 01 — Meest gevraagd</span>
-              </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-5 leading-tight">
                 AI Implementaties
               </h2>
               <p className="text-white/55 leading-relaxed mb-4">
-                Zet kunstmatige intelligentie in om slimmer te werken. Wij implementeren AI-oplossingen die direct impact maken — van chatbots die 80% van klantvragen automatisch beantwoorden tot systemen die patronen herkennen in uw data.
+                Zet kunstmatige intelligentie in om slimmer te werken. Wij implementeren AI-oplossingen die direct impact maken van chatbots die 80% van klantvragen automatisch beantwoorden tot systemen die patronen herkennen in uw data.
               </p>
               <p className="text-white/55 leading-relaxed mb-8">
                 Geen hype, maar bewezen technologie op maat gemaakt voor uw bedrijfsprocessen. Wij zorgen voor implementatie, training en doorlopend onderhoud.
+              </p>
+              <p className="text-white/55 leading-relaxed mb-8 -mt-4">
+                We kunnen werken met zowel closed-source AI (zoals commerciële API-modellen) als open-source modellen, afhankelijk van uw eisen rond kosten, privacy en controle.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {[
                   { icon: Bot, text: "AI Chatbots & assistenten" },
-                  { icon: BarChart, text: "Predictive analytics" },
+                  { icon: BarChart, text: "Voorspellende analyses" },
                   { icon: FileText, text: "Document AI & OCR" },
                   { icon: Database, text: "Kennisbank automatisering" },
                   { icon: Cpu, text: "Data-analyse met AI" },
@@ -155,7 +154,7 @@ export default function Diensten() {
                 </div>
               </div>
 
-              <Link href="/contact">
+              <Link href="/contact#contact-form">
                 <button className="btn-primary-glow flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white text-sm">
                   Bespreek uw AI project
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -270,10 +269,6 @@ export default function Diensten() {
               transition={{ duration: 0.7 }}
               className="order-1 lg:order-2"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.65_0.22_25/0.3)] bg-[oklch(0.65_0.22_25/0.08)] mb-5">
-                <Globe className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
-                <span className="text-xs font-medium text-[oklch(0.65_0.22_25)]">Dienst 02</span>
-              </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-5 leading-tight">
                 Webapps & Klantenportalen
               </h2>
@@ -309,7 +304,7 @@ export default function Diensten() {
                 </div>
               </div>
 
-              <Link href="/contact">
+              <Link href="/contact#contact-form">
                 <button className="btn-primary-glow flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white text-sm">
                   Bespreek uw webapp project
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -332,10 +327,6 @@ export default function Diensten() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.65_0.22_25/0.3)] bg-[oklch(0.65_0.22_25/0.08)] mb-5">
-                <Zap className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
-                <span className="text-xs font-medium text-[oklch(0.65_0.22_25)]">Dienst 03</span>
-              </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-5 leading-tight">
                 Automatiseringen
               </h2>
@@ -375,7 +366,7 @@ export default function Diensten() {
                 </div>
               </div>
 
-              <Link href="/contact">
+              <Link href="/contact#contact-form">
                 <button className="btn-primary-glow flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white text-sm">
                   Bespreek uw automatisering
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -405,7 +396,7 @@ export default function Diensten() {
                   {
                     title: "Data Sync tussen Systemen",
                     desc: "Houd voorraad, klantdata en orders gesynchroniseerd tussen webshop, ERP en warehouse systeem. Altijd up-to-date, altijd correct.",
-                    savings: "Zero handmatige invoer",
+                    savings: "Geen handmatige invoer",
                   },
                 ].map((example) => (
                   <div key={example.title} className="glass-card-hover p-6">
@@ -437,7 +428,7 @@ export default function Diensten() {
               <span className="gradient-text">wij gebruiken</span>
             </h2>
             <p className="text-white/50 max-w-2xl mx-auto">
-              Wij werken met bewezen, moderne technologieën die schaalbaar en onderhoudbaar zijn.
+              Een compacte stack waarmee we snel bouwen, slim automatiseren en stabiel uitrollen.
             </p>
           </motion.div>
 
@@ -448,9 +439,12 @@ export default function Diensten() {
             className="flex flex-wrap justify-center gap-3"
           >
             {[
-              "React", "TypeScript", "Node.js", "Python", "OpenAI", "n8n", "Make",
-              "PostgreSQL", "REST APIs", "Webhooks", "Tailwind CSS", "Docker",
-              "Vercel", "AWS", "Langchain", "Pinecone",
+              "React",
+              "Closed-source AI modellen",
+              "Open-source AI modellen",
+              "n8n",
+              "Python",
+              "Docker",
             ].map((tech) => (
               <span
                 key={tech}
@@ -483,14 +477,14 @@ export default function Diensten() {
               Plan een gratis intake en ontdek welke dienst het beste past bij uw uitdagingen. Reactie binnen 24 uur.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/contact#contact-form">
                 <button className="btn-primary-glow inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)]">
                   Start gratis intake
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </button>
               </Link>
               <Link href="/blog">
-                <button className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white/70 hover:text-white border border-white/10 hover:border-white/20 transition-all duration-300">
+                <button className="btn-outline-theme inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-300">
                   Lees onze case studies
                 </button>
               </Link>

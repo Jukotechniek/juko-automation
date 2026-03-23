@@ -319,7 +319,7 @@ export default function Blog() {
             <p className="text-white/50 text-lg max-w-2xl mx-auto mb-10">
               Laat ons uw processen analyseren en een concreet plan maken voor AI, webapps of automatisering.
             </p>
-            <Link href="/contact">
+            <Link href="/contact#contact-form">
               <button className="btn-primary-glow flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base shadow-2xl shadow-[oklch(0.65_0.22_25/0.3)] hover:shadow-[oklch(0.65_0.22_25/0.5)] transition-all duration-300 hover:scale-105 mx-auto">
                 Start gratis intake
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
