@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BLOG_AUTHOR } from "@/config/blog";
 
 const articles = [
   {
@@ -86,7 +87,7 @@ const articles = [
   {
     id: "data-security-compliance",
     title: "Gegevensbeveiliging & AVG: automatisering veilig implementeren",
-    excerpt: "Hoe u automatisering en AI inzet die voldoet aan de AVG en andere privacy-eisen.",
+    excerpt: "Hoe u automatisering en slimme toepassingen inzet die voldoet aan de AVG en andere privacy-eisen.",
     category: "Beveiliging",
     date: "1 maart 2026",
     readTime: 8,
@@ -204,11 +205,12 @@ export default function Blog() {
                 </div>
                 <div className="flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
                       <span className="px-3 py-1 rounded-full bg-[oklch(0.65_0.22_25/0.15)] text-[oklch(0.65_0.22_25)] text-xs font-semibold border border-[oklch(0.65_0.22_25/0.3)]">
                         Uitgelicht
                       </span>
                       <span className="text-xs text-white/40">{featuredArticle.category}</span>
+                      <span className="text-xs text-white/40">· {BLOG_AUTHOR}</span>
                     </div>
                     <Link href={`/blog/${featuredArticle.id}`}>
                       <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 hover:text-[oklch(0.65_0.22_25)] transition-colors cursor-pointer">
@@ -264,10 +266,11 @@ export default function Blog() {
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span className="text-xs font-semibold text-[oklch(0.65_0.22_25)] bg-[oklch(0.65_0.22_25/0.15)] px-2.5 py-1 rounded-full border border-[oklch(0.65_0.22_25/0.2)]">
                         {article.category}
                       </span>
+                      <span className="text-xs text-white/35">{BLOG_AUTHOR}</span>
                     </div>
                     <Link href={`/blog/${article.id}`}>
                       <h3 className="text-lg font-bold text-white mb-2 hover:text-[oklch(0.65_0.22_25)] transition-colors cursor-pointer line-clamp-2">

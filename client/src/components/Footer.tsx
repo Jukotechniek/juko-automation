@@ -85,10 +85,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/5">
+        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/30 text-xs text-center sm:text-left">
             © {new Date().getFullYear()} Juko Automation. Alle rechten voorbehouden.
           </p>
+          <a
+            href="/AlgemeneVoorwaarden-JukoTechniek.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/45 hover:text-[oklch(0.65_0.22_25)] text-xs transition-colors underline underline-offset-2"
+          >
+            Algemene voorwaarden
+          </a>
         </div>
       </div>
     </footer>

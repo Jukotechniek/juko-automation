@@ -7,9 +7,14 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Mail, ChevronDown, MessageSquare, Clock, CheckCircle2, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Mail, ChevronDown, MessageSquare, Clock, CheckCircle2 } from "lucide-react";
+import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const CONTACT_WEBHOOK_URL =
+  import.meta.env.VITE_N8N_CONTACT_WEBHOOK ||
+  "https://n8n.jukotechniek.nl/webhook/9146874b-5160-4c94-9bb9-a507effe89ec";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -31,7 +36,7 @@ const faqs = [
   },
   {
     q: "Wat kost een project gemiddeld?",
-    a: "Automatiseringen starten vanaf €2.250, AI implementaties vanaf €4.500 en webapps/klantenportalen vanaf €5.500. Complexere projecten vragen meer investering. Na de gratis intake ontvangt u altijd een heldere offerte.",
+    a: "Automatiseringen starten vanaf €1.500, AI implementaties vanaf €4.500 en webapps/klantenportalen vanaf €5.500. Complexere projecten vragen meer investering. Na de gratis intake ontvangt u altijd een heldere offerte.",
   },
   {
     q: "Bieden jullie ondersteuning na oplevering?",
@@ -100,10 +105,44 @@ export default function Contact() {
     dienst: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      const payload = {
+        naam: formData.naam.trim(),
+        bedrijf: formData.bedrijf.trim(),
+        email: formData.email.trim(),
+        telefoon: formData.telefoon.trim(),
+        bericht: formData.bericht.trim(),
+        dienst: formData.dienst || null,
+        bron: "juko-automation-contact",
+        pagina: typeof window !== "undefined" ? window.location.href : "",
+        tijdstip: new Date().toISOString(),
+      };
+
+      const res = await fetch(CONTACT_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        credentials: "omit",
+      });
+
+      if (!res.ok) {
+        throw new Error(`Server reageerde met ${res.status}`);
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      toast.error(
+        "Versturen mislukt. Controleer uw verbinding en probeer het opnieuw, of mail naar info@jukoautomation.nl.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -243,9 +282,10 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="btn-primary-glow w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-white"
+                    disabled={isSubmitting}
+                    className="btn-primary-glow w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-white disabled:opacity-60 disabled:pointer-events-none"
                   >
-                    Verstuur intake aanvraag
+                    {isSubmitting ? "Bezig met verzenden…" : "Verstuur intake aanvraag"}
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </button>
                   <p className="text-center text-white/30 text-xs">

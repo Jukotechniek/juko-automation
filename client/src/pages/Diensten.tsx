@@ -361,7 +361,7 @@ export default function Diensten() {
                   <TrendingUp className="w-5 h-5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm">Vanaf €2.250</p>
+                  <p className="text-white font-semibold text-sm">Vanaf €1.500</p>
                   <p className="text-white/40 text-xs">Afhankelijk van aantal koppelingen en complexiteit</p>
                 </div>
               </div>

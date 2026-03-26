@@ -9,6 +9,7 @@ import { ArrowLeft, Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link, useParams } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BLOG_AUTHOR } from "@/config/blog";
 
 const articleContent: Record<
   string,
@@ -30,7 +31,7 @@ const articleContent: Record<
     date: "21 maart 2026",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
-    author: "Juko Team",
+    author: BLOG_AUTHOR,
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
@@ -72,7 +73,7 @@ const articleContent: Record<
     date: "18 maart 2026",
     readTime: 7,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
-    author: "Juko Team",
+    author: BLOG_AUTHOR,
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
@@ -112,7 +113,7 @@ const articleContent: Record<
     date: "12 maart 2026",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
-    author: "Juko Team",
+    author: BLOG_AUTHOR,
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
@@ -144,7 +145,7 @@ const articleContent: Record<
     date: "9 maart 2026",
     readTime: 6,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
-    author: "Juko Team",
+    author: BLOG_AUTHOR,
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
@@ -167,6 +168,190 @@ const articleContent: Record<
         <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende stappen</h2>
         <p>
           Heeft u interesse in voorspellend onderhoud? Neem contact op voor een gratis analyse.
+        </p>
+      </div>
+    ),
+  },
+  "workflow-automatisering-roi": {
+    title: "Workflowautomatisering: rendement berekenen en direct implementeren",
+    excerpt:
+      "Stap-voor-stap uitleg om automatiseringsprojecten te beoordelen en het rendement op uw investering te maximaliseren.",
+    category: "Automatisering",
+    date: "15 maart 2026",
+    readTime: 9,
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp",
+    author: BLOG_AUTHOR,
+    content: (
+      <div className="prose prose-invert max-w-none space-y-6 text-white/70">
+        <p>
+          Veel bedrijven weten dat ze repetitief werk moeten automatiseren, maar schrikken terug voor de investering.
+          Toch is het rendement vaak sneller zichtbaar dan u denkt — mits u vooraf scherp krijgt welk proces u eerst pakt
+          en hoe u succes meet.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Waar begint u?</h2>
+        <p>
+          Begin met het proces dat het vaakst voorkomt en de meeste fouten of vertraging oplevert: offertes kopiëren,
+          orders overtypen, of rapportages die elke week opnieuw handmatig worden opgebouwd. Dat zijn de plekken waar
+          automatisering het verschil maakt in uren én in rust op de werkvloer.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Rendement inschatten zonder spreadsheet-stress</h2>
+        <p>
+          U hoeft geen ingewikkeld model te bouwen. Vraag uzelf af: hoeveel uur per week gaat dit kosten nu, en wat is
+          een uur werk voor uw team waard? Vermenigvuldig dat met het aantal weken per jaar — dan ziet u snel of een
+          investering van enkele duizenden euro&apos;s zich binnen een jaar kan terugverdienen. Voeg daar bijkomende
+          voordelen aan toe: minder fouten, snellere reactie naar klanten, en medewerkers die weer tijd hebben voor
+          werk dat echt waarde toevoegt.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Klein beginnen, stap voor stap uitbreiden</h2>
+        <p>
+          Een eerste workflow die stabiel draait, geeft vertrouwen om de volgende koppeling aan te pakken. Zo groeit uw
+          automatisering mee met uw bedrijf, in plaats van in één keer een groot project dat maanden vastloopt. Wij
+          helpen u die volgorde te bepalen en de techniek (API&apos;s, tools zoals n8n, of maatwerk waar nodig) passend te
+          kiezen.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende stappen</h2>
+        <p>
+          Wilt u een concreet beeld van rendement en planning voor uw situatie? Vraag een gratis intake aan — we lopen
+          samen uw processen door en geven een eerlijke inschatting zonder jargon.
+        </p>
+      </div>
+    ),
+  },
+  "webapp-vs-standaard-software": {
+    title: "Maatwerk-webapp vs. standaardsoftware: wanneer kiest u wat?",
+    excerpt:
+      "De voor- en nadelen van maatwerk webapplicaties versus kant-en-klare oplossingen. Inclusief beslissingsmodel.",
+    category: "Webapps",
+    date: "6 maart 2026",
+    readTime: 7,
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp",
+    author: BLOG_AUTHOR,
+    content: (
+      <div className="prose prose-invert max-w-none space-y-6 text-white/70">
+        <p>
+          Standaardsoftware is vaak snel te starten: u betaalt per gebruiker, en veel processen zijn al voor u
+          nagedacht. Maar zodra uw manier van werken net even anders is dan het gemiddelde bedrijf, begint het
+          wringen: workarounds in spreadsheets, dubbele invoer, of modules die u nooit gebruikt.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wanneer past maatwerk beter?</h2>
+        <p>
+          Een webapp op maat loont als uw differentiatie in de markt precies in dat proces zit: een klantportaal dat
+          aansluit op uw ERP, een interne tool die uw offertes en planning in één flow houdt, of een portal waar uw
+          klanten alleen zien wat u wilt tonen. U betaalt voor bouw en onderhoud, maar u krijgt precies het gedrag en
+          de integraties die bij uw team passen.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Een eenvoudig beslismoment</h2>
+        <p>
+          Vraag uzelf af: lost een pakket 80% van mijn probleem op zonder dat we het systeem kapot hoeven te tunen?
+          Dan is standaardsoftware vaak de slimste keuze. Moeten we juist het laatste stuk onderscheidend maken, of
+          bestaat er geen goede koppeling met uw bestaande stack? Dan is maatwerk of een combinatie (standaard + maatwerk)
+          vaak rationeler.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Combinaties zijn normaal</h2>
+        <p>
+          In de praktijk zien we vaak een mix: boekhouding of CRM in de cloud, en een op maat gemaakt stuk ertussen dat
+          gegevens synchroniseert en uw klanten de juiste ervaring geeft. Dat hoeft geen megaproject te zijn; het mag
+          gefaseerd.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende stappen</h2>
+        <p>
+          Twijfelt u tussen kant en klaar en maatwerk? In een kort gesprek brengen we uw wensen en beperkingen in kaart
+          en geven we een eerlijk advies — ook als dat betekent dat standaardsoftware voldoende is.
+        </p>
+      </div>
+    ),
+  },
+  "n8n-make-automatisering": {
+    title: "n8n vs Make: welke automatiseringstool past bij uw bedrijf?",
+    excerpt:
+      "Een eerlijke vergelijking van n8n en Make (voorheen Integromat) voor bedrijfsautomatisering. Inclusief praktijkvoorbeelden.",
+    category: "Automatisering",
+    date: "3 maart 2026",
+    readTime: 8,
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
+    author: BLOG_AUTHOR,
+    content: (
+      <div className="prose prose-invert max-w-none space-y-6 text-white/70">
+        <p>
+          Beide platforms helpen u om acties te koppelen: een nieuwe rij in een sheet, een mail, een webhook van uw
+          webshop, een bericht in Slack. Het verschil zit vooral in hoe u wilt betalen, hoeveel controle u over hosting
+          wilt, en hoe technisch uw team is.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Make: snel visueel, zorgeloos beheer</h2>
+        <p>
+          Make is prettig als u snel live wilt zonder servers te beheren. U sleept stappen aan elkaar, en de cloud draait
+          het voor u. Geschikt voor teams die vooral betrouwbaarheid en support verwachten en minder bezig willen zijn
+          met infrastructuur.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">n8n: meer eigenaarschap</h2>
+        <p>
+          n8n kiest u vaak als u workflows liever zelf host (of laat hosten), meer controle wilt over data en
+          doorstroom, en bereid bent iets meer technische verantwoordelijkheid te dragen. Er is een sterke community en
+          veel kant-en-klare nodes; voor maatwerk kunt u waar nodig code of eigen servers inzetten.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Praktijkvoorbeelden die we vaak bouwen</h2>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>Lead uit formulier → CRM → welkomstmail en taak voor sales</li>
+          <li>Order uit webshop → facturatie of magazijn → status terug naar klant</li>
+          <li>Dagelijkse export van cijfers naar rapportage of e-mail naar het team</li>
+        </ul>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Welke kiest u?</h2>
+        <p>
+          Er is geen universele winnaar. Het hangt af van volume, budget, interne kennis en of u streng bent op waar data
+          mag landen. Wij helpen u dezelfde logica soms in Make te zetten, soms in n8n, en soms met een stukje Python
+          ertussen als het echt maatwerk wordt.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende stappen</h2>
+        <p>
+          Vertel ons welke systemen u nu gebruikt en wat u wilt bereiken — dan adviseren we een concrete route, inclusief
+          welk platform daar het best bij past.
+        </p>
+      </div>
+    ),
+  },
+  "data-security-compliance": {
+    title: "Gegevensbeveiliging & AVG: automatisering veilig implementeren",
+    excerpt:
+      "Hoe u automatisering en slimme toepassingen inzet die voldoen aan de AVG en andere privacy-eisen.",
+    category: "Beveiliging",
+    date: "1 maart 2026",
+    readTime: 8,
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
+    author: BLOG_AUTHOR,
+    content: (
+      <div className="prose prose-invert max-w-none space-y-6 text-white/70">
+        <p>
+          Automatisering en slimme toepassingen maken uw processen sneller, maar ze raken ook persoonsgegevens: namen,
+          mailadressen, orderhistorie, soms zelfs gevoelige informatie. De AVG vraagt niet om papierwerk om het papierwerk,
+          maar om duidelijke keuzes: waar staat data, wie mag erbij, en hoe lang bewaart u die?
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Begin bij het proces, niet bij de tool</h2>
+        <p>
+          Voordat u een nieuwe koppeling of chatfunctie inschakelt, is het nuttig om te noteren welke gegevens nodig zijn
+          en of een lichtere oplossing volstaat. Soms is anonimiseren of aggregeren al genoeg voor een rapport; dan hoeft
+          er geen volledige dataset te stromen naar een derde partij.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Verwerkers en afspraken</h2>
+        <p>
+          Gebruikt u clouddiensten of externe modellen? Dan hoort daar een verwerkersovereenkomst of duidelijke
+          voorwaarden bij, en moet u weten in welke regio data wordt opgeslagen. Dat zijn geen leuke details, maar ze
+          beschermen uw organisatie en uw klanten — en ze helpen later ook bij audits of vragen van klanten.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Techniek die helpt: minimale rechten, logging, back-ups</h2>
+        <p>
+          In de praktijk combineren we vaak toegangsrechten per rol, versleutelde verbindingen, en heldere logging van
+          wie wat heeft gedaan. Back-ups en herstel zijn onderdeel van hetzelfde verhaal: automatisering mag niet
+          betekenen dat één fout onomkeerbaar is.
+        </p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende stappen</h2>
+        <p>
+          Wilt u automatisering of nieuwe digitale stappen veilig inrichten? We denken graag mee over een pragmatische
+          aanpak: voldoende zekerheid zonder uw team te verstikken in regels. Plan een gesprek — dan koppelen we uw
+          wensen aan concrete maatregelen.
         </p>
       </div>
     ),
@@ -210,7 +395,7 @@ export default function BlogArticle() {
             "@type": "Article",
             headline: article.title,
             description: article.excerpt,
-            author: { "@type": "Organization", name: "Juko Automation" },
+            author: { "@type": "Person", name: article.author },
             publisher: { "@type": "Organization", name: "Juko Automation" },
             datePublished: article.date,
             image: article.image,
@@ -243,6 +428,7 @@ export default function BlogArticle() {
               {article.title}
             </h1>
             <div className="flex flex-wrap items-center gap-6 text-white/50">
+              <span className="text-white/60">Door {article.author}</span>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" aria-hidden="true" />
                 <time>{article.date}</time>

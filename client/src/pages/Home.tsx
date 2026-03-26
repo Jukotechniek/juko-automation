@@ -209,7 +209,7 @@ export default function Home() {
                 { icon: Bot, text: "AI-oplossingen op maat" },
                 { icon: Globe, text: "Webapps & klantenportalen" },
                 { icon: Zap, text: "Proces automatisering" },
-                { icon: Rocket, text: "Live in 2-12 weken" },
+                { icon: Rocket, text: "Live in 1-8 weken" },
               ].map((usp) => {
                 const IconComponent = usp.icon;
                 return (
@@ -298,7 +298,7 @@ export default function Home() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
             {[
               { value: "10+", label: "Projecten opgeleverd" },
-              { value: "2-12", label: "Weken tot live" },
+              { value: "1-8", label: "Weken tot live" },
               { value: "5/5", label: "Gemiddelde beoordeling" },
             ].map((stat, i) => (
               <motion.div
@@ -586,7 +586,7 @@ export default function Home() {
               {
                 icon: Rocket,
                 title: "Snelle Oplevering",
-                desc: "Van idee naar werkende software in 2-12 weken. Geen eindeloze trajecten.",
+                desc: "Van idee naar werkende software in 1-8 weken. Geen eindeloze trajecten.",
               },
               {
                 icon: Handshake,

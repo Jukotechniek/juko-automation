@@ -187,7 +187,7 @@ export default function OverOns() {
               {
                 icon: Gauge,
                 title: "Snelle Oplevering",
-                desc: "Van idee naar werkende software in 2-12 weken. Geen eindeloze trajecten of onverwachte vertragingen.",
+                desc: "Van idee naar werkende software in 1-8 weken. Geen eindeloze trajecten of onverwachte vertragingen.",
               },
               {
                 icon: Users,
