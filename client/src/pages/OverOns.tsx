@@ -130,7 +130,7 @@ export default function OverOns() {
               {
                 icon: Monitor,
                 title: "Webapp Ontwikkeling",
-                items: ["Klantenportalen op maat", "Interne dashboards", "Workflow applicaties", "Mobile-responsive apps", "API-first architectuur"],
+                items: ["Klantenportalen op maat", "Interne dashboards", "Workflow applicaties", "Mobile-responsive apps"],
               },
               {
                 icon: Zap,
