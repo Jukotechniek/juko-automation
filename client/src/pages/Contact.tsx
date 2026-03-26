@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "Wat kost een project gemiddeld?",
-    a: "Automatiseringen starten vanaf €1.500, AI implementaties vanaf €2.500 en webapps/klantenportalen vanaf €3.500. Complexere projecten vragen meer investering. Na de gratis intake ontvangt u altijd een heldere offerte.",
+    a: "Automatiseringen starten vanaf €2.250, AI implementaties vanaf €4.500 en webapps/klantenportalen vanaf €5.500. Complexere projecten vragen meer investering. Na de gratis intake ontvangt u altijd een heldere offerte.",
   },
   {
     q: "Bieden jullie ondersteuning na oplevering?",

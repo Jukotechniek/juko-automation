@@ -56,7 +56,7 @@ const articleContent: Record<
         </p>
         <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat kost een AI Chatbot?</h2>
         <p>
-          Een AI chatbot implementatie begint vanaf €2.500 en kan oplopen afhankelijk van complexiteit, integraties en het aantal talen. Na de intake ontvangt u een specifieke offerte.
+          Een AI chatbot implementatie begint vanaf €4.500 en kan oplopen afhankelijk van complexiteit, integraties en het aantal talen. Na de intake ontvangt u een specifieke offerte.
         </p>
         <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
         <p>
@@ -96,7 +96,7 @@ const articleContent: Record<
         </ul>
         <h2 className="text-2xl font-bold text-white mt-8 mb-4">Investering en Timeline</h2>
         <p>
-          Een klantenportaal op maat start vanaf €3.500. De gemiddelde bouwtijd is 4-8 weken afhankelijk van functionaliteiten en integraties met uw bestaande systemen.
+          Een klantenportaal op maat start vanaf €5.500. De gemiddelde bouwtijd is 4-8 weken afhankelijk van functionaliteiten en integraties met uw bestaande systemen.
         </p>
         <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
         <p>

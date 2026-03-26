@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
+import Chatbot from "./components/Chatbot";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -59,6 +60,7 @@ function App() {
           <ScrollManager />
           <Toaster />
           <Router />
+          <Chatbot />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

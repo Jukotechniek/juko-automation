@@ -85,14 +85,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-xs">
+        <div className="mt-12 pt-6 border-t border-white/5">
+          <p className="text-white/30 text-xs text-center sm:text-left">
             © {new Date().getFullYear()} Juko Automation. Alle rechten voorbehouden.
           </p>
-          <div className="flex items-center gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-[oklch(0.82_0.18_165)] animate-pulse" />
-            <span className="text-white/30 text-xs">Beschikbaar voor nieuwe projecten</span>
-          </div>
         </div>
       </div>
     </footer>

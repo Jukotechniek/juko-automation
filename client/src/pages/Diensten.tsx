@@ -149,7 +149,7 @@ export default function Diensten() {
                   <TrendingUp className="w-5 h-5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm">Vanaf €2.500</p>
+                  <p className="text-white font-semibold text-sm">Vanaf €4.500</p>
                   <p className="text-white/40 text-xs">Afhankelijk van complexiteit en scope</p>
                 </div>
               </div>
@@ -299,7 +299,7 @@ export default function Diensten() {
                   <TrendingUp className="w-5 h-5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm">Vanaf €3.500</p>
+                  <p className="text-white font-semibold text-sm">Vanaf €5.500</p>
                   <p className="text-white/40 text-xs">Afhankelijk van functionaliteit en integraties</p>
                 </div>
               </div>
@@ -334,7 +334,7 @@ export default function Diensten() {
                 Stop met repetitieve handmatige taken. Wij automatiseren uw workflows zodat data vanzelf stroomt tussen systemen, rapporten zichzelf genereren en uw team zich kan focussen op werk dat er toe doet.
               </p>
               <p className="text-white/55 leading-relaxed mb-8">
-                Met tools als n8n, Make en custom API-integraties bouwen wij automatiseringen die betrouwbaar draaien en makkelijk te onderhouden zijn.
+                Met tools als n8n, Make, Python en custom API-integraties bouwen wij automatiseringen die betrouwbaar draaien en makkelijk te onderhouden zijn.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
@@ -361,7 +361,7 @@ export default function Diensten() {
                   <TrendingUp className="w-5 h-5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm">Vanaf €1.500</p>
+                  <p className="text-white font-semibold text-sm">Vanaf €2.250</p>
                   <p className="text-white/40 text-xs">Afhankelijk van aantal koppelingen en complexiteit</p>
                 </div>
               </div>
@@ -411,49 +411,6 @@ export default function Diensten() {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* ─── TECHNOLOGY STACK ─── */}
-      <section className="py-20 bg-[oklch(0.07_0.012_240)]" aria-label="Technologie stack">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Technologie die{" "}
-              <span className="gradient-text">wij gebruiken</span>
-            </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              Een compacte stack waarmee we snel bouwen, slim automatiseren en stabiel uitrollen.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-3"
-          >
-            {[
-              "React",
-              "Closed-source AI modellen",
-              "Open-source AI modellen",
-              "n8n",
-              "Python",
-              "Docker",
-            ].map((tech) => (
-              <span
-                key={tech}
-                className="px-4 py-2.5 rounded-xl glass-card border border-white/8 text-sm text-white/60 hover:text-white hover:border-[oklch(0.65_0.22_25/0.3)] transition-all duration-300"
-              >
-                {tech}
-              </span>
-            ))}
-          </motion.div>
         </div>
       </section>
 

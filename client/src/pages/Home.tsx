@@ -10,7 +10,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, CheckCircle2, Zap, Brain, Clock, TrendingUp, ChevronDown, Star,
-  Users, Rocket, Handshake, Target, BarChart3, Monitor, Lock, Bot, FileText,
+  Rocket, Handshake, Target, BarChart3, Monitor, Lock, Bot, FileText,
   Workflow, Globe, Database, BarChart, MessageSquare, Cpu, Layers, Code2, ShieldCheck
 } from "lucide-react";
 import { Link } from "wouter";
@@ -20,7 +20,7 @@ import Footer from "@/components/Footer";
 const faqs = [
   {
     q: "Wat kost een AI implementatie?",
-    a: "De kosten hangen af van de complexiteit. Een AI chatbot begint vanaf €2.500, terwijl complexe projecten voor voorspellende analyses meer investering vragen. Na de gratis intake ontvangt u een heldere offerte met exacte kosten.",
+    a: "De kosten hangen af van de complexiteit. Een AI chatbot begint vanaf €4.500, terwijl complexe projecten voor voorspellende analyses meer investering vragen. Na de gratis intake ontvangt u een heldere offerte met exacte kosten.",
   },
   {
     q: "Hoe lang duurt het bouwen van een webapp of klantenportaal?",
@@ -175,19 +175,6 @@ export default function Home() {
         <div className="container relative z-10 pt-24 pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-7">
-            {/* Urgency Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[oklch(0.65_0.22_25/0.3)] bg-[oklch(0.65_0.22_25/0.08)] mb-6"
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.22_25)] animate-pulse" />
-              <span className="text-xs font-medium text-[oklch(0.65_0.22_25)] flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" aria-hidden="true" />Gratis intake in ±2 minuten
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -263,12 +250,8 @@ export default function Home() {
               className="mt-12 flex flex-wrap items-center gap-6 text-sm text-white/40"
             >
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
-                <span>Vertrouwd door 20+ bedrijven</span>
-              </div>
-              <div className="flex items-center gap-2">
                 <Star className="w-4 h-4 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
-                <span>4.9/5 beoordeling</span>
+                <span>5/5 beoordeling</span>
               </div>
             </motion.div>
             </div>
@@ -314,10 +297,9 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
             {[
-              { value: "20+", label: "Tevreden klanten" },
-              { value: "50+", label: "Projecten opgeleverd" },
+              { value: "10+", label: "Projecten opgeleverd" },
               { value: "2-12", label: "Weken tot live" },
-              { value: "4.9/5", label: "Gemiddelde beoordeling" },
+              { value: "5/5", label: "Gemiddelde beoordeling" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -660,19 +642,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                quote: "Juko heeft ons klantenportaal gebouwd waardoor klanten zelf orders kunnen volgen. De klanttevredenheid is enorm gestegen en we besparen 15 uur per week aan telefonische updates.",
+                quote: "We hadden geen idee hoeveel tijd er verloren ging aan handmatige updates naar klanten. Juko heeft een portaal gebouwd waar klanten zelf hun orders kunnen volgen. Onze telefoon gaat sindsdien veel minder en de klanttevredenheid is echt verbeterd.",
                 name: "Mark V.",
                 role: "Operations Manager",
                 company: "Technisch Installatiebedrijf",
               },
               {
-                quote: "De AI chatbot die Juko heeft geImplementeerd beantwoordt 80% van onze klantvragen automatisch. Ons support team kan zich nu focussen op complexe cases.",
+                quote: "Onze klantenservice was altijd overbelast met dezelfde vragen. De chatbot die Juko heeft opgezet pakt het gros van die vragen nu zelf op. Mijn team heeft eindelijk ruimte voor de lastigere gevallen.",
                 name: "Sandra K.",
                 role: "Customer Service Lead",
                 company: "E-commerce Bedrijf",
               },
               {
-                quote: "Door de workflow automatisering van Juko hebben we ons facturatieproces van 3 dagen teruggebracht naar 2 uur. Een ongelofelijke tijdsbesparing.",
+                quote: "Ons facturatieproces kostte vroeger een halve werkweek per maand. Na de automatisering door Juko zijn we dat teruggebracht naar anderhalve dag. Die gewonnen tijd investeren we nu in dingen die er echt toe doen.",
                 name: "Peter J.",
                 role: "Directeur",
                 company: "Dienstverlener MKB",
