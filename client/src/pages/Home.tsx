@@ -180,10 +180,12 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-8"
+              className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-8"
             >
               <span className="block">AI, Webapps &</span>
-              <span className="block gradient-text">Automatisering</span>
+              <span className="block gradient-text [overflow-wrap:anywhere] sm:[overflow-wrap:normal]">
+                Automatisering
+              </span>
               <span className="block text-3xl sm:text-4xl lg:text-5xl text-white/70 mt-2 font-semibold">voor groeiende bedrijven</span>
             </motion.h1>
 

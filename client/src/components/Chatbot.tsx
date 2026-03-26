@@ -87,39 +87,40 @@ const Chatbot = () => {
 
       {/* ===== CHATBOT WINDOW (alleen als open) — lichte UI los van site-thema ===== */}
       {isOpen && (
-        <div className="fixed bottom-[4.75rem] right-4 z-[10000] flex flex-col items-start text-neutral-900 [color-scheme:light] sm:bottom-[5rem] sm:right-5 md:bottom-[5.25rem]">
-          <div className="relative">
-            <button
-              type="button"
-              onClick={closeChat}
-              className="absolute -right-2 -top-2 flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-neutral-900 shadow-md transition-opacity hover:opacity-90"
-              style={{ color: "#ffffff" }}
-              aria-label="Sluit"
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#ffffff"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                aria-hidden="true"
-              >
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
-
+        <div className="fixed bottom-8 right-4 z-[10000] flex max-w-[min(360px,calc(100vw-1.5rem))] flex-col items-start overflow-visible text-neutral-900 [color-scheme:light] sm:bottom-6 sm:right-5 md:bottom-[5.25rem]">
+          <div className="w-full">
             <div
-              className="bg-white rounded-xl p-[14px_16px] shadow-[0_4px_20px_rgba(0,0,0,0.15)] flex gap-3 items-center mb-[10px]"
+              className="relative bg-white rounded-xl p-[14px_16px] pt-3 shadow-[0_4px_20px_rgba(0,0,0,0.15)] mb-[10px]"
               style={{ maxWidth: "360px" }}
             >
+              <button
+                type="button"
+                onClick={closeChat}
+                className="absolute right-2 top-2 z-10 flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-neutral-900 shadow-md transition-opacity hover:opacity-90"
+                style={{ color: "#ffffff" }}
+                aria-label="Sluit"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffffff"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  aria-hidden="true"
+                >
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </button>
+
+              <div className="flex gap-3 items-start pr-9">
               <img
                 src="/justin.png"
                 alt="Justin"
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover shrink-0"
               />
-              <div>
+              <div className="min-w-0">
                 <div className="text-sm md:text-base font-semibold text-black">Justin</div>
                 <div className="text-xs md:text-sm text-black block mt-1 leading-[1.4]">
                   van <span className="font-semibold">Juko Automation</span>
@@ -129,6 +130,7 @@ const Chatbot = () => {
                   <br />
                   Heb je een vraag? Ik help je graag verder via:
                 </div>
+              </div>
               </div>
             </div>
 

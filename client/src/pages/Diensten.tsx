@@ -89,9 +89,12 @@ export default function Diensten() {
               <Layers className="w-3.5 h-3.5 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
               <span className="text-xs font-medium text-white/60">Onze Diensten</span>
             </motion.div>
-            <motion.h1 variants={fadeUp} className="text-5xl lg:text-6xl font-bold leading-tight mb-5">
+            <motion.h1
+              variants={fadeUp}
+              className="text-[clamp(1.75rem,7vw,3.5rem)] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] sm:leading-tight mb-5 max-w-full"
+            >
               AI, Webapps &{" "}
-              <span className="gradient-text">Automatisering</span>
+              <span className="gradient-text [overflow-wrap:anywhere]">Automatisering</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-white/50 text-lg leading-relaxed">
               Van intelligente AI-chatbots tot klantenportalen op maat en volledig geautomatiseerde workflows. Ontdek hoe wij uw bedrijf helpen groeien met technologie die werkt.

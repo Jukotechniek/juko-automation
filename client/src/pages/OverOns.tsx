@@ -40,9 +40,12 @@ export default function OverOns() {
             <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4">
               <span className="text-xs font-medium text-white/60">Over Ons</span>
             </motion.div>
-            <motion.h1 variants={fadeUp} className="text-5xl lg:text-6xl font-bold leading-tight mb-5">
+            <motion.h1
+              variants={fadeUp}
+              className="text-[clamp(1.75rem,7vw,3.5rem)] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] sm:leading-tight mb-5 max-w-full"
+            >
               Uw partner in{" "}
-              <span className="gradient-text">AI & automatisering</span>
+              <span className="gradient-text [overflow-wrap:anywhere]">AI & automatisering</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-white/50 text-lg leading-relaxed">
               Wij combineren expertise in AI implementaties, webapp ontwikkeling en procesautomatisering om uw bedrijf slimmer en efficienter te laten werken.
