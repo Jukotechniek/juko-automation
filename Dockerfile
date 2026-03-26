@@ -6,6 +6,8 @@ WORKDIR /app
 RUN corepack enable pnpm
 
 COPY package.json pnpm-lock.yaml ./
+# pnpm patchedDependencies require patch files before install
+COPY patches ./patches
 RUN pnpm install --frozen-lockfile
 
 COPY . .
