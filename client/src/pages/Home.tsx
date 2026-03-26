@@ -392,6 +392,7 @@ export default function Home() {
                 features: [
                   "API-integraties & koppelingen",
                   "Workflow automatisering (n8n/Make)",
+                  "Python-scripts & integraties",
                   "Data synchronisatie",
                   "Rapportage automatisering",
                   "E-mail & notificatie flows",
@@ -504,8 +505,8 @@ export default function Home() {
               {
                 num: "04",
                 icon: Rocket,
-                title: "Launch & Support",
-                desc: "Go-live met training voor uw team. Daarna blijven we beschikbaar voor optimalisaties en support.",
+                title: "Oplevering & nazorg",
+                desc: "Na oplevering trainen we uw team in het gebruik. Daarna blijven we beschikbaar voor optimalisaties en ondersteuning.",
               },
             ].map((step, i) => {
               const IconComponent = step.icon;

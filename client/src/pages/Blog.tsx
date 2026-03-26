@@ -15,8 +15,8 @@ import Footer from "@/components/Footer";
 const articles = [
   {
     id: "ai-chatbot-klantenservice",
-    title: "AI Chatbot voor Klantenservice: Zo Bespaart U 80% Support Tijd",
-    excerpt: "Ontdek hoe een AI chatbot uw klantenservice transformeert. Van implementatie tot resultaten — een praktische gids voor bedrijven.",
+    title: "AI-chatbot voor klantenservice: zo bespaart u tot 80% supporttijd",
+    excerpt: "Ontdek hoe een AI-chatbot uw klantenservice verbetert. Van implementatie tot resultaten — een praktische gids voor bedrijven.",
     category: "AI",
     date: "21 maart 2026",
     readTime: 8,
@@ -25,8 +25,8 @@ const articles = [
   },
   {
     id: "klantenportaal-bouwen",
-    title: "Klantenportaal op Maat: Waarom Elk Groeiend Bedrijf Er Een Nodig Heeft",
-    excerpt: "Een klantenportaal verhoogt klanttevredenheid en bespaart uw team uren per week. Leer wat het kost en wat het oplevert.",
+    title: "Klantenportaal op maat: waarom elk groeiend bedrijf er een nodig heeft",
+    excerpt: "Een klantenportaal verhoogt klanttevredenheid en bespaart uw team uren per week. Ontdek wat het kost en wat het oplevert.",
     category: "Webapps",
     date: "18 maart 2026",
     readTime: 7,
@@ -35,8 +35,8 @@ const articles = [
   },
   {
     id: "workflow-automatisering-roi",
-    title: "Workflow Automatisering: ROI Berekenen en Direct Implementeren",
-    excerpt: "Stap-voor-stap gids om automatiseringsprojecten te evalueren en de return on investment te maximaliseren.",
+    title: "Workflowautomatisering: rendement berekenen en direct implementeren",
+    excerpt: "Stap-voor-stap uitleg om automatiseringsprojecten te beoordelen en het rendement op uw investering te maximaliseren.",
     category: "Automatisering",
     date: "15 maart 2026",
     readTime: 9,
@@ -45,8 +45,8 @@ const articles = [
   },
   {
     id: "api-integratie-guide",
-    title: "Complete Guide: API Integratie voor Uw Bedrijfssystemen",
-    excerpt: "Leer hoe u uw ERP, CRM en andere systemen naadloos verbindt met REST APIs, webhooks en realtime synchronisatie.",
+    title: "Volledige gids: API-integratie voor uw bedrijfssystemen",
+    excerpt: "Ontdek hoe u uw ERP, CRM en andere systemen naadloos koppelt met REST-API's, webhooks en realtime synchronisatie.",
     category: "Automatisering",
     date: "12 maart 2026",
     readTime: 8,
@@ -55,8 +55,8 @@ const articles = [
   },
   {
     id: "predictive-maintenance-ai",
-    title: "Predictive Maintenance met AI: Voorkom Downtime en Bespaar Kosten",
-    excerpt: "Hoe machine learning u helpt onderhoud in te plannen voordat apparatuur faalt. Resultaten uit de praktijk.",
+    title: "Voorspellend onderhoud met AI: voorkom stilstand en bespaar kosten",
+    excerpt: "Hoe machine learning u helpt onderhoud te plannen voordat apparatuur uitvalt. Resultaten uit de praktijk.",
     category: "AI",
     date: "9 maart 2026",
     readTime: 6,
@@ -65,7 +65,7 @@ const articles = [
   },
   {
     id: "webapp-vs-standaard-software",
-    title: "Maatwerk Webapp vs. Standaard Software: Wanneer Kies Je Wat?",
+    title: "Maatwerk-webapp vs. standaardsoftware: wanneer kiest u wat?",
     excerpt: "De voor- en nadelen van maatwerk webapplicaties versus kant-en-klare oplossingen. Inclusief beslissingsmodel.",
     category: "Webapps",
     date: "6 maart 2026",
@@ -75,7 +75,7 @@ const articles = [
   },
   {
     id: "n8n-make-automatisering",
-    title: "n8n vs Make: Welke Automatiseringstool Past bij Uw Bedrijf?",
+    title: "n8n vs Make: welke automatiseringstool past bij uw bedrijf?",
     excerpt: "Een eerlijke vergelijking van n8n en Make (voorheen Integromat) voor bedrijfsautomatisering. Inclusief praktijkvoorbeelden.",
     category: "Automatisering",
     date: "3 maart 2026",
@@ -85,9 +85,9 @@ const articles = [
   },
   {
     id: "data-security-compliance",
-    title: "Data Security & GDPR: Automatisering Veilig Implementeren",
-    excerpt: "Hoe u automatisering en AI implementeert die voldoet aan GDPR en andere privacy-vereisten.",
-    category: "Security",
+    title: "Gegevensbeveiliging & AVG: automatisering veilig implementeren",
+    excerpt: "Hoe u automatisering en AI inzet die voldoet aan de AVG en andere privacy-eisen.",
+    category: "Beveiliging",
     date: "1 maart 2026",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
@@ -95,7 +95,7 @@ const articles = [
   },
 ];
 
-const categories = ["Alle", "AI", "Webapps", "Automatisering", "Security"];
+const categories = ["Alle", "AI", "Webapps", "Automatisering", "Beveiliging"];
 
 export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -132,7 +132,7 @@ export default function Blog() {
               <span className="gradient-text">Kennisbank</span>
             </h1>
             <p className="text-white/50 text-lg leading-relaxed">
-              Praktische gidsen, case studies en inzichten over AI implementaties, webapp ontwikkeling en procesautomatisering. Leer hoe u uw bedrijf slimmer laat werken.
+              Praktische gidsen, praktijkvoorbeelden en inzichten over AI-implementaties, webapp-ontwikkeling en procesautomatisering. Ontdek hoe u uw bedrijf slimmer laat werken.
             </p>
           </motion.div>
         </div>
@@ -154,7 +154,7 @@ export default function Blog() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" aria-hidden="true" />
               <input
                 type="text"
-                placeholder="Zoek artikelen over AI, webapps, automatisering..."
+                placeholder="Zoek op onderwerp: AI, webapps, automatisering…"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Zoek artikelen"
@@ -225,7 +225,7 @@ export default function Blog() {
                       </div>
                       <div className="flex items-center gap-1">
                         <Clock className="w-4 h-4" aria-hidden="true" />
-                        {featuredArticle.readTime} min
+                        {featuredArticle.readTime} min. leestijd
                       </div>
                     </div>
                     <Link href={`/blog/${featuredArticle.id}`}>
@@ -283,7 +283,7 @@ export default function Blog() {
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="w-3 h-3" aria-hidden="true" />
-                          {article.readTime} min
+                          {article.readTime} min.
                         </div>
                       </div>
                       <Link href={`/blog/${article.id}`}>
@@ -296,7 +296,7 @@ export default function Blog() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-white/50 text-lg">Geen artikelen gevonden. Probeer een ander zoekterm of categorie.</p>
+              <p className="text-white/50 text-lg">Geen artikelen gevonden. Probeer een andere zoekterm of categorie.</p>
             </div>
           )}
         </div>

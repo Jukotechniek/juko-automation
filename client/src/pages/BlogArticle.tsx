@@ -5,7 +5,7 @@
 */
 
 import { motion } from "framer-motion";
-import { ArrowLeft, Calendar, Clock, Share2, ArrowRight } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link, useParams } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -24,8 +24,8 @@ const articleContent: Record<
   }
 > = {
   "ai-chatbot-klantenservice": {
-    title: "AI Chatbot voor Klantenservice: Zo Bespaart U 80% Support Tijd",
-    excerpt: "Ontdek hoe een AI chatbot uw klantenservice transformeert.",
+    title: "AI-chatbot voor klantenservice: zo bespaart u tot 80% supporttijd",
+    excerpt: "Ontdek hoe een AI-chatbot uw klantenservice verbetert.",
     category: "AI",
     date: "21 maart 2026",
     readTime: 8,
@@ -34,11 +34,11 @@ const articleContent: Record<
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
-          Een AI chatbot is voor veel bedrijven de snelste manier om klantenservice te verbeteren en tegelijk kosten te verlagen. In dit artikel leggen we uit hoe het werkt, wat het kost en welke resultaten u kunt verwachten.
+          Een AI-chatbot is voor veel bedrijven de snelste manier om klantenservice te verbeteren en tegelijk kosten te verlagen. In dit artikel leggen we uit hoe het werkt, wat het kost en welke resultaten u kunt verwachten.
         </p>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat is een AI Chatbot?</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat is een AI-chatbot?</h2>
         <p>
-          Een AI chatbot is een virtuele assistent die klantvragen begrijpt en beantwoordt zonder menselijke tussenkomst. Moderne chatbots gebruiken large language models (LLM's) die natuurlijke taal begrijpen en relevante antwoorden genereren op basis van uw bedrijfsdocumentatie.
+          Een AI-chatbot is een virtuele assistent die klantvragen begrijpt en beantwoordt zonder menselijke tussenkomst. Moderne chatbots gebruiken grote taalmodellen (LLM&apos;s) die natuurlijke taal begrijpen en relevante antwoorden genereren op basis van uw bedrijfsdocumentatie.
         </p>
         <h2 className="text-2xl font-bold text-white mt-8 mb-4">Hoe werkt het in de praktijk?</h2>
         <p>
@@ -50,23 +50,23 @@ const articleContent: Record<
           <li>Beschikbaar 24/7, ook buiten kantooruren</li>
           <li>Leert continu bij door nieuwe vragen en feedback</li>
         </ul>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Resultaten uit de Praktijk</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Resultaten uit de praktijk</h2>
         <p>
-          Bedrijven die een AI chatbot implementeren zien gemiddeld een reductie van 60-80% in support tickets en een klanttevredenheid die stijgt door snellere antwoorden.
+          Bedrijven die een AI-chatbot implementeren zien gemiddeld 60-80% minder supporttickets en een hogere klanttevredenheid door snellere antwoorden.
         </p>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat kost een AI Chatbot?</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat kost een AI-chatbot?</h2>
         <p>
-          Een AI chatbot implementatie begint vanaf €4.500 en kan oplopen afhankelijk van complexiteit, integraties en het aantal talen. Na de intake ontvangt u een specifieke offerte.
+          De implementatie van een AI-chatbot begint vanaf €4.500 en kan oplopen afhankelijk van complexiteit, koppelingen en het aantal talen. Na de intake ontvangt u een concrete offerte.
         </p>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende stappen</h2>
         <p>
-          Wilt u ontdekken wat een AI chatbot voor uw bedrijf kan betekenen? Neem contact op voor een gratis intake. We analyseren uw huidige klantenservice en maken een concreet voorstel.
+          Wilt u ontdekken wat een AI-chatbot voor uw bedrijf kan betekenen? Neem contact op voor een gratis intake. We analyseren uw huidige klantenservice en doen een concreet voorstel.
         </p>
       </div>
     ),
   },
   "klantenportaal-bouwen": {
-    title: "Klantenportaal op Maat: Waarom Elk Groeiend Bedrijf Er Een Nodig Heeft",
+    title: "Klantenportaal op maat: waarom elk groeiend bedrijf er een nodig heeft",
     excerpt: "Een klantenportaal verhoogt klanttevredenheid en bespaart uw team uren per week.",
     category: "Webapps",
     date: "18 maart 2026",
@@ -76,29 +76,29 @@ const articleContent: Record<
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
-          Een klantenportaal is een beveiligde webapplicatie waar uw klanten zelf toegang hebben tot hun gegevens, orders, facturen en documenten. Het bespaart uw team uren aan telefonische en e-mail support.
+          Een klantenportaal is een beveiligde webapplicatie waar uw klanten zelf toegang hebben tot hun gegevens, orders, facturen en documenten. Het bespaart uw team uren aan telefonische en e-mailondersteuning.
         </p>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Waarom een Klantenportaal?</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Waarom een klantenportaal?</h2>
         <ul className="list-disc list-inside space-y-2 ml-4">
           <li>Klanten helpen zichzelf, 24/7</li>
           <li>Minder telefonische vragen over orderstatus, facturen en documenten</li>
           <li>Professionele uitstraling en hogere klanttevredenheid</li>
           <li>Centrale plek voor alle klantcommunicatie</li>
         </ul>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat kan er in een Klantenportaal?</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat kan er in een klantenportaal?</h2>
         <p>Typische functionaliteiten die wij bouwen zijn:</p>
         <ul className="list-disc list-inside space-y-2 ml-4">
-          <li>Order tracking en statusupdates</li>
+          <li>Ordervolging en statusupdates</li>
           <li>Facturenoverzicht en betalingsstatus</li>
-          <li>Document management (offertes, contracten, rapporten)</li>
-          <li>Ticketsysteem voor support aanvragen</li>
-          <li>Persoonlijke dashboards met KPI's</li>
+          <li>Documentbeheer (offertes, contracten, rapporten)</li>
+          <li>Ticketsysteem voor supportaanvragen</li>
+          <li>Persoonlijke dashboards met KPI&apos;s</li>
         </ul>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Investering en Timeline</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Investering en doorlooptijd</h2>
         <p>
-          Een klantenportaal op maat start vanaf €5.500. De gemiddelde bouwtijd is 4-8 weken afhankelijk van functionaliteiten en integraties met uw bestaande systemen.
+          Een klantenportaal op maat start vanaf €5.500. De gemiddelde bouwtijd is 4-8 weken, afhankelijk van functionaliteiten en koppelingen met uw bestaande systemen.
         </p>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende stappen</h2>
         <p>
           Benieuwd naar een klantenportaal voor uw bedrijf? Plan een gratis intake en we bespreken de mogelijkheden.
         </p>
@@ -106,8 +106,8 @@ const articleContent: Record<
     ),
   },
   "api-integratie-guide": {
-    title: "Complete Guide: API Integratie voor Uw Bedrijfssystemen",
-    excerpt: "Leer hoe u uw ERP, CRM en andere systemen naadloos verbindt.",
+    title: "Volledige gids: API-integratie voor uw bedrijfssystemen",
+    excerpt: "Ontdek hoe u uw ERP, CRM en andere systemen naadloos verbindt.",
     category: "Automatisering",
     date: "12 maart 2026",
     readTime: 8,
@@ -116,21 +116,21 @@ const articleContent: Record<
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
-          API-integratie is de ruggengraat van moderne automatisering. In deze gids leren we hoe u uw ERP, CRM en andere bedrijfssystemen naadloos met elkaar kunt verbinden.
+          API-integratie is de ruggengraat van moderne automatisering. In deze gids leest u hoe u uw ERP, CRM en andere bedrijfssystemen naadloos met elkaar verbindt.
         </p>
         <h2 className="text-2xl font-bold text-white mt-8 mb-4">Wat is een API?</h2>
         <p>
-          Een API (Application Programming Interface) is een set regels die twee softwaresystemen toestaan met elkaar te communiceren. Voor bedrijven betekent dit dat u gegevens automatisch kunt uitwisselen tussen uw systemen.
+          Een API is een programmeerinterface: een set afspraken waarmee twee softwaresystemen met elkaar kunnen communiceren. Zo wisselt u gegevens automatisch tussen uw systemen uit.
         </p>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">REST APIs: De Standaard</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">REST-API&apos;s: de standaard</h2>
         <p>
-          REST is de meest gebruikte API-architectuur en werkt via HTTP-verzoeken. Ideaal voor data synchronisatie, automatische rapportages en externe tool-integraties.
+          REST is de meest gebruikte API-architectuur en werkt via HTTP-verzoeken. Ideaal voor gegevenssynchronisatie, automatische rapportages en koppelingen met externe tools.
         </p>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Webhooks: Event-Driven Automatisering</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Webhooks: gebeurtenisgestuurde automatisering</h2>
         <p>
-          Webhooks sturen automatisch een bericht wanneer iets gebeurt — perfect voor notificaties, workflow triggers en real-time updates.
+          Webhooks sturen automatisch een bericht wanneer iets gebeurt — handig voor meldingen, het starten van workflows en realtime bijwerkingen.
         </p>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende stappen</h2>
         <p>
           Wilt u uw systemen integreren? Neem contact met ons op voor een gratis technische intake.
         </p>
@@ -138,8 +138,8 @@ const articleContent: Record<
     ),
   },
   "predictive-maintenance-ai": {
-    title: "Predictive Maintenance met AI: Voorkom Downtime en Bespaar Kosten",
-    excerpt: "Hoe machine learning u helpt onderhoud in te plannen voordat apparatuur faalt.",
+    title: "Voorspellend onderhoud met AI: voorkom stilstand en bespaar kosten",
+    excerpt: "Hoe machine learning u helpt onderhoud te plannen voordat apparatuur uitvalt.",
     category: "AI",
     date: "9 maart 2026",
     readTime: 6,
@@ -148,25 +148,25 @@ const articleContent: Record<
     content: (
       <div className="prose prose-invert max-w-none space-y-6 text-white/70">
         <p>
-          Predictive maintenance is een van de meest impactvolle toepassingen van AI. In plaats van apparatuur op vaste schema's te onderhouden, voorspelt AI wanneer onderhoud nodig is.
+          Voorspellend onderhoud is een van de meest krachtige toepassingen van AI. In plaats van apparatuur alleen op vaste momenten te onderhouden, voorspelt AI wanneer onderhoud nodig is.
         </p>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Hoe Werkt Predictive Maintenance?</h2>
-        <p>AI-modellen analyseren sensorgegevens om patronen te herkennen die wijzen op toekomstige fouten:</p>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Hoe werkt voorspellend onderhoud?</h2>
+        <p>Modellen analyseren sensorgegevens om patronen te herkennen die wijzen op toekomstige storingen:</p>
         <ol className="list-decimal list-inside space-y-2 ml-4">
           <li>Sensorgegevens verzamelen (temperatuur, trillingen, stroomverbruik)</li>
-          <li>Machine learning modellen trainen op historische data</li>
-          <li>Real-time voorspellingen doen en alerts genereren</li>
+          <li>Modellen voor machine learning trainen op historische gegevens</li>
+          <li>Realtime voorspellingen doen en waarschuwingen genereren</li>
         </ol>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Praktische Voordelen</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Praktische voordelen</h2>
         <ul className="list-disc list-inside space-y-2 ml-4">
-          <li><strong>50-70% minder downtime</strong></li>
+          <li><strong>50-70% minder stilstand</strong></li>
           <li><strong>Kostenbesparing:</strong> Geen noodinterventies meer</li>
           <li><strong>Betere planning:</strong> Onderhoud op uw momenten</li>
           <li><strong>Langere levensduur</strong> van apparatuur</li>
         </ul>
-        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende Stappen</h2>
+        <h2 className="text-2xl font-bold text-white mt-8 mb-4">Volgende stappen</h2>
         <p>
-          Heeft u interesse in predictive maintenance? Neem contact op voor een gratis analyse.
+          Heeft u interesse in voorspellend onderhoud? Neem contact op voor een gratis analyse.
         </p>
       </div>
     ),
@@ -299,7 +299,7 @@ export default function BlogArticle() {
             transition={{ duration: 0.7 }}
           >
             <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-              Klaar om dit in praktijk te brengen?
+              Klaar om dit in de praktijk te brengen?
             </h2>
             <p className="text-white/50 text-lg max-w-2xl mx-auto mb-10">
               Plan een gratis intake en ontdek hoe we dit voor uw bedrijf kunnen implementeren.
