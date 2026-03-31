@@ -179,7 +179,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.08, margin: "0px 0px 120px 0px" }}
               transition={{ duration: 0.6 }}
               className="lg:col-span-3"
             >
@@ -207,7 +207,7 @@ export default function Contact() {
                         value={formData.naam}
                         onChange={(e) => setFormData({ ...formData, naam: e.target.value })}
                         placeholder="Jan de Vries"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-[border-color,background-color] duration-200 text-sm"
                       />
                     </div>
                     <div>
@@ -218,7 +218,7 @@ export default function Contact() {
                         value={formData.bedrijf}
                         onChange={(e) => setFormData({ ...formData, bedrijf: e.target.value })}
                         placeholder="Uw bedrijfsnaam"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-[border-color,background-color] duration-200 text-sm"
                       />
                     </div>
                   </div>
@@ -233,7 +233,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="jan@bedrijf.nl"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-[border-color,background-color] duration-200 text-sm"
                       />
                     </div>
                     <div>
@@ -245,7 +245,7 @@ export default function Contact() {
                         value={formData.telefoon}
                         onChange={(e) => setFormData({ ...formData, telefoon: e.target.value })}
                         placeholder="+31 6 12345678"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-[border-color,background-color] duration-200 text-sm"
                       />
                     </div>
                   </div>
@@ -256,7 +256,7 @@ export default function Contact() {
                       id="dienst"
                       value={formData.dienst}
                       onChange={(e) => setFormData({ ...formData, dienst: e.target.value })}
-                      className="contact-service-select w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] transition-all duration-200 text-sm"
+                      className="contact-service-select w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] transition-[border-color,background-color] duration-200 text-sm"
                     >
                       <option value="">Selecteer een dienst</option>
                       <option value="ai-implementatie">AI Implementatie (chatbot, analytics, document AI)</option>
@@ -276,7 +276,7 @@ export default function Contact() {
                       value={formData.bericht}
                       onChange={(e) => setFormData({ ...formData, bericht: e.target.value })}
                       placeholder="Beschrijf kort welk proces u wilt verbeteren, automatiseren of digitaliseren..."
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-all duration-200 text-sm resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-[oklch(0.65_0.22_25/0.5)] focus:bg-white/8 transition-[border-color,background-color] duration-200 text-sm resize-none"
                     />
                   </div>
 
@@ -299,7 +299,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.08, margin: "0px 0px 120px 0px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="lg:col-span-2 flex flex-col gap-5"
             >

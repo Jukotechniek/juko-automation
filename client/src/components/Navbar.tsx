@@ -5,7 +5,7 @@
   - Cyan accent on active/hover links
 */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -28,10 +28,29 @@ export default function Navbar() {
 
   const logoSrc = resolvedTheme === "dark" ? branding.logoDark : branding.logoLight;
 
+  const scrollTicking = useRef(false);
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const apply = () => {
+      const y = window.scrollY;
+      setScrolled((prev) => {
+        if (prev) return y > 8;
+        return y > 48;
+      });
+    };
+
+    const onScroll = () => {
+      if (scrollTicking.current) return;
+      scrollTicking.current = true;
+      requestAnimationFrame(() => {
+        scrollTicking.current = false;
+        apply();
+      });
+    };
+
+    apply();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -40,10 +59,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-200 ease-out ${
         scrolled
-          ? "bg-background/88 backdrop-blur-xl border-b border-border/60 shadow-[0_10px_40px_-24px_oklch(0_0_0/0.35)]"
-          : "bg-background/55 backdrop-blur-md border-b border-transparent"
+          ? "bg-background/88 border-b border-border/60 shadow-[0_10px_40px_-24px_oklch(0_0_0/0.35)]"
+          : "bg-background/55 border-b border-transparent shadow-none"
       }`}
     >
       <div className="container">
@@ -92,7 +111,7 @@ export default function Navbar() {
         </div>
       </div>
       <div
-        className={`pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-[oklch(0.65_0.22_25/0.65)] to-transparent transition-opacity duration-300 ${
+        className={`pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-[oklch(0.65_0.22_25/0.65)] to-transparent transition-opacity duration-200 ${
           scrolled ? "opacity-85" : "opacity-55"
         }`}
       />

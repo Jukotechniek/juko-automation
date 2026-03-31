@@ -145,6 +145,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* Voorkomt scroll-anchoring-jitter op mobiel (tekst/inputs die “mee springen”) */
+    overflow-anchor: none;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: 'DM Sans', sans-serif;

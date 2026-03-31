@@ -193,19 +193,21 @@ export default function Home() {
 
         <div className="container relative z-10 pt-24 pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            <div className="lg:col-span-7">
+            <div className="min-w-0 lg:col-span-7">
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-8"
+              className="max-w-full text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.12] tracking-tight mb-8 pr-1 sm:pr-0"
             >
               <span className="block">AI, Webapps &</span>
-              <span className="block gradient-text [overflow-wrap:anywhere] sm:[overflow-wrap:normal]">
+              <span className="block gradient-text [overflow-wrap:anywhere] lg:[overflow-wrap:normal]">
                 Automatisering
               </span>
-              <span className="block text-3xl sm:text-4xl lg:text-5xl text-white/70 mt-2 font-semibold">voor groeiende bedrijven</span>
+              <span className="block text-xl sm:text-3xl lg:text-4xl xl:text-5xl text-white/70 mt-2 font-semibold">
+                voor groeiende bedrijven
+              </span>
             </motion.h1>
 
             {/* Subtext */}
