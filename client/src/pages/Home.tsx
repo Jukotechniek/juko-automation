@@ -44,6 +44,11 @@ const faqs = [
   },
 ];
 
+/** Alleen opacity bij scroll-in: voorkomt conflict met .glass-card-hover + jank op iOS. */
+const scrollReveal = {
+  viewport: { once: true as const, amount: 0.2, margin: "0px 0px 100px 0px" },
+};
+
 function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
   const [open, setOpen] = useState(false);
   return (
@@ -196,8 +201,8 @@ export default function Home() {
             <div className="min-w-0 lg:col-span-7">
             {/* Headline */}
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               className="max-w-full text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.12] tracking-tight mb-8 pr-1 sm:pr-0"
             >
@@ -212,8 +217,8 @@ export default function Home() {
 
             {/* Subtext */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-white/60 mb-8 max-w-2xl leading-relaxed"
             >
@@ -223,8 +228,8 @@ export default function Home() {
 
             {/* USPs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap gap-x-6 gap-y-3 mb-10"
             >
@@ -246,8 +251,8 @@ export default function Home() {
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap items-center gap-4"
             >
@@ -267,8 +272,8 @@ export default function Home() {
 
             {/* Trust Indicators */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-12 flex flex-wrap items-center gap-6 text-sm text-white/40"
             >
@@ -280,8 +285,8 @@ export default function Home() {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, x: 28 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.35 }}
               className="hidden lg:block lg:col-span-5"
             >
@@ -326,9 +331,9 @@ export default function Home() {
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={scrollReveal.viewport}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="text-3xl font-bold text-[oklch(0.65_0.22_25)] mb-2">{stat.value}</div>
@@ -345,9 +350,9 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="mb-16 max-w-3xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
@@ -355,9 +360,9 @@ export default function Home() {
               <span className="text-xs font-medium text-white/60">Onze Diensten</span>
             </motion.div>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
             >
@@ -365,9 +370,9 @@ export default function Home() {
               <span className="gradient-text">digitale groei</span>
             </motion.h2>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-white/60"
             >
@@ -428,9 +433,9 @@ export default function Home() {
               return (
                 <motion.article
                   key={service.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={scrollReveal.viewport}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className={`glass-card-hover p-8 flex flex-col relative ${
                     service.highlight ? "border-[oklch(0.65_0.22_25/0.3)] ring-1 ring-[oklch(0.65_0.22_25/0.15)]" : ""
@@ -475,9 +480,9 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="mb-16 max-w-3xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
@@ -485,9 +490,9 @@ export default function Home() {
               <span className="text-xs font-medium text-white/60">Werkwijze</span>
             </motion.div>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
             >
@@ -495,9 +500,9 @@ export default function Home() {
               <span className="gradient-text">werkende oplossing</span>
             </motion.h2>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-white/60"
             >
@@ -536,9 +541,9 @@ export default function Home() {
               return (
                 <motion.div
                   key={step.num}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={scrollReveal.viewport}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="glass-card-hover p-6 relative group"
                 >
@@ -561,9 +566,9 @@ export default function Home() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={scrollReveal.viewport}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-12 flex flex-col items-center gap-2"
           >
@@ -583,9 +588,9 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="mb-16 max-w-3xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
@@ -593,9 +598,9 @@ export default function Home() {
               <span className="text-xs font-medium text-white/60">Waarom Juko?</span>
             </motion.div>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
             >
@@ -631,9 +636,9 @@ export default function Home() {
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={scrollReveal.viewport}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="glass-card-hover p-6"
                 >
@@ -652,9 +657,9 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5 }}
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
             >
@@ -686,9 +691,9 @@ export default function Home() {
             ].map((review, i) => (
               <motion.blockquote
                 key={review.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={scrollReveal.viewport}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="glass-card p-8 flex flex-col"
               >
@@ -715,9 +720,9 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="mb-16 max-w-3xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-4"
             >
@@ -725,9 +730,9 @@ export default function Home() {
               <span className="text-xs font-medium text-white/60">FAQ</span>
             </motion.div>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
             >
@@ -735,9 +740,9 @@ export default function Home() {
               <span className="gradient-text">vragen</span>
             </motion.h2>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={scrollReveal.viewport}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-white/60"
             >
@@ -746,9 +751,9 @@ export default function Home() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={scrollReveal.viewport}
             transition={{ duration: 0.5 }}
             className="max-w-3xl flex flex-col gap-3"
           >
@@ -768,9 +773,9 @@ export default function Home() {
 
         <div className="container relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={scrollReveal.viewport}
             transition={{ duration: 0.7 }}
             className="max-w-3xl mx-auto"
           >
