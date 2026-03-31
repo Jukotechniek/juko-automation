@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep:*)",
+      "Bash(find /c/Users/justi/Desktop/juko-automation/server -type f \\\\\\(-name *.ts -o -name *.js \\\\\\))"
+    ]
+  }
+}
