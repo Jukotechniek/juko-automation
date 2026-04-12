@@ -15,6 +15,7 @@ import {
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -34,11 +35,14 @@ export default function Diensten() {
     <div className="min-h-screen bg-[oklch(0.09_0.015_240)] text-white">
       <Navbar />
 
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+      <SEOHead
+        title="Diensten | AI Implementaties, Webapps & Automatisering - Juko Automation"
+        description="Ontdek onze diensten: AI-chatbots & implementaties vanaf €4.500, maatwerk webapps & klantenportalen vanaf €5.500, en procesautomatisering vanaf €1.500. Bekijk praktijkvoorbeelden en resultaten."
+        canonical="/diensten"
+        ogTitle="Diensten - AI, Webapps & Automatisering | Juko Automation"
+        ogDescription="Van AI-chatbots tot klantenportalen en workflow-automatisering. Ontdek hoe Juko Automation uw bedrijf helpt groeien met technologie die werkt."
+        jsonLd={[
+          {
             "@context": "https://schema.org",
             "@type": "ItemList",
             name: "Diensten - Juko Automation",
@@ -50,8 +54,20 @@ export default function Diensten() {
                 item: {
                   "@type": "Service",
                   name: "AI Implementaties",
-                  description: "AI chatbots, predictive analytics, documentverwerking en AI-gestuurde automatisering.",
+                  description: "AI chatbots, predictive analytics, documentverwerking en AI-gestuurde automatisering. Vanaf €4.500.",
                   provider: { "@type": "Organization", name: "Juko Automation" },
+                  areaServed: "Nederland",
+                  offers: {
+                    "@type": "Offer",
+                    price: "4500",
+                    priceCurrency: "EUR",
+                    priceSpecification: {
+                      "@type": "PriceSpecification",
+                      price: "4500",
+                      priceCurrency: "EUR",
+                      description: "Vanaf prijs, afhankelijk van complexiteit en scope",
+                    },
+                  },
                 },
               },
               {
@@ -60,8 +76,14 @@ export default function Diensten() {
                 item: {
                   "@type": "Service",
                   name: "Webapps & Klantenportalen",
-                  description: "Maatwerk webapplicaties, klantenportalen op maat, interne dashboards en workflow apps.",
+                  description: "Maatwerk webapplicaties, klantenportalen op maat, interne dashboards en workflow apps. Vanaf €5.500.",
                   provider: { "@type": "Organization", name: "Juko Automation" },
+                  areaServed: "Nederland",
+                  offers: {
+                    "@type": "Offer",
+                    price: "5500",
+                    priceCurrency: "EUR",
+                  },
                 },
               },
               {
@@ -70,13 +92,27 @@ export default function Diensten() {
                 item: {
                   "@type": "Service",
                   name: "Automatiseringen",
-                  description: "Procesautomatisering, API-integraties, workflow optimalisatie met n8n en Make.",
+                  description: "Procesautomatisering, API-integraties, workflow optimalisatie met n8n en Make. Vanaf €1.500.",
                   provider: { "@type": "Organization", name: "Juko Automation" },
+                  areaServed: "Nederland",
+                  offers: {
+                    "@type": "Offer",
+                    price: "1500",
+                    priceCurrency: "EUR",
+                  },
                 },
               },
             ],
-          }),
-        }}
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.jukoautomation.nl/" },
+              { "@type": "ListItem", position: 2, name: "Diensten", item: "https://www.jukoautomation.nl/diensten" },
+            ],
+          },
+        ]}
       />
 
       {/* Page Header */}

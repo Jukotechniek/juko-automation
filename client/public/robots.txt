@@ -1,4 +1,22 @@
+# Robots.txt for jukoautomation.nl
+
 User-agent: *
 Allow: /
+Disallow: /404
+Disallow: /assets/
 
+# Sitemaps
 Sitemap: https://www.jukoautomation.nl/sitemap.xml
+
+# Crawl-delay (voor minder agressieve bots)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Host directive
+Host: https://www.jukoautomation.nl

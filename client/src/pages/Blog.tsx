@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { BLOG_AUTHOR } from "@/config/blog";
 
 const articles = [
@@ -20,6 +21,7 @@ const articles = [
     excerpt: "Ontdek hoe een AI-chatbot uw klantenservice verbetert. Van implementatie tot resultaten — een praktische gids voor bedrijven.",
     category: "AI",
     date: "21 maart 2026",
+    isoDate: "2026-03-21",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
     featured: true,
@@ -30,6 +32,7 @@ const articles = [
     excerpt: "Een klantenportaal verhoogt klanttevredenheid en bespaart uw team uren per week. Ontdek wat het kost en wat het oplevert.",
     category: "Webapps",
     date: "18 maart 2026",
+    isoDate: "2026-03-18",
     readTime: 7,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
     featured: false,
@@ -40,6 +43,7 @@ const articles = [
     excerpt: "Stap-voor-stap uitleg om automatiseringsprojecten te beoordelen en het rendement op uw investering te maximaliseren.",
     category: "Automatisering",
     date: "15 maart 2026",
+    isoDate: "2026-03-15",
     readTime: 9,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp",
     featured: false,
@@ -50,6 +54,7 @@ const articles = [
     excerpt: "Ontdek hoe u uw ERP, CRM en andere systemen naadloos koppelt met REST-API's, webhooks en realtime synchronisatie.",
     category: "Automatisering",
     date: "12 maart 2026",
+    isoDate: "2026-03-12",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
     featured: false,
@@ -60,6 +65,7 @@ const articles = [
     excerpt: "Hoe machine learning u helpt onderhoud te plannen voordat apparatuur uitvalt. Resultaten uit de praktijk.",
     category: "AI",
     date: "9 maart 2026",
+    isoDate: "2026-03-09",
     readTime: 6,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
     featured: false,
@@ -70,6 +76,7 @@ const articles = [
     excerpt: "De voor- en nadelen van maatwerk webapplicaties versus kant-en-klare oplossingen. Inclusief beslissingsmodel.",
     category: "Webapps",
     date: "6 maart 2026",
+    isoDate: "2026-03-06",
     readTime: 7,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp",
     featured: false,
@@ -80,6 +87,7 @@ const articles = [
     excerpt: "Een eerlijke vergelijking van n8n en Make (voorheen Integromat) voor bedrijfsautomatisering. Inclusief praktijkvoorbeelden.",
     category: "Automatisering",
     date: "3 maart 2026",
+    isoDate: "2026-03-03",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
     featured: false,
@@ -90,6 +98,7 @@ const articles = [
     excerpt: "Hoe u automatisering en slimme toepassingen inzet die voldoet aan de AVG en andere privacy-eisen.",
     category: "Beveiliging",
     date: "1 maart 2026",
+    isoDate: "2026-03-01",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
     featured: false,
@@ -116,6 +125,45 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-[oklch(0.09_0.015_240)] text-white">
       <Navbar />
+
+      <SEOHead
+        title="Blog & Kennisbank | AI, Webapps & Automatisering - Juko Automation"
+        description="Praktische gidsen en inzichten over AI-chatbots, webapp-ontwikkeling, klantenportalen en procesautomatisering. Leer hoe u uw bedrijf slimmer laat werken met technologie."
+        canonical="/blog"
+        ogTitle="Blog & Kennisbank | Juko Automation"
+        ogDescription="Praktische gidsen, praktijkvoorbeelden en inzichten over AI-implementaties, webapp-ontwikkeling en procesautomatisering."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: "Juko Automation Blog & Kennisbank",
+            description: "Praktische gidsen en inzichten over AI, webapps en automatisering.",
+            url: "https://www.jukoautomation.nl/blog",
+            publisher: {
+              "@type": "Organization",
+              name: "Juko Automation",
+              logo: { "@type": "ImageObject", url: "https://www.jukoautomation.nl/juko-logo-light.png" },
+            },
+            blogPost: articles.map((a) => ({
+              "@type": "BlogPosting",
+              headline: a.title,
+              description: a.excerpt,
+              url: `https://www.jukoautomation.nl/blog/${a.id}`,
+              image: a.image,
+              datePublished: a.isoDate,
+              author: { "@type": "Person", name: BLOG_AUTHOR },
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.jukoautomation.nl/" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.jukoautomation.nl/blog" },
+            ],
+          },
+        ]}
+      />
 
       {/* Header */}
       <section className="relative pt-32 pb-16 overflow-hidden">
@@ -223,7 +271,7 @@ export default function Blog() {
                     <div className="flex items-center gap-4 text-sm text-white/40">
                       <div className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" aria-hidden="true" />
-                        <time>{featuredArticle.date}</time>
+                        <time dateTime={featuredArticle.isoDate}>{featuredArticle.date}</time>
                       </div>
                       <div className="flex items-center gap-1">
                         <Clock className="w-4 h-4" aria-hidden="true" />
@@ -282,7 +330,7 @@ export default function Blog() {
                       <div className="flex items-center gap-3 text-xs text-white/40">
                         <div className="flex items-center gap-1">
                           <Calendar className="w-3 h-3" aria-hidden="true" />
-                          <time>{article.date}</time>
+                          <time dateTime={article.isoDate}>{article.date}</time>
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="w-3 h-3" aria-hidden="true" />

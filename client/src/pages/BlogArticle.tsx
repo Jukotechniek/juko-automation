@@ -9,6 +9,7 @@ import { ArrowLeft, Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link, useParams } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { BLOG_AUTHOR } from "@/config/blog";
 
 const articleContent: Record<
@@ -18,6 +19,7 @@ const articleContent: Record<
     excerpt: string;
     category: string;
     date: string;
+    isoDate: string;
     readTime: number;
     image: string;
     author: string;
@@ -26,9 +28,10 @@ const articleContent: Record<
 > = {
   "ai-chatbot-klantenservice": {
     title: "AI-chatbot voor klantenservice: zo bespaart u tot 80% supporttijd",
-    excerpt: "Ontdek hoe een AI-chatbot uw klantenservice verbetert.",
+    excerpt: "Ontdek hoe een AI-chatbot uw klantenservice verbetert. Van implementatie tot resultaten — een praktische gids voor bedrijven die klantenservice willen automatiseren.",
     category: "AI",
     date: "21 maart 2026",
+    isoDate: "2026-03-21",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
     author: BLOG_AUTHOR,
@@ -68,9 +71,10 @@ const articleContent: Record<
   },
   "klantenportaal-bouwen": {
     title: "Klantenportaal op maat: waarom elk groeiend bedrijf er een nodig heeft",
-    excerpt: "Een klantenportaal verhoogt klanttevredenheid en bespaart uw team uren per week.",
+    excerpt: "Een klantenportaal verhoogt klanttevredenheid en bespaart uw team uren per week. Ontdek wat het kost en wat het oplevert.",
     category: "Webapps",
     date: "18 maart 2026",
+    isoDate: "2026-03-18",
     readTime: 7,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
     author: BLOG_AUTHOR,
@@ -108,9 +112,10 @@ const articleContent: Record<
   },
   "api-integratie-guide": {
     title: "Volledige gids: API-integratie voor uw bedrijfssystemen",
-    excerpt: "Ontdek hoe u uw ERP, CRM en andere systemen naadloos verbindt.",
+    excerpt: "Ontdek hoe u uw ERP, CRM en andere systemen naadloos koppelt met REST-API's, webhooks en realtime synchronisatie.",
     category: "Automatisering",
     date: "12 maart 2026",
+    isoDate: "2026-03-12",
     readTime: 8,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
     author: BLOG_AUTHOR,
@@ -140,9 +145,10 @@ const articleContent: Record<
   },
   "predictive-maintenance-ai": {
     title: "Voorspellend onderhoud met AI: voorkom stilstand en bespaar kosten",
-    excerpt: "Hoe machine learning u helpt onderhoud te plannen voordat apparatuur uitvalt.",
+    excerpt: "Hoe machine learning u helpt onderhoud te plannen voordat apparatuur uitvalt. Resultaten uit de praktijk.",
     category: "AI",
     date: "9 maart 2026",
+    isoDate: "2026-03-09",
     readTime: 6,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
     author: BLOG_AUTHOR,
@@ -178,6 +184,7 @@ const articleContent: Record<
       "Stap-voor-stap uitleg om automatiseringsprojecten te beoordelen en het rendement op uw investering te maximaliseren.",
     category: "Automatisering",
     date: "15 maart 2026",
+    isoDate: "2026-03-15",
     readTime: 9,
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp",
@@ -224,6 +231,7 @@ const articleContent: Record<
       "De voor- en nadelen van maatwerk webapplicaties versus kant-en-klare oplossingen. Inclusief beslissingsmodel.",
     category: "Webapps",
     date: "6 maart 2026",
+    isoDate: "2026-03-06",
     readTime: 7,
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp",
@@ -269,6 +277,7 @@ const articleContent: Record<
       "Een eerlijke vergelijking van n8n en Make (voorheen Integromat) voor bedrijfsautomatisering. Inclusief praktijkvoorbeelden.",
     category: "Automatisering",
     date: "3 maart 2026",
+    isoDate: "2026-03-03",
     readTime: 8,
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp",
@@ -318,6 +327,7 @@ const articleContent: Record<
       "Hoe u automatisering en slimme toepassingen inzet die voldoen aan de AVG en andere privacy-eisen.",
     category: "Beveiliging",
     date: "1 maart 2026",
+    isoDate: "2026-03-01",
     readTime: 8,
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp",
@@ -386,21 +396,47 @@ export default function BlogArticle() {
     <div className="min-h-screen bg-[oklch(0.09_0.015_240)] text-white">
       <Navbar />
 
-      {/* Article Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+      <SEOHead
+        title={`${article.title} | Juko Automation Blog`}
+        description={article.excerpt}
+        canonical={`/blog/${articleId}`}
+        ogTitle={article.title}
+        ogDescription={article.excerpt}
+        ogImage={article.image}
+        ogType="article"
+        jsonLd={[
+          {
             "@context": "https://schema.org",
             "@type": "Article",
             headline: article.title,
             description: article.excerpt,
             author: { "@type": "Person", name: article.author },
-            publisher: { "@type": "Organization", name: "Juko Automation" },
-            datePublished: article.date,
+            publisher: {
+              "@type": "Organization",
+              name: "Juko Automation",
+              logo: { "@type": "ImageObject", url: "https://www.jukoautomation.nl/juko-logo-light.png" },
+            },
+            datePublished: article.isoDate,
+            dateModified: article.isoDate,
             image: article.image,
-          }),
-        }}
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://www.jukoautomation.nl/blog/${articleId}`,
+            },
+            articleSection: article.category,
+            inLanguage: "nl",
+            wordCount: article.readTime * 200,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.jukoautomation.nl/" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.jukoautomation.nl/blog" },
+              { "@type": "ListItem", position: 3, name: article.title, item: `https://www.jukoautomation.nl/blog/${articleId}` },
+            ],
+          },
+        ]}
       />
 
       {/* Header */}
@@ -431,7 +467,7 @@ export default function BlogArticle() {
               <span className="text-white/60">Door {article.author}</span>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" aria-hidden="true" />
-                <time>{article.date}</time>
+                <time dateTime={article.isoDate}>{article.date}</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" aria-hidden="true" />

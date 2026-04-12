@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
 
           {/* Navigatie */}
-          <div>
+          <nav aria-label="Footer navigatie">
             <h4 className="text-white font-semibold text-sm mb-4 tracking-wide uppercase" style={{ fontFamily: "'Syne', sans-serif" }}>
               Navigatie
             </h4>
@@ -46,42 +46,40 @@ export default function Footer() {
                 { href: "/", label: "Home" },
                 { href: "/diensten", label: "Diensten" },
                 { href: "/over-ons", label: "Over Ons" },
+                { href: "/blog", label: "Blog & Kennisbank" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href}>
                     <span className="text-white/50 hover:text-white transition-colors text-sm flex items-center gap-1 group">
                       {link.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                     </span>
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Diensten */}
-          <div>
+          <nav aria-label="Diensten navigatie">
             <h4 className="text-white font-semibold text-sm mb-4 tracking-wide uppercase" style={{ fontFamily: "'Syne', sans-serif" }}>
               Diensten
             </h4>
             <ul className="flex flex-col gap-2.5">
               {[
-                "Automatiseringen & Software",
-                "AI Implementatie",
-                "Maatwerk Web Applicaties",
-                "Chatbots & Assistenten",
+                { href: "/diensten#ai-implementaties", label: "AI Implementaties" },
+                { href: "/diensten#webapps-portalen", label: "Webapps & Klantenportalen" },
+                { href: "/diensten#automatiseringen", label: "Automatiseringen" },
               ].map((item) => (
-                <li key={item}>
-                  <Link href="/diensten">
-                    <span className="text-white/50 hover:text-white transition-colors text-sm">
-                      {item}
-                    </span>
-                  </Link>
+                <li key={item.href}>
+                  <a href={item.href} className="text-white/50 hover:text-white transition-colors text-sm">
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* Bottom bar */}

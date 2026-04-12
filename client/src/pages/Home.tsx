@@ -16,6 +16,7 @@ import {
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const faqs = [
   {
@@ -97,15 +98,18 @@ export default function Home() {
     <div className="min-h-screen bg-[oklch(0.09_0.015_240)] text-white">
       <Navbar />
 
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+      <SEOHead
+        title="Juko Automation | AI, Webapps & Automatisering in Kootwijkerbroek"
+        description="Juko Automation helpt bedrijven met AI-implementaties, maatwerk webapps, klantenportalen en procesautomatisering (n8n/Make). Bespaar tijd, verminder fouten en groei sneller. Gevestigd in Kootwijkerbroek, Gelderland."
+        canonical="/"
+        ogTitle="Juko Automation | AI, Webapps & Automatisering"
+        ogDescription="Van AI-chatbots en klantenportalen tot volledig geautomatiseerde workflows. Wij bouwen software die uw bedrijf sneller, slimmer en schaalbaarder maakt."
+        jsonLd={[
+          {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "Juko Automation",
-            description: "Juko Automation helpt bedrijven met softwareontwikkeling, automatiseringen, low-code (n8n/Make) en AI. Bespaar tijd, verminder fouten en laat processen vanzelf lopen.",
+            description: "Juko Automation helpt bedrijven met AI-implementaties, maatwerk webapps, klantenportalen en procesautomatisering. Bespaar tijd, verminder fouten en laat processen vanzelf lopen.",
             url: "https://www.jukoautomation.nl",
             logo: "https://www.jukoautomation.nl/juko-logo-light.png",
             image: "https://www.jukoautomation.nl/juko-logo-light.png",
@@ -124,8 +128,17 @@ export default function Home() {
               latitude: 52.1534,
               longitude: 5.8467,
             },
-            areaServed: "Nederland",
+            areaServed: {
+              "@type": "Country",
+              name: "Nederland",
+            },
             priceRange: "€€",
+            openingHoursSpecification: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "09:00",
+              closes: "17:30",
+            },
             sameAs: [
               "https://www.linkedin.com/in/justin-jansen-juko-automation",
             ],
@@ -139,6 +152,7 @@ export default function Home() {
                     "@type": "Service",
                     name: "AI Implementatie",
                     description: "AI chatbots, predictive analytics, documentverwerking en AI-gestuurde automatisering voor bedrijven.",
+                    provider: { "@type": "Organization", name: "Juko Automation" },
                   },
                 },
                 {
@@ -147,6 +161,7 @@ export default function Home() {
                     "@type": "Service",
                     name: "Webapps & Klantenportalen",
                     description: "Maatwerk webapplicaties, klantenportalen, interne dashboards en workflow applicaties.",
+                    provider: { "@type": "Organization", name: "Juko Automation" },
                   },
                 },
                 {
@@ -154,20 +169,20 @@ export default function Home() {
                   itemOffered: {
                     "@type": "Service",
                     name: "Automatiseringen",
-                    description: "Procesautomatisering, API-integraties, workflow optimalisatie en data synchronisatie.",
+                    description: "Procesautomatisering, API-integraties, workflow optimalisatie en data synchronisatie met n8n en Make.",
+                    provider: { "@type": "Organization", name: "Juko Automation" },
                   },
                 },
               ],
             },
-          }),
-        }}
-      />
-
-      {/* FAQ Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5",
+              bestRating: "5",
+              ratingCount: "10",
+            },
+          },
+          {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: faqs.map((faq) => ({
@@ -178,8 +193,20 @@ export default function Home() {
                 text: faq.a,
               },
             })),
-          }),
-        }}
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.jukoautomation.nl/",
+              },
+            ],
+          },
+        ]}
       />
 
       {/* ─── HERO ─── */}

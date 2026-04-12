@@ -1,49 +1,81 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
+import { ArrowRight, Home, Search } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
 
-  const handleGoHome = () => {
-    setLocation("/");
-  };
-
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
-            </div>
+    <div className="min-h-screen bg-[oklch(0.09_0.015_240)] text-white">
+      <Navbar />
+
+      <SEOHead
+        title="Pagina niet gevonden (404) | Juko Automation"
+        description="De pagina die u zoekt bestaat niet of is verplaatst. Ga terug naar de homepagina van Juko Automation."
+        canonical="/404"
+        noindex
+      />
+
+      <div className="container py-32 text-center">
+        <div className="max-w-lg mx-auto">
+          <div className="w-20 h-20 rounded-full bg-[oklch(0.65_0.22_25/0.12)] border border-[oklch(0.65_0.22_25/0.2)] flex items-center justify-center mx-auto mb-8">
+            <Search className="w-10 h-10 text-[oklch(0.65_0.22_25)]" aria-hidden="true" />
           </div>
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
+          <h1 className="text-6xl font-bold mb-4">404</h1>
 
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
+          <h2 className="text-2xl font-semibold text-white/80 mb-4">
+            Pagina niet gevonden
           </h2>
 
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
+          <p className="text-white/50 mb-10 leading-relaxed">
+            Sorry, de pagina die u zoekt bestaat niet of is verplaatst.
             <br />
-            It may have been moved or deleted.
+            Controleer de URL of ga terug naar de homepagina.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => setLocation("/")}
+              className="btn-primary-glow inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white"
             >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Button>
+              <Home className="w-4 h-4" aria-hidden="true" />
+              Naar homepagina
+            </button>
+            <Link href="/contact#contact-form">
+              <button className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white/70 hover:text-white border border-white/10 hover:border-white/20 transition-all duration-300">
+                Contact opnemen
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </button>
+            </Link>
           </div>
-        </CardContent>
-      </Card>
+
+          <div className="mt-12 pt-8 border-t border-white/5">
+            <p className="text-white/40 text-sm mb-4">Misschien vindt u dit interessant:</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/diensten">
+                <span className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white/60 hover:text-white hover:border-white/20 transition-all">
+                  Onze diensten
+                </span>
+              </Link>
+              <Link href="/blog">
+                <span className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white/60 hover:text-white hover:border-white/20 transition-all">
+                  Blog & Kennisbank
+                </span>
+              </Link>
+              <Link href="/over-ons">
+                <span className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white/60 hover:text-white hover:border-white/20 transition-all">
+                  Over ons
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }

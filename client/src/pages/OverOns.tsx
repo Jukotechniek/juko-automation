@@ -12,6 +12,7 @@ import {
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -30,6 +31,46 @@ export default function OverOns() {
   return (
     <div className="min-h-screen bg-[oklch(0.09_0.015_240)] text-white">
       <Navbar />
+
+      <SEOHead
+        title="Over Ons | Juko Automation - Uw Partner in AI & Automatisering"
+        description="Leer Juko Automation kennen: uw partner voor AI-implementaties, webapp-ontwikkeling en procesautomatisering in Kootwijkerbroek. Onze missie, visie, expertise en waarden."
+        canonical="/over-ons"
+        ogTitle="Over Juko Automation | AI & Automatisering Partner"
+        ogDescription="Wij combineren expertise in AI, webapp-ontwikkeling en procesautomatisering om uw bedrijf slimmer en efficienter te laten werken."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: "Over Juko Automation",
+            description: "Juko Automation is gespecialiseerd in AI implementaties, webapp ontwikkeling en procesautomatisering voor groeiende bedrijven in Nederland.",
+            url: "https://www.jukoautomation.nl/over-ons",
+            mainEntity: {
+              "@type": "Organization",
+              name: "Juko Automation",
+              url: "https://www.jukoautomation.nl",
+              logo: "https://www.jukoautomation.nl/juko-logo-light.png",
+              foundingLocation: "Kootwijkerbroek, Nederland",
+              knowsAbout: [
+                "Artificial Intelligence",
+                "Web Application Development",
+                "Business Process Automation",
+                "n8n",
+                "Make (Integromat)",
+                "API Integration",
+              ],
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.jukoautomation.nl/" },
+              { "@type": "ListItem", position: 2, name: "Over Ons", item: "https://www.jukoautomation.nl/over-ons" },
+            ],
+          },
+        ]}
+      />
 
       {/* Header */}
       <section className="relative pt-32 pb-16 overflow-hidden">

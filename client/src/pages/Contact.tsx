@@ -11,6 +11,7 @@ import { ArrowRight, Mail, ChevronDown, MessageSquare, Clock, CheckCircle2 } fro
 import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const CONTACT_WEBHOOK_URL =
   import.meta.env.VITE_N8N_CONTACT_WEBHOOK ||
@@ -148,6 +149,57 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-[oklch(0.09_0.015_240)] text-white">
       <Navbar />
+
+      <SEOHead
+        title="Contact & Gratis Intake | Juko Automation"
+        description="Vraag een gratis intake aan bij Juko Automation. Ontdek wat AI, webapps of automatisering voor uw bedrijf kan betekenen. Reactie binnen 24 uur op werkdagen."
+        canonical="/contact"
+        ogTitle="Gratis Intake Aanvragen | Juko Automation"
+        ogDescription="Vul het intake formulier in en ontdek wat AI, webapps of automatisering voor uw bedrijf kan betekenen. Vrijblijvend, reactie binnen 24 uur."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: "Contact - Juko Automation",
+            description: "Neem contact op met Juko Automation voor een gratis intake over AI, webapps en automatisering.",
+            url: "https://www.jukoautomation.nl/contact",
+            mainEntity: {
+              "@type": "Organization",
+              name: "Juko Automation",
+              email: "info@jukoautomation.nl",
+              telephone: "+31622035459",
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "sales",
+                email: "info@jukoautomation.nl",
+                telephone: "+31622035459",
+                availableLanguage: "Dutch",
+                areaServed: "NL",
+              },
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.jukoautomation.nl/" },
+              { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.jukoautomation.nl/contact" },
+            ],
+          },
+        ]}
+      />
 
       {/* Header */}
       <section className="relative pt-32 pb-16 overflow-hidden">

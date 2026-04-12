@@ -1,68 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.jukoautomation.nl/</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/diensten</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.jukoautomation.nl/juko-logo-light.png</image:loc>
+      <image:title>Juko Automation Diensten</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/over-ons</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/contact</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/blog</loc>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/blog/ai-chatbot-klantenservice</loc>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp</image:loc>
+      <image:title>AI-chatbot voor klantenservice</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/blog/klantenportaal-bouwen</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp</image:loc>
+      <image:title>Klantenportaal op maat bouwen</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/blog/workflow-automatisering-roi</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp</image:loc>
+      <image:title>Workflowautomatisering ROI berekenen</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/blog/api-integratie-guide</loc>
+    <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp</image:loc>
+      <image:title>API-integratie gids voor bedrijfssystemen</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/blog/predictive-maintenance-ai</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp</image:loc>
+      <image:title>Voorspellend onderhoud met AI</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/blog/webapp-vs-standaard-software</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-process-manufacturing-X9uFfZfVUcMMZNT7JjVVji.webp</image:loc>
+      <image:title>Maatwerk webapp vs standaardsoftware</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/blog/n8n-make-automatisering</loc>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-automation-card-Cmgzf2u7YyobuLyoUbbaT9.webp</image:loc>
+      <image:title>n8n vs Make automatiseringstool vergelijking</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.jukoautomation.nl/blog/data-security-compliance</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://d2xsxph8kpxj0f.cloudfront.net/310519663462210963/ciqyepHAPiGH2dwpaT8Bqe/juko-ai-engineering-SeT63nmpEUT9TXX7vv544w.webp</image:loc>
+      <image:title>Gegevensbeveiliging en AVG compliance</image:title>
+    </image:image>
   </url>
 </urlset>
