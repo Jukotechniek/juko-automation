@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useCookieConsent } from "@/hooks/useCookieConsent";
+import { useLocation } from "wouter";
 
 declare global {
   interface Window {
@@ -13,12 +14,28 @@ const MEASUREMENT_ID = "G-4QSG8LRWMG";
 export default function CookieBanner() {
   const { hasConsent, analyticsAccepted, acceptAnalytics, declineAnalytics, isLoading } =
     useCookieConsent();
+  const [location] = useLocation();
+
+  const sendPageView = () => {
+    window.gtag?.("event", "page_view", {
+      page_path: window.location.pathname + window.location.search + window.location.hash,
+      page_title: document.title,
+    });
+  };
 
   useEffect(() => {
     if (analyticsAccepted) {
       initializeGoogleAnalytics();
     }
   }, [analyticsAccepted]);
+
+  useEffect(() => {
+    if (!analyticsAccepted || !window.gtag) {
+      return;
+    }
+
+    sendPageView();
+  }, [analyticsAccepted, location]);
 
   const initializeGoogleAnalytics = () => {
     if (document.querySelector(`script[src*="gtag/js?id=${MEASUREMENT_ID}"]`)) {
@@ -44,10 +61,7 @@ export default function CookieBanner() {
           window.location.hostname === "localhost" ||
           window.location.hostname === "127.0.0.1",
       });
-      window.gtag?.("event", "page_view", {
-        page_path: window.location.pathname + window.location.search + window.location.hash,
-        page_title: document.title,
-      });
+      sendPageView();
     };
 
     script.onerror = () => {
